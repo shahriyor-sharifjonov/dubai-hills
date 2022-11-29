@@ -260,6 +260,16 @@ html.has-scroll-dragging {
   scroll-behavior: smooth;
 }
 
+*::-moz-selection {
+  background: #C7825B;
+  color: #fff;
+}
+
+*::selection {
+  background: #C7825B;
+  color: #fff;
+}
+
 *:focus,
 *:active {
   outline: none;
@@ -396,6 +406,64 @@ ul {
   height: 15px;
   background: #E3945E;
   opacity: 1;
+}
+
+.swiper-navigation {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -90px;
+  width: calc(100% + 180px);
+  height: 63px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.swiper-button-prev {
+  cursor: pointer;
+}
+
+.swiper-button-prev svg:hover path {
+  stroke: #FFA761;
+}
+
+.swiper-button-prev svg:active path {
+  stroke: #C7825B;
+}
+
+.swiper-button-prev svg path {
+  stroke: white;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.swiper-button-next {
+  cursor: pointer;
+}
+
+.swiper-button-next svg:hover path {
+  stroke: #FFA761;
+}
+
+.swiper-button-next svg:active path {
+  stroke: #C7825B;
+}
+
+.swiper-button-next svg path {
+  stroke: white;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
 }
 
 .header {
@@ -688,12 +756,12 @@ ul {
 }
 
 .about__img {
-  max-width: 710px;
+  max-width: 800px;
   border-radius: 20px 0 0 20px;
   line-height: 0;
   overflow: hidden;
   position: absolute;
-  bottom: -225px;
+  bottom: -240px;
   right: 0;
 }
 
@@ -707,14 +775,22 @@ ul {
 
 .features__slider {
   width: 100%;
-  overflow: hidden;
   padding-bottom: 80px;
+  position: relative;
 }
 
 .features__swiper {
   width: 100%;
   padding-bottom: 45px;
+  overflow: hidden;
   position: relative;
+}
+
+.features__navigation {
+  top: calc(50% - 80px);
+  -webkit-transform: translateY(calc(-50% + 40px));
+      -ms-transform: translateY(calc(-50% + 40px));
+          transform: translateY(calc(-50% + 40px));
 }
 
 .features__slide {

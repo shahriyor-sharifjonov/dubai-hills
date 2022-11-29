@@ -6,6 +6,10 @@
     -webkit-tap-highlight-color: transparent;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    &::selection{
+        background: #C7825B;
+        color: #fff;
+    }
     &:focus,
     &:active{
         outline: none;
@@ -108,6 +112,57 @@ ul{
                 height: 15px;
                 background: #E3945E;
                 opacity: 1;
+            }
+        }
+    }
+    &-navigation{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -90px;
+        width: calc(100% + 180px);
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-button{
+        &-prev{
+            cursor: pointer;
+            svg{
+                &:hover{
+                    path{
+                        stroke: #FFA761;
+                    }
+                }
+                &:active{
+                    path{
+                        stroke: #C7825B;
+                    }
+                }
+                path{
+                    stroke: white;
+                    transition: 300ms ease-out;
+                }
+            }
+        }
+        &-next{
+            cursor: pointer;
+            svg{
+                &:hover{
+                    path{
+                        stroke: #FFA761;
+                    }
+                }
+                &:active{
+                    path{
+                        stroke: #C7825B;
+                    }
+                }
+                path{
+                    stroke: white;
+                    transition: 300ms ease-out;
+                }
             }
         }
     }

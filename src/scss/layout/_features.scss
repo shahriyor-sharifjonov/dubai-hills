@@ -4,13 +4,18 @@
     }
     &__slider{
         width: 100%;
-        overflow: hidden;
         padding-bottom: 80px;
+        position: relative;
     }
     &__swiper{
         width: 100%;
         padding-bottom: 45px;
+        overflow: hidden;
         position: relative;
+    }
+    &__navigation{
+        top: calc(50% - 80px);
+        transform: translateY(calc(-50% + 40px));
     }
     &__slide{
         position: relative;
