@@ -125,9 +125,11 @@ ul{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        pointer-events: none;
     }
     &-button{
         &-prev{
+            pointer-events: all;
             cursor: pointer;
             svg{
                 &:hover{
@@ -147,6 +149,7 @@ ul{
             }
         }
         &-next{
+            pointer-events: all;
             cursor: pointer;
             svg{
                 &:hover{
