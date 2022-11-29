@@ -4,7 +4,6 @@
     }
     &__slider{
         width: 100%;
-        padding-bottom: 80px;
         position: relative;
     }
     &__swiper{
@@ -14,8 +13,8 @@
         position: relative;
     }
     &__navigation{
-        top: calc(50% - 80px);
-        transform: translateY(calc(-50% + 40px));
+        top: calc(50% - 45px);
+        transform: translateY(calc(-50% + 22.5px));
     }
     &__slide{
         position: relative;

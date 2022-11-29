@@ -1,15 +1,26 @@
 import * as functions from './modules/functions.js';
+import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination } from 'swiper';
+import SmoothScroll from 'smoothscroll-for-websites'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 
 functions.isWebp();
+gsap.registerPlugin(ScrollTrigger);
 
 const swiper = new Swiper();
-
-gsap.registerPlugin(ScrollTrigger);
 
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+
+// SmoothScroll
+SmoothScroll({
+	animationTime: 1200,
+	stepSize: 80,
+	keyboardSupport: true,
+	arrowScroll: 100, 
+	touchpadSupport: true 
+})
 
 const headerShow = () => {
     gsap.utils.toArray(".header").forEach(header => {
@@ -34,7 +45,7 @@ const sectionTitles = () => {
         const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section,
-                    start: "top center",
+                    start: "top 70%",
                     end: "top 30%", 
                     scrub: 2, 
                     markers: false,
@@ -45,7 +56,7 @@ const sectionTitles = () => {
             .from(section.querySelector(".section__title"), { 
                 y: 100,
                 opacity: 0,
-                ease: Expo.ease,
+                ease: "expo.ease",
             })
     })
 }
@@ -66,6 +77,8 @@ new Swiper('.features__swiper', {
       clickable: true,
     },
 })
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
     headerShow();

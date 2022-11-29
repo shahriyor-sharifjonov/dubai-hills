@@ -1,0 +1,55 @@
+.brochure{
+    .section__title{
+        z-index: -3;
+    }
+    &__body{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 56px;
+        position: relative;
+        isolation: isolate;
+    }
+    &__content{
+        flex: 1 1 auto;
+    }
+    &__cat{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 50px;
+        padding-left: 36px;
+        width: 100%;
+        list-style-type: disc;
+        margin-bottom: 30px;
+    }
+    &__title{
+        margin-bottom: 20px;
+    }
+    &__btn{
+        margin-bottom: 12px;
+    }
+    &__label{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(255, 255, 255, 0.4);
+        padding-left: 15px;
+    }
+    &__form{
+        margin-bottom: -120px;
+        z-index: -2;
+    }
+    &__img{
+        width: 1086px;
+        height: 877px;
+        position: absolute;
+        top: 62px;
+        pointer-events: none;
+        right: -245px;
+        z-index: -1;
+        img{
+            width: 100%;
+        }
+    }
+}

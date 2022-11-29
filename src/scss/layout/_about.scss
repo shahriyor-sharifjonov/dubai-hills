@@ -4,14 +4,18 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        width: 50%;
+        width: 670px;
         margin-left: auto;
         margin-bottom: 120px;
+        margin-right: -110px;
+        @include media(1440){
+            width: 660px;
+        }
     }
     &__title{
         width: 100%;
-        text-align: left;
-    }
+        text-align: left; 
+    } 
     &__p{
         font-weight: 300;
         font-size: 20px;
@@ -47,13 +51,27 @@
         text-fill-color: transparent;
     }
     &__img{
-        max-width: 800px;
-        border-radius: 20px 0 0 20px;
+        display: none;
         line-height: 0;
         overflow: hidden;
-        position: absolute;
-        bottom: -240px;
-        right: 0;
+        margin-bottom: -240px;
+        @include media(1440){
+            max-width: 710px;
+            border-radius: 20px 0 0 20px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: block;
+        }
+        &.disable-uxl{
+            display: block;
+            margin-right: -110px;
+            width: calc(50% + 110px);
+            border-radius: 20px;
+            @include media(1440){
+                display: none;
+            }
+        }
         img{
             width: 100%;
         }

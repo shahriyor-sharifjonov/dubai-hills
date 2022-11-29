@@ -1,0 +1,20 @@
+mixin brochure()
+    section.brochure.section.gray#brochure
+        form(action="#").brochure__body.container.section__body  
+            .section__title 
+                img(src="@img/brochure-title.png", alt="" draggable="false")
+            include form
+            +form1 
+            .brochure__content 
+                ul.brochure__cat 
+                    li.brochure__cat-item Masterplan
+                    li.brochure__cat-item Lifestyle
+                    li.brochure__cat-item Gallery
+                    li.brochure__cat-item Floor plans
+                h2.subtitle.brochure__title Descriptive <span>brochure</span> <br>about Acacia
+                button(type="submit" disabled="true").btn.brochure__btn Download Brochure ( 10 Mb )
+                p.brochure__label 64 Pages | Download time - 10 sec.
+            .brochure__img 
+                img(src="@img/brochure.png", alt="" draggable="false")
+
+                

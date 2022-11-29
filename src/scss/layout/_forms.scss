@@ -1,1 +1,91 @@
-// Формы
+.form{
+    background: #1D1C1C;
+    box-shadow: 0px 4.65376px 94.2387px rgba(31, 31, 31, 0.05);
+    border-radius: 20px;
+    padding: 55px 40px;
+    border: 0.5px solid #FFFFFF;
+    max-width: 404px;
+    width: 100%;
+    &__title{
+        margin-bottom: 40px;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+        text-transform: capitalize;
+        color: #FFFFFF;        
+    }
+    &__item{
+        &:not(:last-of-type){
+            margin-bottom: 56px;
+        }
+        &-label{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 400;
+            font-size: 16.2882px;
+            line-height: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 15px;
+        }
+        &-svg{
+            width: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        &-input{
+            width: 100%;
+            height: 40px;
+            position: relative;
+            input{
+                height: 100%;
+                width: 100%;
+                background: none;
+                border: none;
+                font-weight: 800;
+                font-size: 18px;
+                line-height: 22px;
+                color: #FFFFFF; 
+                padding-right: 56px;       
+                &:focus{
+                    &~.form__item-input-border{
+                        border: 1px solid;
+                        border-image-slice: 1;
+                        border-image-source: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 1px;
+                            background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+                            filter: blur(5px);
+                        }
+                    }
+                }
+                &~.form__item-input-border{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.5);
+                }        
+            }
+            &_correct{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 18px;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+}

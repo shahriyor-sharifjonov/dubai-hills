@@ -29,6 +29,7 @@ body{
     flex-direction: column;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
     .main{
         flex: 1 1 auto;
     }
@@ -54,7 +55,7 @@ ul{
     }
     &__body{
         position: relative;
-        min-height: 278px;
+        min-height: 362px;
         isolation: isolate;
         padding-top: 45px;
     }
@@ -168,5 +169,27 @@ ul{
                 }
             }
         }
+    }
+}
+.btn{
+    background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: 300ms ease-out;
+    padding: 0 14px;
+    &[disabled="true"]{
+        background: linear-gradient(155.88deg, #FDAA68 -83.36%, #D2AF9A 184.44%);
+        cursor: auto;
+    }
+    &:not([disabled="true"]):active{
+        background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
     }
 }

@@ -44,6 +44,8 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "locomotive-scroll": "^4.1.4"
+    "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4",
+    "smoothscroll-for-websites": "^1.4.10"
   }
 }
