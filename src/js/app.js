@@ -1,3 +1,4 @@
+import imagesLoaded from 'imagesloaded';
 import * as functions from './modules/functions.js';
 import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination } from 'swiper';
@@ -21,6 +22,13 @@ SmoothScroll({
 	arrowScroll: 100, 
 	touchpadSupport: true 
 })
+
+const images = gsap.utils.toArray("img");
+const loader = document.querySelector(".loader__progress");
+const updateProgress = (instance) =>
+	(loader.setAttribute('style', `width: ${Math.round(
+		(instance.progressedCount * 100) / images.length
+		)}%`));
 
 const headerShow = () => {
     gsap.utils.toArray(".header").forEach(header => {
@@ -95,3 +103,10 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener('mousemove', brochureParallax)
+
+setTimeout(() => 
+    imagesLoaded(images)
+        .on("progress", updateProgress)
+        // .on("always", showDemo)
+    , 1000
+)

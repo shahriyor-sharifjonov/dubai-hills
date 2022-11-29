@@ -506,6 +506,10 @@ ul {
   background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
 }
 
+.loader {
+  display: none;
+}
+
 .header {
   position: fixed;
   top: 20px;

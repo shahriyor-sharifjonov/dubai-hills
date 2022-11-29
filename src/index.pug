@@ -10,7 +10,11 @@ html(lang="en")
         .wrapper 
             include components/header 
             +header 
-            main.main
+            main.main 
+                .loader
+                    h2.loader__text
+                        | Dubai Hills
+                        .loader__progress(style='width: 0%;') Dubai Hills
                 include components/intro  
                 +intro  
                 include components/about   
