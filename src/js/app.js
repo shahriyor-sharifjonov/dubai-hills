@@ -61,6 +61,15 @@ const sectionTitles = () => {
     })
 }
 
+const brochureParallax = (e) => {
+    document.querySelectorAll('.brochure__img').forEach(move => {
+        let moving_value = move.getAttribute('data-value');
+        let x = (e.clientX * moving_value) / 250;
+        let y = (e.clientY * moving_value) / 250;
+        move.style.transform = `translateX(${x}px) translateY(${y}px)`
+    })
+}
+
 new Swiper('.features__swiper', {
     modules: [Pagination, Navigation],
     slidesPerView: 3,
@@ -84,3 +93,5 @@ window.addEventListener('DOMContentLoaded', () => {
     headerShow();
     sectionTitles();
 })
+
+document.addEventListener('mousemove', brochureParallax)

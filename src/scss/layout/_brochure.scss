@@ -44,9 +44,10 @@
         width: 1086px;
         height: 877px;
         position: absolute;
-        top: 62px;
+        top: 100px;
         pointer-events: none;
-        right: -245px;
+        right: -255px;
+        transition: 300ms cubic-bezier(0.235, 0.615, 0.185, 0.995);
         z-index: -1;
         img{
             width: 100%;

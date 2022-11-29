@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221129133057"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221129140428"/>
     <title>GULP </title>
   </head>
   <body> 
@@ -101,7 +101,7 @@
                                       </div>Your name
                                     </label>
                                     <div class="form__item-input">
-                                      <input type="text" name="name" required="true" placeholder="" autocomplete="off"/>
+                                      <input type="text" name="name" id="name1" required="true" placeholder="" autocomplete="off"/>
                                       <div class="form__item-input-border"> </div>
                                       <div class="form__item-input_correct">
                                          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,14 +118,14 @@
                                     </div>
                                   </div>
                                   <div class="form__item"> 
-                                    <label class="form__item-label" for="name1"> 
+                                    <label class="form__item-label" for="email1"> 
                                       <div class="form__item-svg"><svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M22.0314 0.550293H3.23739C2.00171 0.550293 1 1.552 1 2.78768V16.212C1 17.4477 2.00171 18.4494 3.23739 18.4494H22.0314C23.2671 18.4494 24.2688 17.4477 24.2688 16.212V2.78768C24.2688 1.552 23.2671 0.550293 22.0314 0.550293Z" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M4.58008 4.13037L12.6347 10.3951L20.6893 4.13037" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
                                       </div></svg>Your email 
                                     </label>
                                     <div class="form__item-input">
-                                      <input type="email" name="email" required="true" placeholder="" autocomplete="off"/>
+                                      <input type="email" id="email" name="email" required="true" placeholder="" autocomplete="off"/>
                                       <div class="form__item-input-border"> </div>
                                       <div class="form__item-input_correct">
                                          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,14 +142,14 @@
                                     </div>
                                   </div>
                                   <div class="form__item"> 
-                                    <label class="form__item-label" for="name1"> 
+                                    <label class="form__item-label" for="phone1"> 
                                       <div class="form__item-svg"><svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.60724 0.558729L4.07151 0.12121C4.73806 -0.0782768 5.45502 -0.0303177 6.08854 0.256135C6.72206 0.542588 7.22885 1.04796 7.51429 1.6779L8.42549 3.68873C8.67102 4.23044 8.73942 4.8348 8.62109 5.41703C8.50275 5.99925 8.20363 6.53012 7.76569 6.93512L6.17352 8.40781C6.15385 8.42604 6.1377 8.44769 6.12589 8.47168C5.95917 8.80945 6.21233 9.71161 7.00533 11.0749C7.89977 12.6115 8.59044 13.2188 8.91064 13.1251L11.0003 12.4907C11.5726 12.3174 12.1852 12.326 12.7523 12.5154C13.3194 12.7048 13.8125 13.0655 14.1626 13.5469L15.4575 15.3258C15.864 15.8844 16.0523 16.5704 15.9875 17.2563C15.9226 17.9422 15.6089 18.5815 15.1047 19.0553L13.9906 20.1009C13.6032 20.465 13.1327 20.7306 12.6194 20.8752C12.1061 21.0198 11.5651 21.0391 11.0426 20.9313C7.94034 20.2908 5.16088 17.8127 2.68046 13.5513C0.199143 9.28722 -0.574448 5.65582 0.422311 2.66932C0.589163 2.16933 0.874886 1.71652 1.25534 1.34916C1.63579 0.981807 2.09978 0.710693 2.60812 0.558729H2.60724ZM2.99007 1.81528C2.68505 1.90642 2.40663 2.06905 2.17833 2.28943C1.95003 2.50982 1.77856 2.78148 1.6784 3.08146C0.819251 5.65494 1.51522 8.92408 3.82629 12.895C6.13559 16.8633 8.63896 19.0946 11.3117 19.6459C11.6253 19.7106 11.9501 19.699 12.2582 19.6122C12.5663 19.5253 12.8487 19.3658 13.0811 19.1471L14.1943 18.1023C14.4659 17.8473 14.635 17.5031 14.67 17.1337C14.705 16.7644 14.6037 16.395 14.3849 16.0941L13.09 14.3143C12.9015 14.0551 12.636 13.861 12.3307 13.759C12.0255 13.657 11.6957 13.6523 11.3875 13.7455L9.29258 14.3817C8.13352 14.7238 7.04326 13.7657 5.8595 11.7303C4.85656 10.0082 4.50902 8.76395 4.93772 7.89504C5.02063 7.72703 5.13354 7.57565 5.27115 7.44789L6.86331 5.9752C7.09922 5.75713 7.26036 5.47124 7.32412 5.15768C7.38787 4.84412 7.35104 4.51862 7.21879 4.22688L6.3076 2.21692C6.1539 1.87764 5.88096 1.60545 5.53976 1.45118C5.19856 1.29692 4.81242 1.27113 4.45345 1.37864L2.98919 1.81616L2.99007 1.81528Z" fill="white" fill-opacity="0.4"/>
 </svg>
                                       </div>Your number 
                                     </label>
                                     <div class="form__item-input">
-                                      <input type="tel" name="phone" required="true" placeholder="" autocomplete="off"/>
+                                      <input type="tel" id="phone1" name="phone" required="true" placeholder="" autocomplete="off"/>
                                       <div class="form__item-input-border"> </div>
                                       <div class="form__item-input_correct">
                                          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,7 +177,7 @@
                       <button class="btn brochure__btn" type="submit" disabled="true">Download Brochure ( 10 Mb )</button>
                       <p class="brochure__label">64 Pages | Download time - 10 sec.</p>
                     </div>
-                    <div class="brochure__img"> <picture><source srcset="img/brochure.webp" type="image/webp"><img src="img/brochure.png" alt="" draggable="false"/></picture></div>
+                    <div class="brochure__img" data-value="6"><picture><source srcset="img/brochure.webp" type="image/webp"><img src="img/brochure.png" alt="" draggable="false"/></picture></div>
                   </form>
                 </section>
                 <section class="section exterior" id="exterior"> 
@@ -190,6 +190,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221129133057"> </script>
+    <script src="js/app.min.js?_v=20221129140428"> </script>
   </body>
 </html>
