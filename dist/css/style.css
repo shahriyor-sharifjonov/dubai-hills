@@ -510,6 +510,49 @@ ul {
   display: none;
 }
 
+.remove-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-animation: flexShrink 500ms ease forwards;
+  animation: flexShrink 500ms ease forwards;
+}
+
+@-webkit-keyframes flexShrink {
+  to {
+    -webkit-box-flex: 0.01;
+            flex: 0.01;
+    -webkit-box-flex: 0.00001;
+            flex: 0.00001;
+  }
+}
+
+@keyframes flexShrink {
+  to {
+    -webkit-box-flex: 0.01;
+        -ms-flex: 0.01;
+            flex: 0.01;
+    -webkit-box-flex: 0.00001;
+        -ms-flex: 0.00001;
+            flex: 0.00001;
+  }
+}
+
+@-webkit-keyframes flexGrow {
+  to {
+    -webkit-box-flex: 1;
+            flex: 1;
+  }
+}
+
+@keyframes flexGrow {
+  to {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
 .header {
   position: fixed;
   top: 20px;
@@ -966,6 +1009,63 @@ ul {
 
 .exterior {
   padding-top: 458px;
+}
+
+.exterior__slider {
+  width: 100%;
+  position: relative;
+}
+
+.exterior__swiper {
+  width: 100%;
+  padding-bottom: 45px;
+  overflow: hidden;
+  position: relative;
+}
+
+.exterior__slide {
+  border-radius: 20px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid #fff;
+  opacity: 1;
+  -webkit-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.exterior__slide.swiper-slide-next,
+.exterior__slide.swiper-slide-prev,
+.exterior__slide.swiper-slide-duplicate-prev,
+.exterior__slide.swiper-slide-duplicate-next {
+  opacity: 0;
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.exterior__navigation {
+  top: calc(50% - 45px);
+  -webkit-transform: translateY(calc(-50% + 22.5px));
+      -ms-transform: translateY(calc(-50% + 22.5px));
+          transform: translateY(calc(-50% + 22.5px));
+}
+
+.exterior .swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.exterior .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .form {

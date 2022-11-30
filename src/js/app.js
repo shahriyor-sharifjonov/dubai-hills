@@ -8,13 +8,15 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
 
-const swiper = new Swiper();
-
+// !onload scroll to top start
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+// !onload scroll to top end
 
-// SmoothScroll
+
+
+// !smooth scroll start
 SmoothScroll({
 	animationTime: 1200,
 	stepSize: 80,
@@ -22,53 +24,29 @@ SmoothScroll({
 	arrowScroll: 100, 
 	touchpadSupport: true 
 })
+// !smooth scroll end
 
+
+
+// !preloader start
 const images = gsap.utils.toArray("img");
 const loader = document.querySelector(".loader__progress");
-const updateProgress = (instance) =>
-	(loader.setAttribute('style', `width: ${Math.round(
-		(instance.progressedCount * 100) / images.length
-		)}%`));
-
-const headerShow = () => {
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.intro',
-                start: "top bottom",
-                scrub: 2, 
-                markers: false,
-                onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
-                onLeave: () => {header.classList.add('show');header.classList.add('white');},
-                onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
-                onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
-            }, 
-            defaults: {ease: 'none'} 
-        });
-    })
+const updateProgress = (instance) => {
+    loader.setAttribute('style', `width: ${Math.round(
+		(instance.progressedCount * 100) / images.length)}%`);
 }
 
-const sectionTitles = () => {
-    gsap.utils.toArray(".section").forEach(section => {
-        const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 70%",
-                    end: "top 30%", 
-                    scrub: 2, 
-                    markers: false,
-                }, 
-                defaults: {ease: "none"} 
-            });
-        tl
-            .from(section.querySelector(".section__title"), { 
-                y: 100,
-                opacity: 0,
-                ease: "expo.ease",
-            })
-    })
-}
+setTimeout(() => 
+    imagesLoaded(images)
+        .on("progress", updateProgress)
+        // .on("always", showDemo)
+    , 1000
+)
+// !peloader end
 
+
+
+// !parallax on mousemove start 
 const brochureParallax = (e) => {
     document.querySelectorAll('.brochure__img').forEach(move => {
         let moving_value = move.getAttribute('data-value');
@@ -77,7 +55,12 @@ const brochureParallax = (e) => {
         move.style.transform = `translateX(${x}px) translateY(${y}px)`
     })
 }
+document.addEventListener('mousemove', brochureParallax)
+// !parallax on mousemove end 
+ 
 
+
+// !sliders start 
 new Swiper('.features__swiper', {
     modules: [Pagination, Navigation],
     slidesPerView: 3,
@@ -94,19 +77,65 @@ new Swiper('.features__swiper', {
       clickable: true,
     },
 })
+new Swiper('.exterior__swiper', {
+    modules: [Pagination, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 10,
+    initialSlide: 0,
+    centeredSlides: false,
+    loop: true,
+    navigation: {
+        nextEl: '.exterior__next',
+        prevEl: '.exterior__prev',
+    },
+    pagination: {
+      el: ".exterior__pagination",
+      clickable: true,
+    },
+})
+// !sliders end 
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    headerShow();
-    sectionTitles();
+// !gsap animations start
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.intro',
+            start: "top bottom",
+            scrub: 2, 
+            markers: false,
+            onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
+            onLeave: () => {header.classList.add('show');header.classList.add('white');},
+            onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
+            onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
+        }, 
+        defaults: {ease: 'none'} 
+    });
 })
 
-document.addEventListener('mousemove', brochureParallax)
-
-setTimeout(() => 
-    imagesLoaded(images)
-        .on("progress", updateProgress)
-        // .on("always", showDemo)
-    , 1000
-)
+gsap.utils.toArray(".section").forEach(section => {
+    const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 70%",
+                end: "top 30%", 
+                scrub: 2, 
+                markers: false,
+            }, 
+            defaults: {ease: "none"} 
+        });
+    tl
+        .add('start')
+        .from(section.querySelector(".section__title"), { 
+            x: -200,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+        .from(section.querySelector(".about__top"), { 
+            y: 100,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+})
+// !gsap animations end 

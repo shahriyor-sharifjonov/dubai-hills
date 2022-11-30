@@ -1,3 +1,41 @@
 .exterior{
     padding-top: 458px;
+    &__slider{
+        width: 100%;
+        position: relative;
+    }
+    &__swiper{
+        width: 100%;
+        padding-bottom: 45px;
+        overflow: hidden;
+        position: relative;
+    }
+    &__slide{
+        border-radius: 20px;
+        overflow: hidden;
+        line-height: 0;
+        border: 1px solid #fff;
+        opacity: 1;
+        transition: 300ms ease-in-out;
+        transform: scale(1);
+        &.swiper-slide-next,
+        &.swiper-slide-prev,
+        &.swiper-slide-duplicate-prev,
+        &.swiper-slide-duplicate-next{
+            opacity: 0;
+            transform: scale(0.7);
+        }
+    }
+    &__navigation{
+        top: calc(50% - 45px);
+        transform: translateY(calc(-50% + 22.5px));
+    }
+    .swiper{
+        width: 100%;
+        overflow: hidden;
+        &-wrapper{
+            display: flex;
+            width: max-content;
+        }
+    }
 }

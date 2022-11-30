@@ -196,3 +196,22 @@ ul{
 .loader{
     display: none;
 }
+.remove-item {
+    flex: 1;
+    -webkit-animation: flexShrink 500ms ease forwards;
+    -o-animation: flexShrink 500ms ease forwards;
+    animation: flexShrink 500ms ease forwards;
+}
+
+@keyframes flexShrink {
+    to {
+        flex: .01;
+        flex: .00001;
+    }
+}
+
+@keyframes flexGrow {
+    to {
+        flex: 1;
+    }
+}
