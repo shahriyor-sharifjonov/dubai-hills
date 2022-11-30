@@ -6,6 +6,7 @@
     isolation: isolate;
     position: relative;
     padding-top: 0;
+    // background-attachment: fixed !important;
     &::before{
         content: '';
         position: absolute;
@@ -13,7 +14,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(354.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
+        background: linear-gradient(360.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
         z-index: -1;
     }
     &__body{

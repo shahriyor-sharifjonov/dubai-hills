@@ -3,10 +3,11 @@ import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination, EffectCreative } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
-import { nodeName } from 'jquery';
 
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 // !onload scroll to top start
 window.onbeforeunload = function () {
@@ -15,9 +16,9 @@ window.onbeforeunload = function () {
 // !onload scroll to top end
 
 
+
 // !preloader start
 let preloaderText = document.querySelector('.loader__text');
-let loaded = false
 let percentage = 0
 const updateProgress = () => {
     const a = () => {
@@ -37,7 +38,6 @@ const updateProgress = () => {
             preloaderText.innerHTML = 'Привет';
             setTimeout(() => {
                 document.getElementsByTagName('html')[0].setAttribute('loaded', true)
-                loaded = true;
             }, 300)
         }
     }
@@ -53,14 +53,9 @@ const updateProgress = () => {
     }
     q()
 }
-const loaderCompleter = () => {
-
-}
 updateProgress()
 const outLoader = () => {
     if(percentage === 100){
-        console.log('animate');
-        let loadingTl = gsap.timeline({onComplete: loaderCompleter})
         gsap.to('.loader__text', .5, {
             yPercent: -150,
             opacity: 0,
@@ -76,6 +71,18 @@ const outLoader = () => {
     }
 }
 // !preloader end
+
+
+
+// !smooth scroll start
+SmoothScroll({
+	animationTime: 1200,
+	stepSize: 80,
+	keyboardSupport: true,
+	arrowScroll: 100, 
+	touchpadSupport: true 
+})
+// !smooth scroll end
 
 
 
@@ -97,13 +104,12 @@ const outLoader = () => {
 
 // !number animation start
 let charIndex = 0
-let firstTypeCompleted = false
 const typeit = document.querySelector('.typeit');
 const cursorSpan = document.querySelector('.type-cursor');
 const text = typeit.getAttribute('data-text');
-const showTime = 2000
+const showTime = 5000
 const hideTime = 2000
-const typeSpeen = 250
+const typeSpeen = 200
 const erazeSpeed = 100
 const type = () => {
     if (charIndex < text.length) {
@@ -123,13 +129,13 @@ const type = () => {
 
 function erase() {
     if (charIndex > 0) {
-        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-        typeit.textContent = text.substring(0, charIndex-1);
-        charIndex--;
-        setTimeout(erase, erazeSpeed);
+        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing")
+        typeit.textContent = text.substring(0, charIndex-1)
+        charIndex--
+        setTimeout(erase, erazeSpeed)
     } else {
-        cursorSpan.classList.add("typing");
-        setTimeout(type, hideTime);
+        cursorSpan.classList.add("typing")
+        setTimeout(type, hideTime)
     }
 }
 // !number animation end
@@ -158,6 +164,7 @@ new Swiper('.features__swiper', {
     initialSlide: 1,
     centeredSlides: true,
     loop: true,
+    speed: 500,
     navigation: {
         nextEl: '.features__next',
         prevEl: '.features__prev',
@@ -267,15 +274,4 @@ gsap.utils.toArray(".about__bot").forEach(el => {
         });
 })
 // !gsap animations end 
-
-
-// !smooth scroll start
-SmoothScroll({
-	animationTime: 1200,
-	stepSize: 80,
-	keyboardSupport: true,
-	arrowScroll: 100, 
-	touchpadSupport: true 
-})
-// !smooth scroll end
 
