@@ -77,15 +77,15 @@ type()
 
 
 // !parallax on mousemove brochure start 
-// const brochureParallax = (e) => {
-//     document.querySelectorAll('.brochure__img').forEach(move => {
-//         let moving_value = move.getAttribute('data-value');
-//         let x = (e.clientX * moving_value) / 250;
-//         let y = (e.clientY * moving_value) / 250;
-//         move.style.transform = `translateX(${x}px) translateY(${y}px)`
-//     })
-// }
-// document.addEventListener('mousemove', brochureParallax)
+const brochureParallax = (e) => {
+    document.querySelectorAll('.brochure__img').forEach(move => {
+        let moving_value = move.getAttribute('data-value');
+        let x = (e.clientX * moving_value) / 250;
+        let y = (e.clientY * moving_value) / 250;
+        move.style.transform = `translateX(${x}px) translateY(${y}px)`
+    })
+}
+document.addEventListener('mousemove', brochureParallax)
 // !parallax on mousemove brochure end 
 
 
@@ -114,18 +114,21 @@ new Swiper('.features__swiper', {
     },
 })
 
-new Swiper('.exterior__swiper', {
+const exteriorSwiper = new Swiper('.exterior__swiper', {
     modules: [Pagination, Navigation, EffectCreative],
     slidesPerView: 1,
     spaceBetween: 10,
     initialSlide: 0,
     centeredSlides: false,
     loop: true,
+    speed: 800,
+    autoplay: 2000,
     effect: "creative",
     creativeEffect: {
         prev: {
             shadow: true,
             translate: [0, 0, -400],
+            opacity: 0,
         },
         next: {
             translate: ["100%", 0, 0],
