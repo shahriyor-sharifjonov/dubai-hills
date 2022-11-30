@@ -46,7 +46,9 @@
   "dependencies": {
     "gsap": "^3.11.3",
     "imagesloaded": "^5.0.0",
+    "jquery": "^3.6.1",
     "locomotive-scroll": "^4.1.4",
-    "smoothscroll-for-websites": "^1.4.10"
+    "smoothscroll-for-websites": "^1.4.10",
+    "typeit": "^8.7.0"
   }
 }

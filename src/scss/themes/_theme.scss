@@ -89,6 +89,20 @@ ul{
         text-fill-color: transparent;
     }
 }
+.type-cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+    height: 80%;
+    &.blink {
+        animation: blink 1000ms infinite !important;
+    }
+    &.typing {
+        animation: none;
+    }
+}
 .swiper{
     &-pagination{
         position: absolute;
@@ -114,6 +128,13 @@ ul{
                 background: #E3945E;
                 opacity: 1;
             }
+        }
+    }
+    &-3d{
+        perspective: 1200px;
+        .swiper-wrapper{
+            transform-style: preserve-3d;
+            transform: translate3d(0px,0,0);
         }
     }
     &-navigation{
@@ -196,22 +217,17 @@ ul{
 .loader{
     display: none;
 }
-.remove-item {
-    flex: 1;
-    -webkit-animation: flexShrink 500ms ease forwards;
-    -o-animation: flexShrink 500ms ease forwards;
-    animation: flexShrink 500ms ease forwards;
-}
-
-@keyframes flexShrink {
-    to {
-        flex: .01;
-        flex: .00001;
+@keyframes blink {
+    0%{
+        opacity: 0;
     }
-}
-
-@keyframes flexGrow {
-    to {
-        flex: 1;
+    30%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }

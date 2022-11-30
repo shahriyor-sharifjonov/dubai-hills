@@ -39,11 +39,18 @@
         margin-bottom: 30px;
     }
     &__counter{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         font-weight: 600;
         font-size: 220px;
         line-height: 103.5%;
         margin-left: -90px;
         text-align: right;
+        height: 227px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;

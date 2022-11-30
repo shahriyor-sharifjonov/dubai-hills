@@ -1,7 +1,7 @@
 import imagesLoaded from 'imagesloaded';
 import * as functions from './modules/functions.js';
 import { gsap } from 'gsap'
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, EffectCreative } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 
@@ -29,34 +29,70 @@ SmoothScroll({
 
 
 // !preloader start
-const images = gsap.utils.toArray("img");
-const loader = document.querySelector(".loader__progress");
-const updateProgress = (instance) => {
-    loader.setAttribute('style', `width: ${Math.round(
-		(instance.progressedCount * 100) / images.length)}%`);
-}
 
-setTimeout(() => 
-    imagesLoaded(images)
-        .on("progress", updateProgress)
-        // .on("always", showDemo)
-    , 1000
-)
 // !peloader end
 
 
 
-// !parallax on mousemove start 
-const brochureParallax = (e) => {
-    document.querySelectorAll('.brochure__img').forEach(move => {
-        let moving_value = move.getAttribute('data-value');
-        let x = (e.clientX * moving_value) / 250;
-        let y = (e.clientY * moving_value) / 250;
-        move.style.transform = `translateX(${x}px) translateY(${y}px)`
-    })
+// !number animation start
+let charIndex = 0
+let firstTypeCompleted = false
+const typeit = document.querySelector('.typeit');
+const cursorSpan = document.querySelector('.type-cursor');
+const text = typeit.getAttribute('data-text');
+const showTime = 2000
+const hideTime = 2000
+const typeSpeen = 200
+const erazeSpeed = 100
+const type = () => {
+    if (charIndex < text.length) {
+        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        cursorSpan.classList.remove("blink");
+        typeit.textContent += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typeSpeen)
+        firstTypeCompleted = true
+    } else {
+        cursorSpan.classList.remove("typing");
+        cursorSpan.classList.add("blink");
+        setTimeout(erase, showTime);
+    }
 }
-document.addEventListener('mousemove', brochureParallax)
-// !parallax on mousemove end 
+
+function erase() {
+    if (charIndex > 0) {
+        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typeit.textContent = text.substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(erase, erazeSpeed);
+    } else {
+        cursorSpan.classList.add("typing");
+        setTimeout(type, hideTime);
+    }
+}
+
+type()
+// !number animation end
+
+
+
+// !parallax on mousemove brochure start 
+// const brochureParallax = (e) => {
+//     document.querySelectorAll('.brochure__img').forEach(move => {
+//         let moving_value = move.getAttribute('data-value');
+//         let x = (e.clientX * moving_value) / 250;
+//         let y = (e.clientY * moving_value) / 250;
+//         move.style.transform = `translateX(${x}px) translateY(${y}px)`
+//     })
+// }
+// document.addEventListener('mousemove', brochureParallax)
+// !parallax on mousemove brochure end 
+
+
+
+// !tilt on mousemove brochure start 
+
+// !tilt on mousemove brochure end 
  
 
 
@@ -77,13 +113,24 @@ new Swiper('.features__swiper', {
       clickable: true,
     },
 })
+
 new Swiper('.exterior__swiper', {
-    modules: [Pagination, Navigation],
+    modules: [Pagination, Navigation, EffectCreative],
     slidesPerView: 1,
     spaceBetween: 10,
     initialSlide: 0,
     centeredSlides: false,
     loop: true,
+    effect: "creative",
+    creativeEffect: {
+        prev: {
+            shadow: true,
+            translate: [0, 0, -400],
+        },
+        next: {
+            translate: ["100%", 0, 0],
+        },
+    },
     navigation: {
         nextEl: '.exterior__next',
         prevEl: '.exterior__prev',
@@ -103,18 +150,19 @@ gsap.utils.toArray(".header").forEach(header => {
         scrollTrigger: {
             trigger: '.intro',
             start: "top bottom",
-            scrub: 2, 
-            markers: false,
+            end: "bottom 150px",
+            scrub: 2,
+            markers: true,
             onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
             onLeave: () => {header.classList.add('show');header.classList.add('white');},
             onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
             onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
-        }, 
-        defaults: {ease: 'none'} 
+        },
+        defaults: {ease: 'none'}
     });
 })
 
-gsap.utils.toArray(".section").forEach(section => {
+gsap.utils.toArray(".section__body").forEach(section => {
     const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
@@ -133,6 +181,11 @@ gsap.utils.toArray(".section").forEach(section => {
             ease: "expo.ease",
         }, 'start')
         .from(section.querySelector(".about__top"), { 
+            y: 100,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+        .from(section.querySelector(".exterior__title"), { 
             y: 100,
             opacity: 0,
             ease: "expo.ease",

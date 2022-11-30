@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221130121215"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221130135239"/>
     <title>GULP </title>
   </head>
   <body> 
@@ -44,12 +44,14 @@
                     <div class="about__bot">
                       <div class="about__bot-left">
                         <p class="about__label">Residential units </p>
-                        <p class="about__counter"><span id="inc">470</span>+</p>
+                        <div class="about__counter"> 
+                          <div class="typeit" data-text="470+"> </div><span class="type-cursor">&nbsp;</span>
+                        </div>
                       </div>
                       <div class="about__img disable-uxl"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
                     </div>
                   </div>
-                  <div class="about__img"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
+                  <div class="about__img">  <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
                 </section>
                 <section class="section gray features" id="features">
                   <div class="features__body section__body container">
@@ -196,8 +198,8 @@
                           <div class="exterior__slide swiper-slide"><picture><source srcset="img/exterior-1.webp" type="image/webp"><img src="img/exterior-1.png" alt="" draggable="false"/></picture></div>
                           <div class="exterior__slide swiper-slide"><picture><source srcset="img/exterior-1.webp" type="image/webp"><img src="img/exterior-1.png" alt="" draggable="false"/></picture></div>
                         </div>
-                        <div class="exterior__pagination swiper-pagination"></div>
                       </div>
+                      <div class="exterior__pagination swiper-pagination">   </div>
                       <div class="exterior__navigation swiper-navigation">
                         <div class="swiper-button-prev exterior__prev"><svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="0.317073"></path>
@@ -218,6 +220,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221130121215"> </script>
+    <script src="js/app.min.js?_v=20221130135239"> </script>
   </body>
 </html>

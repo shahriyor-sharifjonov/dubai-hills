@@ -372,6 +372,26 @@ ul {
   text-fill-color: transparent;
 }
 
+.type-cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+  height: 80%;
+}
+
+.type-cursor.blink {
+  -webkit-animation: blink 1000ms infinite !important;
+          animation: blink 1000ms infinite !important;
+}
+
+.type-cursor.typing {
+  -webkit-animation: none;
+          animation: none;
+}
+
 .swiper-pagination {
   position: absolute;
   bottom: 0;
@@ -407,6 +427,18 @@ ul {
   height: 15px;
   background: #E3945E;
   opacity: 1;
+}
+
+.swiper-3d {
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+}
+
+.swiper-3d .swiper-wrapper {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(0px, 0, 0);
+          transform: translate3d(0px, 0, 0);
 }
 
 .swiper-navigation {
@@ -510,46 +542,39 @@ ul {
   display: none;
 }
 
-.remove-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-animation: flexShrink 500ms ease forwards;
-  animation: flexShrink 500ms ease forwards;
-}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
 
-@-webkit-keyframes flexShrink {
-  to {
-    -webkit-box-flex: 0.01;
-            flex: 0.01;
-    -webkit-box-flex: 0.00001;
-            flex: 0.00001;
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
-@keyframes flexShrink {
-  to {
-    -webkit-box-flex: 0.01;
-        -ms-flex: 0.01;
-            flex: 0.01;
-    -webkit-box-flex: 0.00001;
-        -ms-flex: 0.00001;
-            flex: 0.00001;
+@keyframes blink {
+  0% {
+    opacity: 0;
   }
-}
 
-@-webkit-keyframes flexGrow {
-  to {
-    -webkit-box-flex: 1;
-            flex: 1;
+  30% {
+    opacity: 1;
   }
-}
 
-@keyframes flexGrow {
-  to {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -812,11 +837,24 @@ ul {
 }
 
 .about__counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   font-weight: 600;
   font-size: 220px;
   line-height: 103.5%;
   margin-left: -90px;
   text-align: right;
+  height: 227px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   background: -o-linear-gradient(294.12deg, #FFA761 -83.36%, #C7825B 184.44%);
   background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
   -webkit-background-clip: text;
@@ -1014,44 +1052,39 @@ ul {
 .exterior__slider {
   width: 100%;
   position: relative;
+  padding-bottom: 45px;
 }
 
 .exterior__swiper {
   width: 100%;
-  padding-bottom: 45px;
   overflow: hidden;
   position: relative;
+  border-radius: 20px;
 }
 
 .exterior__slide {
-  border-radius: 20px;
   overflow: hidden;
   line-height: 0;
-  border: 1px solid #fff;
   opacity: 1;
   -webkit-transition: 300ms ease-in-out;
   -o-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  border: 1px solid #fff;
+  border-radius: 20px;
 }
 
-.exterior__slide.swiper-slide-next,
-.exterior__slide.swiper-slide-prev,
-.exterior__slide.swiper-slide-duplicate-prev,
-.exterior__slide.swiper-slide-duplicate-next {
-  opacity: 0;
-  -webkit-transform: scale(0.7);
-      -ms-transform: scale(0.7);
-          transform: scale(0.7);
+.exterior__slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .exterior__navigation {
-  top: calc(50% - 45px);
-  -webkit-transform: translateY(calc(-50% + 22.5px));
-      -ms-transform: translateY(calc(-50% + 22.5px));
-          transform: translateY(calc(-50% + 22.5px));
+  top: calc(50% - 90px);
+  -webkit-transform: translateY(calc(-50% + 45px));
+      -ms-transform: translateY(calc(-50% + 45px));
+          transform: translateY(calc(-50% + 45px));
 }
 
 .exterior .swiper {
@@ -1066,6 +1099,11 @@ ul {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
 }
 
 .form {
