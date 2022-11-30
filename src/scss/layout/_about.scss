@@ -37,6 +37,9 @@
         line-height: 103.5%;
         color: #FFFFFF;        
         margin-bottom: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: 300ms ease-in-out;
     }
     &__counter{
         display: flex;
@@ -56,6 +59,9 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-fill-color: transparent;
+        .typeit{
+            height: 227px;
+        }
     }
     &__img{
         display: none;

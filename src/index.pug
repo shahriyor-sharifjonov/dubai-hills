@@ -1,20 +1,19 @@
 doctype html 
 html(lang="en") 
-    head 
+    head
         meta(charset="UTF-8") 
         meta(http-equiv="X-UA-Compatible", content="IE=edge") 
         meta(name="viewport", content="width=device-width, initial-scale=1.0") 
         link(rel="stylesheet", href="css/style.min.css") 
         title GULP 
     body 
+        .loader
+            p.loader__text يا
+        .cursor  
         .wrapper 
             include components/header 
             +header 
             main.main 
-                .loader
-                    h2.loader__text
-                        | Dubai Hills
-                        .loader__progress(style='width: 0%;') Dubai Hills
                 include components/intro  
                 +intro  
                 include components/about   
@@ -27,5 +26,4 @@ html(lang="en")
                 +exterior   
             include components/footer 
             +footer 
-
         script(src="js/app.min.js") 

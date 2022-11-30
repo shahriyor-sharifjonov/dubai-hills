@@ -280,6 +280,51 @@ body {
   height: 100%;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #343435;
+  z-index: 1000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.loader__text {
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 88px;
+  color: #FFFFFF;
+  position: relative;
+  padding-left: 47px;
+}
+
+.loader__text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #E3955E;
+}
+
 body {
   background: #1D1C1C;
   color: #fff;
@@ -374,7 +419,7 @@ ul {
 
 .type-cursor {
   display: inline-block;
-  background-color: #ccc;
+  background-color: #fff;
   margin-left: 0.1rem;
   width: 3px;
   -webkit-animation: blink 1s infinite;
@@ -538,10 +583,6 @@ ul {
   background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
 }
 
-.loader {
-  display: none;
-}
-
 @-webkit-keyframes blink {
   0% {
     opacity: 0;
@@ -576,6 +617,21 @@ ul {
   100% {
     opacity: 0;
   }
+}
+
+.cursor {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FDB57C;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  -webkit-transform: translate(-100px, -100px);
+      -ms-transform: translate(-100px, -100px);
+          transform: translate(-100px, -100px);
+  z-index: 5555555555555;
+  pointer-events: none;
 }
 
 .header {
@@ -834,6 +890,13 @@ ul {
   line-height: 103.5%;
   color: #FFFFFF;
   margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+      -ms-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
 }
 
 .about__counter {
@@ -861,6 +924,10 @@ ul {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.about__counter .typeit {
+  height: 227px;
 }
 
 .about__img {
@@ -1047,6 +1114,10 @@ ul {
 
 .exterior {
   padding-top: 458px;
+}
+
+.exterior__body {
+  scroll-margin: -100px;
 }
 
 .exterior__slider {

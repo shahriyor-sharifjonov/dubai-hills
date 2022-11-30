@@ -1,13 +1,17 @@
 <!DOCTYPE html >
 <html lang="en"> 
-  <head> 
+  <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221130144224"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221130171623"/>
     <title>GULP </title>
   </head>
   <body> 
+    <div class="loader">
+      <p class="loader__text">يا</p>
+    </div>
+    <div class="cursor"> </div>
     <div class="wrapper"> 
             <header class="header container"> 
               <nav class="header__nav"> 
@@ -22,11 +26,6 @@
               </nav>
             </header>
       <main class="main"> 
-        <div class="loader">
-          <h2 class="loader__text">Dubai Hills
-            <div class="loader__progress" style="width: 0%;">Dubai Hills</div>
-          </h2>
-        </div>
                 <section class="section intro afterWhite" id="intro" style="background: url('img/intro.png') center / cover no-repeat;">
                   <div class="intro__body section__body container"> 
                     <h1 class="intro__title">ACACIA</h1>
@@ -48,10 +47,10 @@
                           <div class="typeit" data-text="470+"> </div><span class="type-cursor">&nbsp;</span>
                         </div>
                       </div>
-                      <div class="about__img disable-uxl"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
+                      <div class="about__img about__img_sm disable-uxl"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
                     </div>
                   </div>
-                  <div class="about__img">  <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
+                  <div class="about__img about__img_lg"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
                 </section>
                 <section class="section gray features" id="features">
                   <div class="features__body section__body container">
@@ -187,8 +186,8 @@
                     <div class="brochure__img" data-value="6"><picture><source srcset="img/brochure.webp" type="image/webp"><img src="img/brochure.png" alt="" draggable="false"/></picture></div>
                   </form>
                 </section>
-                <section class="section exterior" id="exterior"> 
-                  <div class="section__body exterior__body container">
+                <section class="section exterior">
+                  <div class="section__body exterior__body container" id="exterior"> 
                     <div class="section__title"> <picture><source srcset="img/exterior-title.webp" type="image/webp"><img src="img/exterior-title.png" alt="" draggable="false"/></picture></div>
                     <h2 class="title exterior__title">Exterior</h2>
                     <div class="exterior__slider"> 
@@ -220,6 +219,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221130144224"> </script>
+    <script src="js/app.min.js?_v=20221130171623"> </script>
   </body>
 </html>

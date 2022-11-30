@@ -1,5 +1,8 @@
 .exterior{
     padding-top: 458px;
+    &__body{
+        scroll-margin: -100px;
+    }
     &__slider{
         width: 100%;
         position: relative;
