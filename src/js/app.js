@@ -155,7 +155,7 @@ gsap.utils.toArray(".header").forEach(header => {
             start: "top bottom",
             end: "bottom 150px",
             scrub: 2,
-            markers: true,
+            markers: false,
             onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
             onLeave: () => {header.classList.add('show');header.classList.add('white');},
             onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
