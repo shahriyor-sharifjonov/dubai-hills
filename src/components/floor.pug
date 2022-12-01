@@ -1,3 +1,75 @@
+mixin slider()
+    .swiper.floor__swiper
+        .swiper-wrapper 
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE 
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>1</span>
+                        p.floor__item-info-p Total area:  <span>665 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE 2
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>2</span>
+                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+
+mixin slider-2()
+    .swiper.floor__swiper
+        .swiper-wrapper 
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE asf 
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>1</span>
+                        p.floor__item-info-p Total area:  <span>665 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE 2 326
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>2</span>
+                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+
+mixin slider-3()
+    .swiper.floor__swiper
+        .swiper-wrapper 
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE gasg
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>1</span>
+                        p.floor__item-info-p Total area:  <span>665 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor-1.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE 2 hw
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>2</span>
+                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+
 mixin floor()
     section.section.white.floor#floor
         .section__body.floor__body.container 
@@ -6,29 +78,9 @@ mixin floor()
                 button(type='button' data-target="#floor1").floor__tab-item.active 1 bedroom
                 button(type='button' data-target="#floor2").floor__tab-item 2 bedrooms
                 button(type='button' data-target="#floor3").floor__tab-item 3 bedrooms
-            .floor__content#floor1
-                .swiper.floor__swiper
-                    .swiper-wrapper 
-                        .floor__item.swiper-slide 
-                            .floor__item-img 
-                                img(src="@img/floor-1.png", alt="" draggable="false")
-                            .floor__item-info 
-                                .floor__item-title TITLE 
-                                .floor__item-info
-                                    p.floor__item-info-p Bedrooms:  <span>1</span>
-                                    p.floor__item-info-p Total area:  <span>665 SQ FT</span>
-                                button(type='button').floor__item-btn.btn Download broshure
-                                p.floor__item-label Prices, floor plans & availabilities
-                        .floor__item.swiper-slide 
-                            .floor__item-img 
-                                img(src="@img/floor-1.png", alt="" draggable="false")
-                            .floor__item-info 
-                                .floor__item-title TITLE 
-                                .floor__item-info
-                                    p.floor__item-info-p Bedrooms:  <span>1</span>
-                                    p.floor__item-info-p Total area:  <span>665 SQ FT</span>
-                                button(type='button').floor__item-btn.btn Download broshure
-                                p.floor__item-label Prices, floor plans & availabilities
+            .floor__content.active#floor1
+                +slider 
             .floor__content#floor2
-
-            .floor__content#floor3
+                +slider-2 
+            .floor__content#floor3 
+                +slider-3

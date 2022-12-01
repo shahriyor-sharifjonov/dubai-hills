@@ -1,6 +1,6 @@
 import * as functions from './modules/functions.js';
 import { gsap } from 'gsap'
-import Swiper, { Navigation, Pagination, EffectCreative } from 'swiper';
+import Swiper, { Navigation, Pagination, EffectCreative, EffectFade } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 
@@ -168,6 +168,24 @@ links.forEach(el => {
 })
 // !header links end
 
+// !tabs start
+const tabBtns = document.querySelectorAll('.floor__tab-item');
+const tabContents = document.querySelectorAll('.floor__content');
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const target = btn.getAttribute('data-target');
+        const el = document.querySelector(target)
+        tabBtns.forEach(btn => {
+            btn.classList.remove('active')
+        })
+        e.target.classList.add('active')
+        tabContents.forEach(content => {
+            content.classList.remove('active')
+        })
+        el.classList.add('active')
+    })
+})
+// !tabs end
 
 
 // !sliders start 
@@ -225,18 +243,8 @@ new Swiper('.interior__swiper', {
     initialSlide: 0,
     centeredSlides: false,
     loop: true,
-    speed: 800,
+    speed: 600,
     effect: "creative",
-    creativeEffect: {
-        prev: {
-            shadow: true,
-            translate: ["-120%", 0, -110],
-            opacity: 1,
-        },
-        next: {
-            translate: ["200%", 0, 0],
-        },
-    },
     navigation: {
         nextEl: '.exterior__next',
         prevEl: '.exterior__prev',
@@ -244,6 +252,21 @@ new Swiper('.interior__swiper', {
     pagination: {
         el: ".interior__pagination",
         clickable: true,
+    },
+})
+
+new Swiper('.floor__swiper', {
+    modules: [Pagination, Navigation, EffectFade],
+    slidesPerView: 1,
+    spaceBetween: 100,
+    initialSlide: 0,
+    centeredSlides: false,
+    loop: false,
+    speed: 600,
+    effect: "fade",
+    navigation: {
+        nextEl: '.floor__next',
+        prevEl: '.floor__prev',
     },
 })
 // !sliders end 

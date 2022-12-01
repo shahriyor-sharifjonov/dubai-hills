@@ -141,6 +141,9 @@ ul{
     }
 }
 .swiper{
+    &-fade{
+        transition-property: opacity;
+    }
     &-pagination{
         position: absolute;
         bottom: 0;

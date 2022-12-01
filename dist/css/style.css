@@ -442,6 +442,12 @@ ul {
           animation: none;
 }
 
+.swiper-fade {
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+
 .swiper-pagination {
   position: absolute;
   bottom: 0;
@@ -1433,6 +1439,41 @@ ul {
   margin-bottom: 50px;
 }
 
+.floor__content {
+  display: none;
+}
+
+.floor__content.active {
+  display: block;
+}
+
+.floor .swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.floor .swiper-slide > * {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 600ms ease, visibility 600ms ease;
+  -o-transition: opacity 600ms ease, visibility 600ms ease;
+  transition: opacity 600ms ease, visibility 600ms ease;
+}
+
+.floor .swiper-slide-active > * {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floor .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .floor__tab {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1468,6 +1509,64 @@ ul {
   background: #E3945E;
   color: #FFFFFF;
   border-color: #E3945E;
+}
+
+.floor__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 120px;
+}
+
+.floor__item-title {
+  font-weight: 500;
+  font-size: 46.4421px;
+  line-height: 95.2%;
+  margin-bottom: 55px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.floor__item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  margin-bottom: 50px;
+  min-width: 330px;
+}
+
+.floor__item-info-p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.floor__item-info-p span {
+  font-weight: 700;
+}
+
+.floor__item-info-btn {
+  margin-bottom: 25px;
+}
+
+.floor__item-info-label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .form {
