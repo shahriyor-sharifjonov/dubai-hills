@@ -6,6 +6,7 @@
     -webkit-tap-highlight-color: transparent;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    scroll-be
     // cursor: none;
     &::selection{
         background: #C7825B;
@@ -85,6 +86,10 @@ ul{
     padding-top: 80px;
     &.gray{
         background: #343435;
+    }
+    &.white{
+        background: #fff;
+        color: #000;
     }
     &__body{
         position: relative;

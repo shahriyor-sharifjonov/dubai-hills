@@ -1,0 +1,35 @@
+.floor{
+    padding-top: 195px;
+    &__title{
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 63px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 50px;
+    }
+    &__tab{
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-bottom: 50px;
+        &-item{
+            padding: 8px 22px;
+            font-weight: 400;
+            font-size: 16.426px;
+            line-height: 20px;
+            border: 1px solid #1D1C1C;
+            border-radius: 5px;
+            text-align: center;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.active{
+                background: #E3945E;
+                color: #FFFFFF;
+                border-color: #E3945E;
+            }
+        }
+    }
+}

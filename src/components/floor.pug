@@ -1,0 +1,34 @@
+mixin floor()
+    section.section.white.floor#floor
+        .section__body.floor__body.container 
+            h2.floor__title Floor plans 
+            .floor__tab
+                button(type='button' data-target="#floor1").floor__tab-item.active 1 bedroom
+                button(type='button' data-target="#floor2").floor__tab-item 2 bedrooms
+                button(type='button' data-target="#floor3").floor__tab-item 3 bedrooms
+            .floor__content#floor1
+                .swiper.floor__swiper
+                    .swiper-wrapper 
+                        .floor__item.swiper-slide 
+                            .floor__item-img 
+                                img(src="@img/floor-1.png", alt="" draggable="false")
+                            .floor__item-info 
+                                .floor__item-title TITLE 
+                                .floor__item-info
+                                    p.floor__item-info-p Bedrooms:  <span>1</span>
+                                    p.floor__item-info-p Total area:  <span>665 SQ FT</span>
+                                button(type='button').floor__item-btn.btn Download broshure
+                                p.floor__item-label Prices, floor plans & availabilities
+                        .floor__item.swiper-slide 
+                            .floor__item-img 
+                                img(src="@img/floor-1.png", alt="" draggable="false")
+                            .floor__item-info 
+                                .floor__item-title TITLE 
+                                .floor__item-info
+                                    p.floor__item-info-p Bedrooms:  <span>1</span>
+                                    p.floor__item-info-p Total area:  <span>665 SQ FT</span>
+                                button(type='button').floor__item-btn.btn Download broshure
+                                p.floor__item-label Prices, floor plans & availabilities
+            .floor__content#floor2
+
+            .floor__content#floor3

@@ -9,6 +9,16 @@
             display: none;
         }
     }
+    .interior{
+        &__pagination{
+            .swiper-pagination-bullet{
+                background: #000;
+                &-active{
+                    background: #E3945E;
+                }
+            }
+        }
+    }
     &::before{
         content: '';
         position: absolute;
@@ -22,7 +32,7 @@
         filter: blur(200px);
     }
     &__body{
-        scroll-margin: -100px;
+        scroll-margin: 100px;
     }
     &__slider{
         width: 100%;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221201134115"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221201162344"/>
     <title>GULP </title>
   </head>
   <body> 
@@ -16,9 +16,9 @@
             <header class="header container"> 
               <nav class="header__nav"> 
                 <ul class="header__list"> 
-                  <li class="header__li active"><a class="header__link" href="#about">About </a></li>
-                  <li class="header__li"> <a class="header__link" href="#exterior">Exterior </a></li>
-                  <li class="header__li"> <a class="header__link" href="#interior">Interior </a></li>
+                  <li class="header__li active" id="aboutLink"><a class="header__link" href="#about">About </a></li>
+                  <li class="header__li" id="exteriorLink"><a class="header__link" href="#exterior">Exterior </a></li>
+                  <li class="header__li" id="interiorLink"> <a class="header__link" href="#interior">Interior </a></li>
                   <li class="header__li"> <a class="header__link" href="#location">Location </a></li>
                   <li class="header__li"> <a class="header__link" href="#community">Community </a></li>
                   <li class="header__li"> <a class="header__link" href="#developer">Developer </a></li>
@@ -105,7 +105,7 @@
                     </div>
                   </div>
                 </section>
-                <section class="brochure section gray" id="brochure">
+                <section class="section brochure gray" id="brochure">
                   <form class="brochure__body container section__body" action="#"> 
                     <div class="section__title"> <picture><source srcset="img/brochure-title.webp" type="image/webp"><img src="img/brochure-title.png" alt="" draggable="false"/></picture></div>
                                 <div class="form brochure__form"> 
@@ -252,8 +252,8 @@
                     </div>
                   </div>
                 </section>
-                <section class="section exterior interior"> 
-                  <div class="section__body exterior__body container" id="interior"> 
+                <section class="section exterior interior" id="interior"> 
+                  <div class="section__body exterior__body container">
                     <div class="section__title"> <picture><source srcset="img/interior-title.webp" type="image/webp"><img src="img/interior-title.png" alt="" draggable="false"/></picture></div>
                     <h2 class="title exterior__title">Interior</h2>
                     <div class="exterior__slider"> 
@@ -278,6 +278,48 @@
                     </div>
                   </div>
                 </section>
+                <section class="section white floor" id="floor">
+                  <div class="section__body floor__body container"> 
+                    <h2 class="floor__title">Floor plans </h2>
+                    <div class="floor__tab">
+                      <button class="floor__tab-item active" type="button" data-target="#floor1">1 bedroom</button>
+                      <button class="floor__tab-item" type="button" data-target="#floor2">2 bedrooms</button>
+                      <button class="floor__tab-item" type="button" data-target="#floor3">3 bedrooms</button>
+                    </div>
+                    <div class="floor__content" id="floor1">
+                      <div class="swiper floor__swiper">
+                        <div class="swiper-wrapper"> 
+                          <div class="floor__item swiper-slide"> 
+                            <div class="floor__item-img"> <picture><source srcset="img/floor-1.webp" type="image/webp"><img src="img/floor-1.png" alt="" draggable="false"/></picture></div>
+                            <div class="floor__item-info"> 
+                              <div class="floor__item-title">TITLE </div>
+                              <div class="floor__item-info">
+                                <p class="floor__item-info-p">Bedrooms:  <span>1</span></p>
+                                <p class="floor__item-info-p">Total area:  <span>665 SQ FT</span></p>
+                              </div>
+                              <button class="floor__item-btn btn" type="button">Download broshure</button>
+                              <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                            </div>
+                          </div>
+                          <div class="floor__item swiper-slide"> 
+                            <div class="floor__item-img"> <picture><source srcset="img/floor-1.webp" type="image/webp"><img src="img/floor-1.png" alt="" draggable="false"/></picture></div>
+                            <div class="floor__item-info"> 
+                              <div class="floor__item-title">TITLE </div>
+                              <div class="floor__item-info">
+                                <p class="floor__item-info-p">Bedrooms:  <span>1</span></p>
+                                <p class="floor__item-info-p">Total area:  <span>665 SQ FT</span></p>
+                              </div>
+                              <button class="floor__item-btn btn" type="button">Download broshure</button>
+                              <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="floor__content" id="floor2"></div>
+                    <div class="floor__content" id="floor3"></div>
+                  </div>
+                </section>
       </main>
             <footer class="footer">  
               <div class="footer__body container"> 
@@ -285,6 +327,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221201134115"> </script>
+    <script src="js/app.min.js?_v=20221201162344"> </script>
   </body>
 </html>

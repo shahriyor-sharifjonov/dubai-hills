@@ -40,23 +40,30 @@
     }
     &__li{
         position: relative;
+        transition: 300ms ease-out;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transition: 300ms ease-out;
+            background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+        }
         &.active{
             background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            padding-left: 15px;
             &::before{
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-                width: 5px;
-                height: 5px;
-                border-radius: 50%;
-                background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+                opacity: 1;
+                visibility: visible;
             }
         }
     }
@@ -66,6 +73,7 @@
         font-size: 18px;
         line-height: 22px;
         color: inherit;
+        transition: 300ms ease-out;
     }
     &__tel{
         font-weight: 400;
@@ -73,12 +81,14 @@
         line-height: 27px;
         color: inherit;  
         text-decoration: none;
+        transition: 300ms ease-out;
         span{
             background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+            transition: 300ms ease-out;
         }      
     }
 }

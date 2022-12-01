@@ -50,8 +50,8 @@ mixin exterior()
 
 
 mixin interior()
-    section.section.exterior.interior 
-        .section__body.exterior__body.container#interior 
+    section.section.exterior.interior#interior  
+        .section__body.exterior__body.container
             .section__title 
                 img(src="@img/interior-title.png", alt="" draggable="false")
             h2.title.exterior__title Interior

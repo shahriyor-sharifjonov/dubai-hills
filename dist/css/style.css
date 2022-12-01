@@ -260,12 +260,12 @@ html.has-scroll-dragging {
   scroll-behavior: smooth;
 }
 
-*::-moz-selection {
+scroll-be *::-moz-selection {
   background: #C7825B;
   color: #fff;
 }
 
-*::selection {
+scroll-be *::selection {
   background: #C7825B;
   color: #fff;
 }
@@ -374,6 +374,11 @@ ul {
 
 .section.gray {
   background: #343435;
+}
+
+.section.white {
+  background: #fff;
+  color: #000;
 }
 
 .section__body {
@@ -709,6 +714,29 @@ ul {
 
 .header__li {
   position: relative;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.header__li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+  background: -o-linear-gradient(294.12deg, #FFA761 -83.36%, #C7825B 184.44%);
+  background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
 }
 
 .header__li.active {
@@ -718,22 +746,11 @@ ul {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  padding-left: 15px;
 }
 
 .header__li.active::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: -o-linear-gradient(294.12deg, #FFA761 -83.36%, #C7825B 184.44%);
-  background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+  opacity: 1;
+  visibility: visible;
 }
 
 .header__link {
@@ -742,6 +759,9 @@ ul {
   font-size: 18px;
   line-height: 22px;
   color: inherit;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
 }
 
 .header__tel {
@@ -750,6 +770,9 @@ ul {
   line-height: 27px;
   color: inherit;
   text-decoration: none;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
 }
 
 .header__tel span {
@@ -759,6 +782,9 @@ ul {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
 }
 
 .intro {
@@ -1178,6 +1204,14 @@ ul {
   display: none;
 }
 
+.exterior .interior__pagination .swiper-pagination-bullet {
+  background: #000;
+}
+
+.exterior .interior__pagination .swiper-pagination-bullet-active {
+  background: #E3945E;
+}
+
 .exterior::before {
   content: "";
   position: absolute;
@@ -1193,7 +1227,7 @@ ul {
 }
 
 .exterior__body {
-  scroll-margin: -100px;
+  scroll-margin: 100px;
 }
 
 .exterior__slider {
@@ -1269,6 +1303,7 @@ ul {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
+  line-height: 0;
 }
 
 .details__img img {
@@ -1382,6 +1417,56 @@ ul {
   line-height: 96.5%;
   color: #FFFFFF;
   text-align: center;
+}
+
+.floor {
+  padding-top: 195px;
+}
+
+.floor__title {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 63px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.floor__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 28px;
+  margin-bottom: 50px;
+}
+
+.floor__tab-item {
+  padding: 8px 22px;
+  font-weight: 400;
+  font-size: 16.426px;
+  line-height: 20px;
+  border: 1px solid #1D1C1C;
+  border-radius: 5px;
+  text-align: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.floor__tab-item.active {
+  background: #E3945E;
+  color: #FFFFFF;
+  border-color: #E3945E;
 }
 
 .form {

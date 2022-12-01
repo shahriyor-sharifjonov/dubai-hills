@@ -156,6 +156,20 @@ document.addEventListener('mousemove', brochureParallax)
 
 
 
+// !header links start
+const links = document.querySelectorAll('.header__li');
+links.forEach(el => {
+    el.addEventListener('click', () => {
+        links.forEach(link => {
+            link.classList.remove('active')
+        })
+        el.classList.add('active')
+    })
+})
+// !header links end
+
+
+
 // !sliders start 
 new Swiper('.features__swiper', {
     modules: [Pagination, Navigation],
@@ -182,12 +196,12 @@ new Swiper('.ext__sw', {
     initialSlide: 0,
     centeredSlides: false,
     loop: true,
-    speed: 800,
+    speed: 600,
     effect: "creative",
     creativeEffect: {
         prev: {
             shadow: true,
-            translate: [0, 0, -400],
+            translate: ["-100%", 0, -110],
             opacity: 0,
         },
         next: {
@@ -254,6 +268,65 @@ gsap.utils.toArray(".header").forEach(header => {
     });
 })
 
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".floor",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+            onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".exterior",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('exteriorLink').classList.add('active')
+            },
+            onLeaveBack: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('aboutLink').classList.add('active')
+            }
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".interior",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('interiorLink').classList.add('active')
+            },
+            onLeaveBack: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('exteriorLink').classList.add('active')
+            }
+        }
+    })
+})
+
 gsap.utils.toArray(".section__body").forEach(section => {
     const tl = gsap.timeline({
             scrollTrigger: {
@@ -283,7 +356,7 @@ gsap.utils.toArray(".section__body").forEach(section => {
             ease: "expo.ease",
         }, 'start')
         .from(section.querySelector(".features__title"), { 
-            y: 50,
+            x: -100,
             opacity: 0,
             ease: "expo.ease",
         }, 'start')
