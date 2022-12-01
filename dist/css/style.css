@@ -260,12 +260,12 @@ html.has-scroll-dragging {
   scroll-behavior: smooth;
 }
 
-scroll-be *::-moz-selection {
+*::-moz-selection {
   background: #C7825B;
   color: #fff;
 }
 
-scroll-be *::selection {
+*::selection {
   background: #C7825B;
   color: #fff;
 }
@@ -402,7 +402,7 @@ ul {
   line-height: 88px;
   text-align: left;
   color: #FFFFFF;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .subtitle {
@@ -1252,6 +1252,7 @@ ul {
   transition: 300ms ease-in-out;
   border: 1px solid #fff;
   border-radius: 20px;
+  max-height: 500px;
 }
 
 .exterior__slide img {

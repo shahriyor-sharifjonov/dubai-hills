@@ -230,8 +230,8 @@ new Swiper('.interior__swiper', {
     creativeEffect: {
         prev: {
             shadow: true,
-            translate: [0, 0, -400],
-            opacity: 0,
+            translate: ["-120%", 0, -110],
+            opacity: 1,
         },
         next: {
             translate: ["200%", 0, 0],
@@ -362,21 +362,25 @@ gsap.utils.toArray(".section__body").forEach(section => {
         }, 'start')
         // .from(section.querySelector(".brochure__content"), { 
         //     y: 80,
-        //     // x: 80,
+        //     x: 80,
         //     opacity: 0,
         //     ease: "expo.ease",
         // }, 'start')
         // .from(section.querySelector(".brochure__form"), { 
         //     y: 80,
-        //     // x: -80,
+        //     x: -80,
         //     opacity: 0,
         //     ease: "expo.ease",
         // }, 'start')
-        // .from(section.querySelector(".brochure__img"), { 
+        // .fromTo(section.querySelector(".brochure__img"), { 
         //     y: 80,
         //     x: 80,
         //     opacity: 0,
         //     ease: "expo.ease",
+        // }, {
+        //     y: 0,
+        //     x: 0,
+        //     opacity: 1
         // }, 'start')
     const tl60 = gsap.timeline({
         scrollTrigger: {
@@ -464,6 +468,31 @@ gsap.utils.toArray(".features__body").forEach(el => {
             x: 1200,
             ease: "expo.ease",
         }, 'mid')
+})
+
+gsap.utils.toArray(".details").forEach(el => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 50%", 
+            scrub: 2, 
+            markers: false,
+        }, 
+        defaults: {ease: "none"} 
+    })
+    tl.add('start')
+        .from(el.querySelector(".details__img"), .1, {
+            opacity: 0,
+            x: 200,
+            ease: "expo.ease",
+        }, 'start')
+        .from(el.querySelector(".details__content"), .1, {
+            opacity: 0,
+            x: -80,
+            delay: .1,
+            ease: "expo.ease",
+        }, 'start')
 })
 // !gsap animations end 
 
