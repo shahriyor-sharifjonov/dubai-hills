@@ -254,6 +254,40 @@ gsap.utils.toArray(".section__body").forEach(section => {
             opacity: 0,
             ease: "expo.ease",
         }, 'start')
+        .from(section.querySelector(".features__title"), { 
+            y: 50,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+    const tl60 = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "top 50%",
+            end: "top 10%", 
+            scrub: 2, 
+            markers: false,
+        }, 
+        defaults: {ease: "none"} 
+    });
+    tl60
+        .add('start')
+        .from(section.querySelector(".exterior__swiper"), { 
+            y: 100,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+        .from(section.querySelector(".exterior__prev"), { 
+            x: -100,
+            opacity: 0,
+            ease: "expo.ease",
+            delay: .3,
+        }, 'start')
+        .from(section.querySelector(".exterior__next"), { 
+            x: 100,
+            opacity: 0,
+            ease: "expo.ease",
+            delay: .3,
+        }, 'start')
 })
 
 gsap.utils.toArray(".about__bot").forEach(el => {
@@ -272,6 +306,45 @@ gsap.utils.toArray(".about__bot").forEach(el => {
             }, 
             defaults: {ease: "none"} 
         });
+})
+
+gsap.utils.toArray(".features__body").forEach(el => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            start: "top 50%",
+            end: "bottom 40%", 
+            scrub: 2, 
+            markers: false,
+        }, 
+        defaults: {ease: "none"} 
+    })
+    tl.add('start')
+        .from(el.querySelector(".features__swiper"), {
+            opacity: 0
+        }, 'start')
+        .from(el.querySelector(".features__next"), { 
+            x: -1200,
+            opacity: 1,
+            ease: "expo.ease",
+        }, 'start')
+        .from(el.querySelector(".features__overlay"), { 
+            x: -1200,
+            opacity: 1,
+            ease: "expo.ease",
+        }, 'start')
+        .from(el.querySelector(".features__prev"), {
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
+    tl.add('mid')
+        .fromTo(el.querySelector(".features__overlay"), {
+            x: 0,
+            ease: "expo.ease",
+        }, {
+            x: 1200,
+            ease: "expo.ease",
+        }, 'mid')
 })
 // !gsap animations end 
 
