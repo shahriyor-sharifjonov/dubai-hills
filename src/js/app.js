@@ -170,20 +170,19 @@ new Swiper('.features__swiper', {
         prevEl: '.features__prev',
     },
     pagination: {
-    el: ".features__pagination",
-    clickable: true,
+        el: ".features__pagination",
+        clickable: true,
     },
 })
 
-const exteriorSwiper = new Swiper('.exterior__swiper', {
+new Swiper('.ext__sw', {
     modules: [Pagination, Navigation, EffectCreative],
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 100,
     initialSlide: 0,
     centeredSlides: false,
     loop: true,
     speed: 800,
-    autoplay: 2000,
     effect: "creative",
     creativeEffect: {
         prev: {
@@ -192,7 +191,7 @@ const exteriorSwiper = new Swiper('.exterior__swiper', {
             opacity: 0,
         },
         next: {
-            translate: ["100%", 0, 0],
+            translate: ["200%", 0, 0],
         },
     },
     navigation: {
@@ -200,8 +199,37 @@ const exteriorSwiper = new Swiper('.exterior__swiper', {
         prevEl: '.exterior__prev',
     },
     pagination: {
-    el: ".exterior__pagination",
-    clickable: true,
+        el: ".ext-p",
+        clickable: true,
+    },
+})
+
+new Swiper('.interior__swiper', {
+    modules: [Pagination, Navigation, EffectCreative],
+    slidesPerView: 1,
+    spaceBetween: 100,
+    initialSlide: 0,
+    centeredSlides: false,
+    loop: true,
+    speed: 800,
+    effect: "creative",
+    creativeEffect: {
+        prev: {
+            shadow: true,
+            translate: [0, 0, -400],
+            opacity: 0,
+        },
+        next: {
+            translate: ["200%", 0, 0],
+        },
+    },
+    navigation: {
+        nextEl: '.exterior__next',
+        prevEl: '.exterior__prev',
+    },
+    pagination: {
+        el: ".interior__pagination",
+        clickable: true,
     },
 })
 // !sliders end 
@@ -259,6 +287,24 @@ gsap.utils.toArray(".section__body").forEach(section => {
             opacity: 0,
             ease: "expo.ease",
         }, 'start')
+        // .from(section.querySelector(".brochure__content"), { 
+        //     y: 80,
+        //     // x: 80,
+        //     opacity: 0,
+        //     ease: "expo.ease",
+        // }, 'start')
+        // .from(section.querySelector(".brochure__form"), { 
+        //     y: 80,
+        //     // x: -80,
+        //     opacity: 0,
+        //     ease: "expo.ease",
+        // }, 'start')
+        // .from(section.querySelector(".brochure__img"), { 
+        //     y: 80,
+        //     x: 80,
+        //     opacity: 0,
+        //     ease: "expo.ease",
+        // }, 'start')
     const tl60 = gsap.timeline({
         scrollTrigger: {
             trigger: section,

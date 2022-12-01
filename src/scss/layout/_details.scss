@@ -1,0 +1,84 @@
+.details{
+    display: flex;
+    justify-content: space-between;
+    gap: 110px;
+    padding-top: 80px;
+    &__img{
+        max-width: 460px;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    &__title{
+        margin-bottom: 40px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__list{
+        list-style-type: disc;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    &__li{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 96.5%;
+        color: #FFFFFF;        
+    }
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 94px;
+        width: calc(100% + 88px);
+        margin-right: -44px;
+        flex: 1 1 auto;
+    }
+    &__col{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:not(:last-of-type){
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 75px;
+                transform:  rotate(-90deg);
+                right: -75%;
+                height: 0px;
+                border: 1px solid;
+                border-image-slice: 1;
+                border-image-source: radial-gradient(46.51% 343999.97% at 50% 0.01%, #FFFFFF 0%, rgba(255, 255, 255, 0) 66.77%);
+            }
+        }
+        &-num{
+            font-weight: 700;
+            font-size: 55px;
+            line-height: 96.5%;
+            margin-bottom: 18px;
+            background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        &-text{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 96.5%;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+}

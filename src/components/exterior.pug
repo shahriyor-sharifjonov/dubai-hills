@@ -5,7 +5,7 @@ mixin exterior()
                 img(src="@img/exterior-title.png", alt="" draggable="false")
             h2.title.exterior__title Exterior
             .exterior__slider 
-                .swiper.exterior__swiper
+                .swiper.exterior__swiper.ext__sw
                     .swiper-wrapper     
                         .exterior__slide.swiper-slide
                             img(src="@img/exterior-1.png", alt="" draggable="false")
@@ -13,7 +13,58 @@ mixin exterior()
                             img(src="@img/exterior-1.png", alt="" draggable="false")
                         .exterior__slide.swiper-slide
                             img(src="@img/exterior-1.png", alt="" draggable="false")
-                .exterior__pagination.swiper-pagination    
+                .exterior__pagination.ext-p.swiper-pagination    
+                .exterior__navigation.swiper-navigation
+                    .swiper-button-prev.exterior__prev
+                        <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="0.317073"></path>
+                        </svg>
+                    .swiper-button-next.exterior__next
+                        <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="0.5"></path>
+                        </svg>
+            .details 
+                .details__img 
+                    img(src="@img/exterior-vertical.png", alt="" draggable="false")
+                .details__content 
+                    h2.subtitle.details__title Building details of <span>Acacia</span> Dubai Hills:
+                    ul.details__list 
+                        li.details__li Contemporary and elegant design
+                        li.details__li Highest-quality materials
+                        li.details__li Huge and secure parking area
+                        li.details__li Jogging and cycling trails
+                        li.details__li Direct access to the Boulevard area
+                        li.details__li Social and commercial facilities
+                    .details__row 
+                        .details__col   
+                            p.details__col-num 2019
+                            p.details__col-text developed in
+                        .details__col   
+                            p.details__col-num 9
+                            p.details__col-text resedential floors
+                        .details__col   
+                            p.details__col-num 24
+                            p.details__col-text hours security system
+                    button(type='button').details__btn.btn Register your interest 
+
+
+
+mixin interior()
+    section.section.exterior.interior 
+        .section__body.exterior__body.container#interior 
+            .section__title 
+                img(src="@img/interior-title.png", alt="" draggable="false")
+            h2.title.exterior__title Interior
+            .exterior__slider 
+                .swiper.exterior__swiper.interior__swiper
+                    .swiper-wrapper     
+                        .exterior__slide.swiper-slide
+                            img(src="@img/interior-1.png", alt="" draggable="false")
+                        .exterior__slide.swiper-slide
+                            img(src="@img/interior-1.png", alt="" draggable="false")
+                        .exterior__slide.swiper-slide
+                            img(src="@img/interior-1.png", alt="" draggable="false")
+                .exterior__pagination.interior__pagination.swiper-pagination    
                 .exterior__navigation.swiper-navigation
                     .swiper-button-prev.exterior__prev
                         <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,26 @@
 .exterior{
     padding-top: 458px;
+    position: relative;
+    isolation: isolate;
+    &.interior{
+        padding-top: 80px;
+        margin-bottom: -155px;
+        &::before{
+            display: none;
+        }
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: -155px;
+        width: 314px;
+        height: 314px;
+        z-index: -1;
+        border-radius: 50%;
+        background: #E7975F;
+        filter: blur(200px);
+    }
     &__body{
         scroll-margin: -100px;
     }

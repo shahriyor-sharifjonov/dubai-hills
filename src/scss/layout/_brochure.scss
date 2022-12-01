@@ -1,4 +1,6 @@
 .brochure{
+    position: relative;
+    z-index: 1;
     .section__title{
         z-index: -3;
     }
