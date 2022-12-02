@@ -1441,15 +1441,33 @@ ul {
 
 .floor__content {
   display: none;
+  position: relative;
+}
+
+.floor__content > * {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+  transition: opacity 300ms ease-out, visibility 300ms ease-out;
 }
 
 .floor__content.active {
   display: block;
 }
 
+.floor__content.active > * {
+  opacity: 1;
+  visibility: visible;
+}
+
 .floor .swiper {
   width: 100%;
   overflow: hidden;
+}
+
+.floor .swiper-slide {
+  pointer-events: none;
 }
 
 .floor .swiper-slide > * {
@@ -1458,6 +1476,11 @@ ul {
   -webkit-transition: opacity 600ms ease, visibility 600ms ease;
   -o-transition: opacity 600ms ease, visibility 600ms ease;
   transition: opacity 600ms ease, visibility 600ms ease;
+}
+
+.floor .swiper-slide-active {
+  pointer-events: all;
+  z-index: 2;
 }
 
 .floor .swiper-slide-active > * {
@@ -1531,6 +1554,16 @@ ul {
   margin-bottom: 55px;
   text-transform: uppercase;
   color: #000000;
+}
+
+.floor__item-img {
+  position: relative;
+  max-width: 667px;
+  width: 100%;
+}
+
+.floor__item-img img {
+  width: 100%;
 }
 
 .floor__item-info {

@@ -1,5 +1,17 @@
+mixin navigation()
+    .floor__navigation 
+        .floor__prev.swiper-button-prev 
+            <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="0.317073"></path>
+            </svg>
+        .floor__next.swiper-button-next     
+            <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="0.5"></path>
+            </svg>
+
 mixin slider()
     .swiper.floor__swiper
+        +navigation
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
@@ -24,6 +36,7 @@ mixin slider()
 
 mixin slider-2()
     .swiper.floor__swiper
+        +navigation 
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
@@ -47,7 +60,8 @@ mixin slider-2()
                     p.floor__item-label Prices, floor plans & availabilities
 
 mixin slider-3()
-    .swiper.floor__swiper
+    .swiper.floor__swiper 
+        +navigation 
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
@@ -65,22 +79,22 @@ mixin slider-3()
                 .floor__item-info 
                     .floor__item-title TITLE 2 hw
                     .floor__item-info
-                        p.floor__item-info-p Bedrooms:  <span>2</span>
-                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
-                    button(type='button').floor__item-btn.btn Download broshure
-                    p.floor__item-label Prices, floor plans & availabilities
+                        p.floor__item-info-p Bedrooms:  <span>2</span> 
+                        p.floor__item-info-p Total area:  <span>685 SQ FT</span> 
+                    button(type='button').floor__item-btn.btn Download broshure 
+                    p.floor__item-label Prices, floor plans & availabilities 
 
-mixin floor()
-    section.section.white.floor#floor
+mixin floor() 
+    section.section.white.floor#floor 
         .section__body.floor__body.container 
             h2.floor__title Floor plans 
-            .floor__tab
-                button(type='button' data-target="#floor1").floor__tab-item.active 1 bedroom
-                button(type='button' data-target="#floor2").floor__tab-item 2 bedrooms
-                button(type='button' data-target="#floor3").floor__tab-item 3 bedrooms
-            .floor__content.active#floor1
+            .floor__tab 
+                button(type='button' data-target="#floor1").floor__tab-item.active 1 bedroom 
+                button(type='button' data-target="#floor2").floor__tab-item 2 bedrooms 
+                button(type='button' data-target="#floor3").floor__tab-item 3 bedrooms 
+            .floor__content.active#floor1 
                 +slider 
-            .floor__content#floor2
+            .floor__content#floor2 
                 +slider-2 
             .floor__content#floor3 
-                +slider-3
+                +slider-3 

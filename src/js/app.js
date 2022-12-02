@@ -62,7 +62,6 @@ const outLoader = () => {
             ease: "expo.easeInOut"
         })
         gsap.to('.loader', 1, {
-            // yPercent: -100,
             opacity: 0,
             display: "none",
             delay: 0.8,
@@ -168,6 +167,8 @@ links.forEach(el => {
 })
 // !header links end
 
+
+
 // !tabs start
 const tabBtns = document.querySelectorAll('.floor__tab-item');
 const tabContents = document.querySelectorAll('.floor__content');
@@ -210,9 +211,7 @@ new Swiper('.features__swiper', {
 new Swiper('.ext__sw', {
     modules: [Pagination, Navigation, EffectCreative],
     slidesPerView: 1,
-    spaceBetween: 100,
-    initialSlide: 0,
-    centeredSlides: false,
+    spaceBetween: 0,
     loop: true,
     speed: 600,
     effect: "creative",
@@ -227,8 +226,8 @@ new Swiper('.ext__sw', {
         },
     },
     navigation: {
-        nextEl: '.exterior__next',
-        prevEl: '.exterior__prev',
+        nextEl: '.ext__next',
+        prevEl: '.ext__prev',
     },
     pagination: {
         el: ".ext-p",
@@ -239,15 +238,23 @@ new Swiper('.ext__sw', {
 new Swiper('.interior__swiper', {
     modules: [Pagination, Navigation, EffectCreative],
     slidesPerView: 1,
-    spaceBetween: 100,
-    initialSlide: 0,
-    centeredSlides: false,
+    spaceBetween: 0,
     loop: true,
     speed: 600,
     effect: "creative",
+    creativeEffect: {
+        prev: {
+            shadow: true,
+            translate: ["-100%", 0, -110],
+            opacity: 0,
+        },
+        next: {
+            translate: ["200%", 0, 0],
+        },
+    },
     navigation: {
-        nextEl: '.exterior__next',
-        prevEl: '.exterior__prev',
+        nextEl: '.interior__next',
+        prevEl: '.interior__prev',
     },
     pagination: {
         el: ".interior__pagination",
@@ -255,13 +262,22 @@ new Swiper('.interior__swiper', {
     },
 })
 
+
 new Swiper('.floor__swiper', {
-    modules: [Pagination, Navigation, EffectFade],
+    modules: [Navigation, EffectFade],
     slidesPerView: 1,
-    spaceBetween: 100,
-    initialSlide: 0,
-    centeredSlides: false,
+    slidesPerGroup: 1,
+    createElements: true,
+    preventClicks: true,
+    preventClicksPropagation: true,
+    noSwiping: true,
+    noSwipingSelector: 'button',
+    slideToClickedSlide: false,
+    focusableElements: 'button',
+    rewind: true,
     loop: false,
+    createElements: true,
+    watchSlidesProgress: true,
     speed: 600,
     effect: "fade",
     navigation: {

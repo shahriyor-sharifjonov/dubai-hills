@@ -10,20 +10,33 @@
     }
     &__content{
         display: none;
+        position: relative;
+        &>*{
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 300ms ease-out, visibility 300ms ease-out;
+        }
         &.active{
             display: block;
+            &>*{
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
     .swiper{
         width: 100%;
         overflow: hidden;
         &-slide{
+            pointer-events: none;
             &>*{
                 opacity: 0;
                 visibility: hidden;
                 transition: opacity 600ms ease, visibility 600ms ease;
             }
             &-active{
+                pointer-events: all;
+                z-index: 2;
                 &>*{
                     opacity: 1;
                     visibility: visible;
@@ -71,6 +84,14 @@
             margin-bottom: 55px;
             text-transform: uppercase;
             color: #000000;            
+        }
+        &-img{
+            position: relative;
+            max-width: 667px;
+            width: 100%;
+            img{
+                width: 100%;
+            }
         }
         &-info{
             display: flex;
