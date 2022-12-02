@@ -109,7 +109,7 @@ ul{
     font-size: 72px;
     line-height: 88px;
     text-align: left;
-    color: #FFFFFF;
+    color: inherit;
     margin-bottom: 30px;
 }
 .subtitle{
@@ -117,7 +117,7 @@ ul{
     font-size: 48px;
     line-height: 59px;
     text-transform: capitalize;
-    color: #FFFFFF;
+    color: inherit;
     span{
         background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%), #FFFFFF;
         -webkit-background-clip: text;

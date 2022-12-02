@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221202115113"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221202160319"/>
     <title>GULP </title>
   </head>
   <body> 
@@ -19,9 +19,9 @@
                   <li class="header__li active" id="aboutLink"><a class="header__link" href="#about">About </a></li>
                   <li class="header__li" id="exteriorLink"><a class="header__link" href="#exterior">Exterior </a></li>
                   <li class="header__li" id="interiorLink"> <a class="header__link" href="#interior">Interior </a></li>
-                  <li class="header__li"> <a class="header__link" href="#location">Location </a></li>
-                  <li class="header__li"> <a class="header__link" href="#community">Community </a></li>
-                  <li class="header__li"> <a class="header__link" href="#developer">Developer </a></li>
+                  <li class="header__li" id="locationLink"> <a class="header__link" href="#location">Location </a></li>
+                  <li class="header__li" id="communityLink"> <a class="header__link" href="#community">Community </a></li>
+                  <li class="header__li" id="developerLink"> <a class="header__link" href="#developer">Developer </a></li>
                 </ul><a class="header__tel" href="#!">+971 56 <span>xxx-xx-xx</span></a>
               </nav>
             </header>
@@ -414,6 +414,77 @@
                     </div>
                   </div>
                 </section>
+                <section class="section location" id="location"> 
+                  <div class="section__body location__body container"> 
+                    <div class="section__title"> <picture><source srcset="img/location-title.webp" type="image/webp"><img src="img/location-title.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="title location__title">Location </h2>
+                    <div class="location__wrap"> <a class="location__link" href="#!" target="_blank" rel="noopener"> <img src="img/google.svg" alt="" draggable="false"/></a>
+                      <div class="location__tab"> 
+                        <button class="location__tab-item active" type="button" data-target="#map">Dubai Map </button>
+                        <button class="location__tab-item" type="button" data-target="#localMap">Local Map </button>
+                      </div>
+                      <div class="location__map active" id="map"> <picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="" draggable="false"/></picture></div>
+                      <div class="location__map location__map-wrap" id="localMap"> 
+                        <div class="location__map-tab"> 
+                          <button class="location__map-tab-item active" type="button" data-target="#localAll">All categories </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localPharmacies">Pharmacies </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localFitnesses">Fitness </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localShops">Shops </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localBars">Restaurants and bars </button>
+                        </div>
+                        <div class="location__map-item active" id="localAll"> <picture><source srcset="img/local-map_all.webp" type="image/webp"><img src="img/local-map_all.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localPharmacies"> <picture><source srcset="img/local-map_pharmasies.webp" type="image/webp"><img src="img/local-map_pharmasies.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localFitnesses"> <picture><source srcset="img/local-map_fitnesses.webp" type="image/webp"><img src="img/local-map_fitnesses.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localShops"> <picture><source srcset="img/local-map_shops.webp" type="image/webp"><img src="img/local-map_shops.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localBars"> <picture><source srcset="img/local-map_bars.webp" type="image/webp"><img src="img/local-map_bars.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                    <div class="location__info"> 
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">5 mins </p>
+                        <p class="location__info-text">drive to the Dubai Hills Mall </p>
+                      </div>
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">15 mins </p>
+                        <p class="location__info-text">drive to the Dubai Int. Stadium </p>
+                      </div>
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">17 mins </p>
+                        <p class="location__info-text">drive to the Jumeirah Beach </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section community">
+                  <div class="section__body community__body container" id="community"> 
+                    <div class="section__title"> <picture><source srcset="img/community-title.webp" type="image/webp"><img src="img/community-title.png" alt="" draggable="false"/></picture></div>
+                    <div class="community__header">
+                      <h2 class="title community__title">About <span>Dubai Hills</span> Estate</h2>
+                      <p class="community__p">Elite location, which gives access to luscious landscaped greens and pristine fairways with an iconic backdrop of the Burj Khalifa and the Dubai skyline. The 2700-acre multi-purpose development includes high-class amenities and infrastructure such as schools, hospitals, parks, malls and even 18-hole Championship golf course. </p>
+                    </div>
+                    <div class="community__row community__row_left">
+                      <div class="community__track"> 
+                        <div class="community__item"> <picture><source srcset="img/community-1.webp" type="image/webp"><img src="img/community-1.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-2.webp" type="image/webp"><img src="img/community-2.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-3.webp" type="image/webp"><img src="img/community-3.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-1.webp" type="image/webp"><img src="img/community-1.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-2.webp" type="image/webp"><img src="img/community-2.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-3.webp" type="image/webp"><img src="img/community-3.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                    <div class="community__row community__row_right"> 
+                      <div class="community__track"> 
+                        <div class="community__item"> <picture><source srcset="img/community-4.webp" type="image/webp"><img src="img/community-4.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-5.webp" type="image/webp"><img src="img/community-5.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-6.webp" type="image/webp"><img src="img/community-6.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-4.webp" type="image/webp"><img src="img/community-4.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-5.webp" type="image/webp"><img src="img/community-5.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-6.webp" type="image/webp"><img src="img/community-6.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        <div class="h100vh"> </div>
       </main>
             <footer class="footer">  
               <div class="footer__body container"> 
@@ -421,6 +492,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221202115113"> </script>
+    <script src="js/app.min.js?_v=20221202160319"> </script>
   </body>
 </html>

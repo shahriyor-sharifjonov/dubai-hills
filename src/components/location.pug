@@ -1,6 +1,41 @@
-mixin location()
+mixin location() 
     section.section.location#location 
-        .section__body.location__body
-            h2.location__title.title Location
+        .section__body.location__body.container 
             .section__title 
-                //- img(src="@img/l", alt="" draggable="false")
+                img(src="@img/location-title.png", alt="" draggable="false") 
+            h2.title.location__title Location 
+            .location__wrap 
+                a(href="#!" target="_blank" rel="noopener").location__link 
+                    img(src="@img/google.svg", alt="" draggable="false")
+                .location__tab 
+                    button(type='button' data-target="#map").location__tab-item.active Dubai Map 
+                    button(type='button' data-target="#localMap").location__tab-item Local Map 
+                .location__map#map.active 
+                    img(src="@img/map.png", alt="" draggable="false") 
+                .location__map.location__map-wrap#localMap 
+                    .location__map-tab 
+                        button(type='button' data-target="#localAll").location__map-tab-item.active All categories 
+                        button(type='button' data-target="#localPharmacies").location__map-tab-item Pharmacies 
+                        button(type='button' data-target="#localFitnesses").location__map-tab-item Fitness 
+                        button(type='button' data-target="#localShops").location__map-tab-item Shops 
+                        button(type='button' data-target="#localBars").location__map-tab-item Restaurants and bars 
+                    .location__map-item#localAll.active 
+                        img(src="@img/local-map_all.png", alt="" draggable="false")
+                    .location__map-item#localPharmacies 
+                        img(src="@img/local-map_pharmasies.png", alt="" draggable="false")
+                    .location__map-item#localFitnesses 
+                        img(src="@img/local-map_fitnesses.png", alt="" draggable="false")
+                    .location__map-item#localShops 
+                        img(src="@img/local-map_shops.png", alt="" draggable="false")
+                    .location__map-item#localBars 
+                        img(src="@img/local-map_bars.png", alt="" draggable="false")
+            .location__info 
+                .location__info-item 
+                    p.location__info-title 5 mins 
+                    p.location__info-text drive to the Dubai Hills Mall 
+                .location__info-item 
+                    p.location__info-title 15 mins 
+                    p.location__info-text drive to the Dubai Int. Stadium 
+                .location__info-item 
+                    p.location__info-title 17 mins 
+                    p.location__info-text drive to the Jumeirah Beach 

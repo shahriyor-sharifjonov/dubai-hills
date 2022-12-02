@@ -189,6 +189,40 @@ tabBtns.forEach(btn => {
 // !tabs end
 
 
+// !location start
+const locationTabs = document.querySelectorAll('.location__tab-item');
+const locationMaps = document.querySelectorAll('.location__map');
+locationTabs.forEach(el => {
+    el.addEventListener('click', () => {
+        locationTabs.forEach(tab => {
+            tab.classList.remove('active')
+        })
+        el.classList.add('active')
+        locationMaps.forEach(map => {
+            map.classList.remove('active')
+        })
+        const target = el.getAttribute('data-target');
+        document.querySelector(target).classList.add('active')
+    })
+})
+const mapTabs = document.querySelectorAll('.location__map-tab-item');
+const mapMaps = document.querySelectorAll('.location__map-item');
+mapTabs.forEach(el => {
+    el.addEventListener('click', () => {
+        mapTabs.forEach(tab => {
+            tab.classList.remove('active')
+        })
+        el.classList.add('active')
+        mapMaps.forEach(map => {
+            map.classList.remove('active')
+        })
+        const target = el.getAttribute('data-target');
+        document.querySelector(target).classList.add('active')
+    })
+})
+// !location end
+
+
 // !sliders start 
 new Swiper('.features__swiper', {
     modules: [Pagination, Navigation],
@@ -323,6 +357,30 @@ gsap.utils.toArray(".header").forEach(header => {
 gsap.utils.toArray(".header").forEach(header => {
     gsap.timeline({
         scrollTrigger: {
+            trigger: ".floor",
+            start: "top 60px",
+            end: "bottom bottom",
+            onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+            onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".location",
+            start: "527px top",
+            end: "bottom bottom",
+            onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
+            onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
             trigger: ".exterior",
             start: "top 60px",
             end: "bottom bottom",
@@ -338,6 +396,52 @@ gsap.utils.toArray(".header").forEach(header => {
                     li.classList.remove('active')
                 })
                 document.getElementById('aboutLink').classList.add('active')
+            }
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".location",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('locationLink').classList.add('active')
+            },
+            onLeaveBack: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('interiorLink').classList.add('active')
+            }
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".community",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('communityLink').classList.add('active')
+            },
+            onLeaveBack: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('locationLink').classList.add('active')
             }
         }
     })
@@ -399,28 +503,11 @@ gsap.utils.toArray(".section__body").forEach(section => {
             opacity: 0,
             ease: "expo.ease",
         }, 'start')
-        // .from(section.querySelector(".brochure__content"), { 
-        //     y: 80,
-        //     x: 80,
-        //     opacity: 0,
-        //     ease: "expo.ease",
-        // }, 'start')
-        // .from(section.querySelector(".brochure__form"), { 
-        //     y: 80,
-        //     x: -80,
-        //     opacity: 0,
-        //     ease: "expo.ease",
-        // }, 'start')
-        // .fromTo(section.querySelector(".brochure__img"), { 
-        //     y: 80,
-        //     x: 80,
-        //     opacity: 0,
-        //     ease: "expo.ease",
-        // }, {
-        //     y: 0,
-        //     x: 0,
-        //     opacity: 1
-        // }, 'start')
+        .from(section.querySelector(".location__title"), { 
+            y: 100,
+            opacity: 0,
+            ease: "expo.ease",
+        }, 'start')
     const tl60 = gsap.timeline({
         scrollTrigger: {
             trigger: section,
@@ -449,6 +536,24 @@ gsap.utils.toArray(".section__body").forEach(section => {
             opacity: 0,
             ease: "expo.ease",
             delay: .3,
+        }, 'start')
+    const tlGallery = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "top 100%",
+            end: "bottom 0%", 
+            scrub: 4, 
+            markers: false,
+        }, 
+        defaults: {ease: "none"} 
+    });
+    tlGallery
+        .add('start')
+        .from(section.querySelector(".community__row_left"), {
+            x: 800,
+        }, 'start')
+        .from(section.querySelector(".community__row_right"), {
+            x: -800,
         }, 'start')
 })
 
@@ -530,6 +635,27 @@ gsap.utils.toArray(".details").forEach(el => {
             opacity: 0,
             x: -80,
             delay: .1,
+            ease: "expo.ease",
+        }, 'start')
+})
+
+gsap.utils.toArray(".community__header").forEach(el => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 50%", 
+            scrub: 2, 
+            markers: true,
+            onEnter: () => {console.log('enter')},
+            onLeave: () => {console.log('leave')}
+        }, 
+        defaults: {ease: "none"} 
+    })
+    tl.add('start')
+        .from(document.querySelector(".community__header"), {
+            opacity: 0,
+            y: 80,
             ease: "expo.ease",
         }, 'start')
 })
