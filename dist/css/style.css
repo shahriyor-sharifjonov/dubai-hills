@@ -1980,7 +1980,7 @@ ul {
 
 .community {
   padding-top: 500px;
-  margin-bottom: -640px;
+  padding-bottom: 80px;
 }
 
 .community__body {
@@ -2065,10 +2065,6 @@ ul {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
-}
-
-.developer {
-  padding-top: 700px;
 }
 
 .developer__title span {
