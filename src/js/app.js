@@ -646,9 +646,7 @@ gsap.utils.toArray(".community__header").forEach(el => {
             start: "top 80%",
             end: "top 50%", 
             scrub: 2, 
-            markers: true,
-            onEnter: () => {console.log('enter')},
-            onLeave: () => {console.log('leave')}
+            markers: false,
         }, 
         defaults: {ease: "none"} 
     })

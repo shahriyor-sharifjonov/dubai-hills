@@ -1980,6 +1980,7 @@ ul {
 
 .community {
   padding-top: 500px;
+  margin-bottom: -640px;
 }
 
 .community__body {
@@ -2001,6 +2002,7 @@ ul {
   line-height: 177%;
   color: #FFFFFF;
   margin-bottom: 85px;
+  max-width: 980px;
 }
 
 .community__row {
@@ -2063,6 +2065,19 @@ ul {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.developer {
+  padding-top: 700px;
+}
+
+.developer__title span {
+  background: -o-linear-gradient(294.12deg, #FFA761 -83.36%, #C7825B 184.44%);
+  background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .form {
