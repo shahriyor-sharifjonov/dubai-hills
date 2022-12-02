@@ -190,6 +190,10 @@ ul{
         pointer-events: none;
     }
     &-button{
+        &-lock{
+            opacity: 0;
+            visibility: hidden;
+        }
         &-prev{
             pointer-events: all;
             cursor: pointer;

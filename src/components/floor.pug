@@ -2,30 +2,40 @@ mixin navigation()
     .floor__navigation 
         .floor__prev.swiper-button-prev 
             <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="0.317073"></path>
+                <path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
             </svg>
         .floor__next.swiper-button-next     
             <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="0.5"></path>
+                <path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
             </svg>
 
 mixin slider()
-    .swiper.floor__swiper
-        +navigation
+    .swiper.floor__swiper 
+        +navigation 
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
+                    img(src="@img/floor_1-1.png", alt="" draggable="false") 
                 .floor__item-info 
                     .floor__item-title TITLE 
-                    .floor__item-info
+                    .floor__item-info 
                         p.floor__item-info-p Bedrooms:  <span>1</span>
                         p.floor__item-info-p Total area:  <span>665 SQ FT</span>
                     button(type='button').floor__item-btn.btn Download broshure
                     p.floor__item-label Prices, floor plans & availabilities
             .floor__item.swiper-slide 
                 .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
+                    img(src="@img/floor_1-2.png", alt="" draggable="false")
+                .floor__item-info 
+                    .floor__item-title TITLE 2
+                    .floor__item-info
+                        p.floor__item-info-p Bedrooms:  <span>2</span>
+                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
+                    button(type='button').floor__item-btn.btn Download broshure
+                    p.floor__item-label Prices, floor plans & availabilities
+            .floor__item.swiper-slide 
+                .floor__item-img 
+                    img(src="@img/floor_1-3.png", alt="" draggable="false")
                 .floor__item-info 
                     .floor__item-title TITLE 2
                     .floor__item-info
@@ -40,24 +50,14 @@ mixin slider-2()
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
+                    img(src="@img/floor_2-1.png", alt="" draggable="false")
                 .floor__item-info 
                     .floor__item-title TITLE asf 
                     .floor__item-info
                         p.floor__item-info-p Bedrooms:  <span>1</span>
                         p.floor__item-info-p Total area:  <span>665 SQ FT</span>
                     button(type='button').floor__item-btn.btn Download broshure
-                    p.floor__item-label Prices, floor plans & availabilities
-            .floor__item.swiper-slide 
-                .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
-                .floor__item-info 
-                    .floor__item-title TITLE 2 326
-                    .floor__item-info
-                        p.floor__item-info-p Bedrooms:  <span>2</span>
-                        p.floor__item-info-p Total area:  <span>685 SQ FT</span>
-                    button(type='button').floor__item-btn.btn Download broshure
-                    p.floor__item-label Prices, floor plans & availabilities
+                    p.floor__item-label Prices, floor plans & availabilities 
 
 mixin slider-3()
     .swiper.floor__swiper 
@@ -65,7 +65,7 @@ mixin slider-3()
         .swiper-wrapper 
             .floor__item.swiper-slide 
                 .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
+                    img(src="@img/floor_3-1.png", alt="" draggable="false")
                 .floor__item-info 
                     .floor__item-title TITLE gasg
                     .floor__item-info
@@ -75,7 +75,7 @@ mixin slider-3()
                     p.floor__item-label Prices, floor plans & availabilities
             .floor__item.swiper-slide 
                 .floor__item-img 
-                    img(src="@img/floor-1.png", alt="" draggable="false")
+                    img(src="@img/floor_3-2.png", alt="" draggable="false")
                 .floor__item-info 
                     .floor__item-title TITLE 2 hw
                     .floor__item-info
