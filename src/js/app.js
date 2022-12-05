@@ -1,4 +1,5 @@
-import * as functions from './modules/functions.js';
+import * as functions from './modules/functions.js'
+import imagesLoaded from 'imagesloaded'
 import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination, EffectCreative, EffectFade } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
@@ -20,57 +21,64 @@ window.onbeforeunload = function () {
 
 
 // !preloader start
+const images = gsap.utils.toArray("img");
 let preloaderText = document.querySelector('.loader__text');
 let percentage = 0
-const updateProgress = () => {
-    const a = () => {
-        if(percentage <= 20){
-            preloaderText.innerHTML = 'يا'
-        }
-        if(percentage > 20 && percentage <= 40){
-            preloaderText.innerHTML = 'Hello';
-        }
-        if(percentage > 40 && percentage <= 60){
-            preloaderText.innerHTML = '여기요';
-        }
-        if(percentage > 60 && percentage <= 80){
-            preloaderText.innerHTML = 'Hé';
-        }
-        if(percentage > 80 && percentage <= 100){
-            preloaderText.innerHTML = 'Привет';
-        }
-    }
-    const q = () => {
-        a()
-        setTimeout(() => {
-            if(percentage <= 100) {
-                percentage++
-                outLoader()
-                q()
-            }
-        }, 10);
-    }
-    q()
+let realPercentage = 0
+const updateProgress = (instance) => {
+    realPercentage = Math.round((instance.progressedCount * 100) / images.length)
 }
 
-updateProgress()
+const a = () => {
+    if(percentage <= 20){
+        preloaderText.innerHTML = 'يا'
+    }
+    if(percentage > 20 && percentage <= 40){
+        preloaderText.innerHTML = 'Hello';
+    }
+    if(percentage > 40 && percentage <= 60){
+        preloaderText.innerHTML = '여기요';
+    }
+    if(percentage > 60 && percentage <= 80){
+        preloaderText.innerHTML = 'Hé';
+    }
+    if(percentage > 80 && percentage <= 100){
+        preloaderText.innerHTML = 'Привет';
+    }
+}
+a()
+const q = () => {
+    a()
+    setTimeout(() => {
+        if(percentage <= 100) {
+            percentage++
+            outLoader()
+            q()
+        }
+    }, 10);
+}
+q()
 const outLoader = () => {
     if(percentage === 100){
-        document.scrollingElement.scrollTo(0, 0);
-        setTimeout(() => {
-            document.getElementsByTagName('html')[0].setAttribute('loaded', true)
-        }, 300)
-        gsap.to('.loader__text', .5, {
-            yPercent: -150,
-            opacity: 0,
-            ease: "expo.easeInOut"
-        })
-        gsap.to('.loader', 1, {
-            opacity: 0,
-            display: "none",
-            delay: 0.8,
-            ease: "expo.easeInOut"
-        })
+        if(realPercentage === 100){
+            document.scrollingElement.scrollTo(0, 0);
+            setTimeout(() => {
+                document.getElementsByTagName('html')[0].setAttribute('loaded', true)
+            }, 300)
+            gsap.to('.loader__text', .5, {
+                yPercent: -150,
+                opacity: 0,
+                ease: "expo.easeInOut"
+            })
+            gsap.to('.loader', 1, {
+                opacity: 0,
+                display: "none",
+                delay: 0.8,
+                ease: "expo.easeInOut"
+            })
+        } else {
+            preloaderText.innerHTML = `${Math.round((instance.progressedCount * 100) / images.length)}%`;
+        }
     }
 }
 // !preloader end
@@ -706,3 +714,4 @@ gsap.utils.toArray(".community__header").forEach(el => {
 })
 // !gsap animations end 
 
+setTimeout(() => imagesLoaded(images).on("progress", updateProgress).on("always", outLoader), 1000)
