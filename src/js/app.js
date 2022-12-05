@@ -10,7 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 // !onload scroll to top start
+document.scrollingElement.scrollTo(0, 0);
 window.onbeforeunload = function () {
+    document.scrollingElement.scrollTo(0, 0);
     window.scrollTo(0, 0);
 }
 // !onload scroll to top end
@@ -18,6 +20,7 @@ window.onbeforeunload = function () {
 
 
 // !preloader start
+const images = gsap.utils.toArray("img");
 let preloaderText = document.querySelector('.loader__text');
 let percentage = 0
 const updateProgress = () => {
@@ -36,26 +39,30 @@ const updateProgress = () => {
         }
         if(percentage > 80 && percentage <= 100){
             preloaderText.innerHTML = 'Привет';
-            setTimeout(() => {
-                document.getElementsByTagName('html')[0].setAttribute('loaded', true)
-            }, 300)
         }
     }
     const q = () => {
         a()
         setTimeout(() => {
             if(percentage <= 100) {
-                percentage++
-                outLoader()
-                q()
+                if(Math.round((instance.progressedCount * 100) / images.length) === 100){
+                    percentage++
+                    outLoader()
+                    q()
+                }
             }
         }, 10);
     }
     q()
 }
+
 updateProgress()
 const outLoader = () => {
     if(percentage === 100){
+        document.scrollingElement.scrollTo(0, 0);
+        setTimeout(() => {
+            document.getElementsByTagName('html')[0].setAttribute('loaded', true)
+        }, 300)
         gsap.to('.loader__text', .5, {
             yPercent: -150,
             opacity: 0,
