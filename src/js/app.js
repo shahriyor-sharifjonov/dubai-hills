@@ -62,9 +62,6 @@ const outLoader = () => {
         console.log(`percentage: 100%; realPercentage: ${realPercentage}%`);
         if(realPercentage === 100){
             document.scrollingElement.scrollTo(0, 0);
-            setTimeout(() => {
-                document.getElementsByTagName('html')[0].setAttribute('loaded', true)
-            }, 300)
             gsap.to('.loader__text', .5, {
                 yPercent: -150,
                 opacity: 0,
@@ -78,10 +75,7 @@ const outLoader = () => {
             })
         } else {
             console.log('else');
-            setTimeout(() => {
-                console.log('else timeout');
-                outLoader()
-            }, 100)
+            outLoader()
         }
     }
 }
