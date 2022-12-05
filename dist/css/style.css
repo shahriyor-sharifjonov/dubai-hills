@@ -597,13 +597,13 @@ ul {
   padding: 0 14px;
 }
 
-.btn[disabled=true] {
+.btn[disabled=disabled] {
   background: -o-linear-gradient(294.12deg, #FDAA68 -83.36%, #D2AF9A 184.44%);
   background: linear-gradient(155.88deg, #FDAA68 -83.36%, #D2AF9A 184.44%);
   cursor: auto;
 }
 
-.btn:not([disabled=true]):active {
+.btn:not([disabled=disabled]):active {
   background: -o-linear-gradient(294.12deg, #FF7F1B -83.36%, #C98057 184.44%);
   background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
 }

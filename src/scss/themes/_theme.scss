@@ -257,11 +257,11 @@ ul{
     color: #FFFFFF;
     transition: 300ms ease-out;
     padding: 0 14px;
-    &[disabled="true"]{
+    &[disabled="disabled"]{
         background: linear-gradient(155.88deg, #FDAA68 -83.36%, #D2AF9A 184.44%);
         cursor: auto;
     }
-    &:not([disabled="true"]):active{
+    &:not([disabled="disabled"]):active{
         background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
     }
 }
