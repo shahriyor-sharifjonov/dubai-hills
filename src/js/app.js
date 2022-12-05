@@ -77,7 +77,9 @@ const outLoader = () => {
                 ease: "expo.easeInOut"
             })
         } else {
+            console.log('else');
             setTimeout(() => {
+                console.log('else timeout');
                 outLoader()
             }, 100)
         }
