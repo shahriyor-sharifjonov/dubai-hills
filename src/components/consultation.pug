@@ -4,3 +4,13 @@ mixin consultation()
             .section__title 
                 img(src="@img/consultation-text.png", alt="" draggable="false")
             h2.consultation__title.title <span>Get</span> consultation from our expert
+            .consultation__content 
+                .consultation__info 
+                    .consultation__item
+                        p.consultation__item-p Our specialists will contact you at a time convenient for you
+                    .consultation__item
+                        p.consultation__item-p Our experts will answer any of your questions
+                    .consultation__item
+                        p.consultation__item-p You will get all PDFs (brochures, payment plans, price lists, floor plans)
+                include form 
+                +form2 

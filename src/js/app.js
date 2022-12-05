@@ -142,15 +142,15 @@ function erase() {
 
 
 // !parallax on mousemove brochure start 
-const brochureParallax = (e) => {
-    document.querySelectorAll('.brochure__img').forEach(move => {
-        let moving_value = move.getAttribute('data-value');
-        let x = (e.clientX * moving_value) / 250;
-        let y = (e.clientY * moving_value) / 250;
-        move.style.transform = `translateX(${x}px) translateY(${y}px)`
-    })
-}
-document.addEventListener('mousemove', brochureParallax)
+// const brochureParallax = (e) => {
+//     document.querySelectorAll('.brochure__img').forEach(move => {
+//         let moving_value = move.getAttribute('data-value');
+//         let x = (e.clientX * moving_value) / 250;
+//         let y = (e.clientY * moving_value) / 250;
+//         move.style.transform = `translateX(${x}px) translateY(${y}px)`
+//     })
+// }
+// document.addEventListener('mousemove', brochureParallax)
 // !parallax on mousemove brochure end 
 
 
