@@ -103,7 +103,7 @@ ul{
         z-index: -1;
         pointer-events: none;
     }
-}
+} 
 .title{
     font-weight: 600;
     font-size: 72px;
@@ -111,6 +111,13 @@ ul{
     text-align: left;
     color: inherit;
     margin-bottom: 30px;
+    span{
+        background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
 }
 .subtitle{
     font-weight: 500;

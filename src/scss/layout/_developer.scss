@@ -1,11 +1,99 @@
 .developer{
     &__title{
-        span{
+        margin-bottom: 80px;
+    }
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        gap: 56px;
+        &:not(:last-of-type){
+            margin-bottom: 80px; 
+        }
+        &_reverse{
+            flex-direction: row-reverse;
+            .developer__item{
+                &-title{
+                    text-align: left;
+                }
+                &-p{
+                    text-align: left;
+                }
+                &-subtitle{     
+                    text-align: left;
+                }
+                &-sub{
+                    align-items: flex-start;
+                }
+            }
+        }
+        &-img{ 
+            width: 460px;
+            min-width: 460px;
+            border-radius: 20px;
+            overflow: hidden;
+            line-height: 0;
+            img{
+                width: 100%;
+            }
+        }
+        &-content{
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+        }
+        &-title{
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: right;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        &-p{
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 177%;
+            margin-bottom: 70px;
+            text-align: right;
+            color: #fff;
+        }
+        &-subtitle{
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 177%;
+            margin-bottom: 20px;
+            text-align: right;
+            color: #fff;            
+        }
+        &-grid{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0 28px;
+        }
+        &-sub{
+            width: calc(50% - 14px);
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &-num{
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 96.5%;
+            margin-bottom: 5px;
             background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+        }
+        &-label{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 96.5%;
+            color: #fff;
         }
     }
 }

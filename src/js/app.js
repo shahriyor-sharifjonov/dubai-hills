@@ -169,6 +169,28 @@ links.forEach(el => {
 
 
 
+// !disable header on scroll down start
+let scrollBefore = 0;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', (e) => {
+    const scrolled = window.scrollY;
+    if(scrollBefore > scrolled){
+        if(header.classList.contains('hide')){
+            header.classList.remove('hide')
+        }
+        scrollBefore = scrolled;
+    }else{
+        scrollBefore = scrolled;
+        if(!header.classList.contains('hide')){
+            header.classList.add('hide')
+        }
+    }
+})
+// !disable header on scroll down end
+
+
+
+
 // !tabs start
 const tabBtns = document.querySelectorAll('.floor__tab-item');
 const tabContents = document.querySelectorAll('.floor__content');
@@ -308,8 +330,6 @@ new Swiper('.floor__swiper', {
     noSwipingSelector: 'button',
     slideToClickedSlide: false,
     focusableElements: 'button',
-    rewind: true,
-    loop: false,
     createElements: true,
     watchSlidesProgress: true,
     speed: 600,
@@ -442,6 +462,29 @@ gsap.utils.toArray(".header").forEach(header => {
                     li.classList.remove('active')
                 })
                 document.getElementById('locationLink').classList.add('active')
+            }
+        }
+    })
+})
+
+gsap.utils.toArray(".header").forEach(header => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".developer",
+            start: "top 60px",
+            end: "bottom bottom",
+            markers: false,
+            onEnter: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('developerLink').classList.add('active')
+            },
+            onLeaveBack: () => {
+                document.querySelectorAll('.header__li').forEach(li => {
+                    li.classList.remove('active')
+                })
+                document.getElementById('communityLink').classList.add('active')
             }
         }
     })

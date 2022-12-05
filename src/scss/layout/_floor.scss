@@ -6,7 +6,7 @@
         line-height: 63px;
         text-align: center;
         color: #000000;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
     &__content{
         display: none;
@@ -54,7 +54,12 @@
                         transition: 300ms ease-out;
                         stroke: #000;
                     }
-                }                        
+                } 
+                &.swiper-button-disabled{
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
             }
             &-next{
                 pointer-events: all;
@@ -74,7 +79,12 @@
                         transition: 300ms ease-out;
                         stroke: #000;
                     }
-                }                            
+                } 
+                &.swiper-button-disabled{
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
             }
         }
     }

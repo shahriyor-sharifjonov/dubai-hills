@@ -17,6 +17,11 @@
         visibility: visible;
         transform: translateX(-50%) translateY(0);
     }
+    &.hide{
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateX(-50%) translateY(-20px) !important;
+    }
     &.white{
         background: #fff;
         color: #1D1C1C;
