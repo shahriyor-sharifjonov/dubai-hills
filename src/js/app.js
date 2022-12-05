@@ -76,9 +76,7 @@ const outLoader = (instance) => {
                 delay: 0.8,
                 ease: "expo.easeInOut"
             })
-        } else {
-            preloaderText.innerHTML = `${realPercentage}%`;
-        }
+        } 
     }
 }
 // !preloader end
