@@ -20,7 +20,6 @@ window.onbeforeunload = function () {
 
 
 // !preloader start
-const images = gsap.utils.toArray("img");
 let preloaderText = document.querySelector('.loader__text');
 let percentage = 0
 const updateProgress = () => {
@@ -45,11 +44,9 @@ const updateProgress = () => {
         a()
         setTimeout(() => {
             if(percentage <= 100) {
-                if(Math.round((instance.progressedCount * 100) / images.length) === 100){
-                    percentage++
-                    outLoader()
-                    q()
-                }
+                percentage++
+                outLoader()
+                q()
             }
         }, 10);
     }
