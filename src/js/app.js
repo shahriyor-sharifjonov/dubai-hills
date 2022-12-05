@@ -63,7 +63,7 @@ const outLoader = () => {
         if(realPercentage === 100){
             document.scrollingElement.scrollTo(0, 0);
             gsap.to('.loader__text', .5, {
-                yPercent: -150,
+                yPercent: -150, 
                 opacity: 0,
                 ease: "expo.easeInOut"
             })
