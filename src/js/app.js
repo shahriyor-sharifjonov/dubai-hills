@@ -21,8 +21,8 @@ window.onbeforeunload = function () {
 
 
 // !preloader start
-const images = gsap.utils.toArray("img");
-let preloaderText = document.querySelector('.loader__text');
+const images = gsap.utils.toArray("img")
+let preloaderText = document.querySelector('.loader__text')
 let percentage = 0
 let realPercentage = 0
 const updateProgress = (instance) => {
@@ -57,8 +57,9 @@ const q = () => {
     }, 10);
 }
 q()
-const outLoader = (instance) => {
+const outLoader = () => {
     if(percentage === 100){
+        console.log(`percentage: 100%; realPercentage: ${realPercentage}%`);
         if(realPercentage === 100){
             document.scrollingElement.scrollTo(0, 0);
             setTimeout(() => {
@@ -75,7 +76,11 @@ const outLoader = (instance) => {
                 delay: 0.8,
                 ease: "expo.easeInOut"
             })
-        } 
+        } else {
+            setTimeout(() => {
+                outLoader()
+            }, 100)
+        }
     }
 }
 // !preloader end
