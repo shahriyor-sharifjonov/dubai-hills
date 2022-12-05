@@ -46,7 +46,6 @@ const a = () => {
         preloaderText.innerHTML = 'Привет';
     }
 }
-a()
 const q = () => {
     a()
     setTimeout(() => {
