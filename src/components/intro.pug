@@ -1,5 +1,7 @@
 mixin intro()
-    section.section.intro.afterWhite#intro(style="background: url('img/intro.png') center / cover no-repeat;")
+    section.section.intro.afterWhite#intro  
+        .intro__img 
+            img(src="@img/intro.png", alt="" draggable="false")
         .intro__body.section__body.container 
             h1.intro__title ACACIA
             p.intro__p Astounding apartment complex at Dubai Hills Estate
