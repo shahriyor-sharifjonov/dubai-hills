@@ -77,7 +77,7 @@ const outLoader = (instance) => {
                 ease: "expo.easeInOut"
             })
         } else {
-            preloaderText.innerHTML = `${Math.round((instance.progressedCount * 100) / images.length)}%`;
+            preloaderText.innerHTML = `${realPercentage}%`;
         }
     }
 }
