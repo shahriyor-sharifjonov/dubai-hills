@@ -815,6 +815,11 @@ ul {
   transition: 300ms ease-out;
 }
 
+.footer {
+  padding-top: 230px;
+  padding-bottom: 30px;
+}
+
 .intro {
   min-height: 100vh;
   display: -webkit-box;
@@ -2240,6 +2245,67 @@ ul {
 .consultation__title {
   max-width: 890px;
   margin-bottom: 80px;
+}
+
+.consultation__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 56px;
+}
+
+.consultation__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.consultation__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px;
+}
+
+.consultation__item-svg {
+  min-width: 80px;
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.consultation__item-p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
 }
 
 .form {

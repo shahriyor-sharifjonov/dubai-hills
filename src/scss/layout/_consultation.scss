@@ -3,4 +3,37 @@
         max-width: 890px;
         margin-bottom: 80px;
     }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 56px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        &-svg{
+            min-width: 80px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        &-p{
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+    }
 }
