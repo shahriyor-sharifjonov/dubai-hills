@@ -714,4 +714,4 @@ gsap.utils.toArray(".community__header").forEach(el => {
 })
 // !gsap animations end 
 
-setTimeout(() => imagesLoaded(images).on("progress", updateProgress).on("always", outLoader), 1000)
+setTimeout(() => imagesLoaded(images).on("progress", updateProgress).on("progress", outLoader).on("always", outLoader), 1000)
