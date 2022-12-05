@@ -58,7 +58,7 @@ const q = () => {
     }, 10);
 }
 q()
-const outLoader = () => {
+const outLoader = (instance) => {
     if(percentage === 100){
         if(realPercentage === 100){
             document.scrollingElement.scrollTo(0, 0);
