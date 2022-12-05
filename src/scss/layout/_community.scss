@@ -57,7 +57,7 @@
         cursor: pointer;
         img{
             transition: 500ms ease-in-out;
-            will-change: transform;
+            border-radius: 20px;
         }
         &:hover{
             img{

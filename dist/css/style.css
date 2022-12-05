@@ -2184,7 +2184,7 @@ ul {
   -webkit-transition: 500ms ease-in-out;
   -o-transition: 500ms ease-in-out;
   transition: 500ms ease-in-out;
-  will-change: transform;
+  border-radius: 20px;
 }
 
 .community__item:hover img {
