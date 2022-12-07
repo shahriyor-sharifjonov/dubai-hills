@@ -24,10 +24,6 @@ window.onbeforeunload = function () {
 const images = gsap.utils.toArray("img")
 let preloaderText = document.querySelector('.loader__text')
 let percentage = 0
-let realPercentage = 0
-const updateProgress = (instance) => {
-    realPercentage = Math.round((instance.progressedCount * 100) / images.length)
-}
 
 const a = () => {
     if(percentage <= 20){
@@ -59,24 +55,18 @@ const q = () => {
 q()
 const outLoader = () => {
     if(percentage === 100){
-        console.log(`percentage: 100%; realPercentage: ${realPercentage}%`);
-        if(realPercentage === 100){
-            document.scrollingElement.scrollTo(0, 0);
-            gsap.to('.loader__text', .5, {
-                yPercent: -150, 
-                opacity: 0,
-                ease: "expo.easeInOut"
-            })
-            gsap.to('.loader', 1, {
-                opacity: 0,
-                display: "none",
-                delay: 0.8,
-                ease: "expo.easeInOut"
-            })
-        } else {
-            console.log('else');
-            outLoader()
-        }
+        document.scrollingElement.scrollTo(0, 0);
+        gsap.to('.loader__text', .5, {
+            yPercent: -150, 
+            opacity: 0,
+            ease: "expo.easeInOut"
+        })
+        gsap.to('.loader', 1, {
+            opacity: 0,
+            display: "none",
+            delay: 0.8,
+            ease: "expo.easeInOut"
+        })
     }
 }
 // !preloader end
@@ -711,5 +701,3 @@ gsap.utils.toArray(".community__header").forEach(el => {
         }, 'start')
 })
 // !gsap animations end 
-
-setTimeout(() => imagesLoaded(images).on("progress", updateProgress).on("progress", outLoader).on("always", outLoader), 1000)
