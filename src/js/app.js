@@ -10,67 +10,72 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-
 // !onload scroll to top start
-document.scrollingElement.scrollTo(0, 0);
-document.body.style.overflowY = "hidden"
-window.onbeforeunload = function () {
+const scroll = () => {
     document.scrollingElement.scrollTo(0, 0);
-    window.scrollTo(0, 0);
+    document.body.style.overflowY = "hidden"
+    window.onbeforeunload = function () {
+        document.scrollingElement.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+    }
 }
+scroll()
 // !onload scroll to top end
 
 
 
 // !preloader start
-let preloaderText = document.querySelector('.loader__text')
-let percentage = 0
-
-const a = () => {
-    if(percentage <= 20){
-        preloaderText.innerHTML = 'يا'
-    }
-    if(percentage > 20 && percentage <= 40){
-        preloaderText.innerHTML = 'Hello';
-    }
-    if(percentage > 40 && percentage <= 60){
-        preloaderText.innerHTML = '여기요';
-    }
-    if(percentage > 60 && percentage <= 80){
-        preloaderText.innerHTML = 'Hé';
-    }
-    if(percentage > 80 && percentage <= 100){
-        preloaderText.innerHTML = 'Привет';
-    }
-}
-const q = () => {
-    a()
-    setTimeout(() => {
-        if(percentage <= 100) {
-            percentage++
-            outLoader()
-            q()
+const preloader = () => {
+    let preloaderText = document.querySelector('.loader__text')
+    let percentage = 0
+    
+    const a = () => {
+        if(percentage <= 20){
+            preloaderText.innerHTML = 'يا'
         }
-    }, 10);
-}
-q()
-const outLoader = () => {
-    if(percentage === 100){
-        document.scrollingElement.scrollTo(0, 0);
-        gsap.to('.loader__text', .5, {
-            yPercent: -150, 
-            opacity: 0,
-            ease: "expo.easeInOut"
-        })
-        gsap.to('.loader', 1, {
-            opacity: 0,
-            display: "none",
-            delay: 0.8,
-            ease: "expo.easeInOut"
-        })
-        document.body.style.overflowY = "visible"
+        if(percentage > 20 && percentage <= 40){
+            preloaderText.innerHTML = 'Hello';
+        }
+        if(percentage > 40 && percentage <= 60){
+            preloaderText.innerHTML = '여기요';
+        }
+        if(percentage > 60 && percentage <= 80){
+            preloaderText.innerHTML = 'Hé';
+        }
+        if(percentage > 80 && percentage <= 100){
+            preloaderText.innerHTML = 'Привет';
+        }
+    }
+    const q = () => {
+        a()
+        setTimeout(() => {
+            if(percentage <= 100) {
+                percentage++
+                outLoader()
+                q()
+            }
+        }, 10);
+    }
+    q()
+    const outLoader = () => {
+        if(percentage === 100){
+            document.scrollingElement.scrollTo(0, 0);
+            gsap.to('.loader__text', .5, {
+                yPercent: -150, 
+                opacity: 0,
+                ease: "expo.easeInOut"
+            })
+            gsap.to('.loader', 1, {
+                opacity: 0,
+                display: "none",
+                delay: 0.8,
+                ease: "expo.easeInOut"
+            })
+            document.body.style.overflowY = "visible"
+        }
     }
 }
+preloader()
 // !preloader end
 
 
@@ -84,6 +89,20 @@ SmoothScroll({
 	touchpadSupport: true 
 })
 // !smooth scroll end
+
+
+
+// !ripple animation start
+document.querySelectorAll('[anim="ripple"]').forEach(el => {
+    el.addEventListener("click", function (e) {
+        e = e.touches ? e.touches[0] : e;
+        var r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
+        el.style.cssText = "--s: 0; --o: 1;";
+        el.offsetTop;
+        el.style.cssText = "--t: 1; --o: 0; --d: ".concat(d, "; --x:").concat(e.clientX - r.left, "; --y:").concat(e.clientY - r.top, ";");
+    });
+})
+// !ripple animation end
 
 
 
@@ -192,514 +211,527 @@ window.addEventListener('scroll', (e) => {
 
 
 
-
 // !tabs start
-const tabBtns = document.querySelectorAll('.floor__tab-item');
-const tabContents = document.querySelectorAll('.floor__content');
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const target = btn.getAttribute('data-target');
-        const el = document.querySelector(target)
-        tabBtns.forEach(btn => {
-            btn.classList.remove('active')
+const tabs = () => {
+    const tabBtns = document.querySelectorAll('.floor__tab-item');
+    const tabContents = document.querySelectorAll('.floor__content');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = btn.getAttribute('data-target');
+            const el = document.querySelector(target)
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active')
+            })
+            e.target.classList.add('active')
+            tabContents.forEach(content => {
+                content.classList.remove('active')
+            })
+            el.classList.add('active')
         })
-        e.target.classList.add('active')
-        tabContents.forEach(content => {
-            content.classList.remove('active')
-        })
-        el.classList.add('active')
     })
-})
+}
+tabs()
 // !tabs end
 
 
+
 // !location start
-const locationTabs = document.querySelectorAll('.location__tab-item');
-const locationMaps = document.querySelectorAll('.location__map');
-locationTabs.forEach(el => {
-    el.addEventListener('click', () => {
-        locationTabs.forEach(tab => {
-            tab.classList.remove('active')
+const location = () => {
+    const locationTabs = document.querySelectorAll('.location__tab-item');
+    const locationMaps = document.querySelectorAll('.location__map');
+    locationTabs.forEach(el => {
+        el.addEventListener('click', () => {
+            locationTabs.forEach(tab => {
+                tab.classList.remove('active')
+            })
+            el.classList.add('active')
+            locationMaps.forEach(map => {
+                map.classList.remove('active')
+            })
+            const target = el.getAttribute('data-target');
+            document.querySelector(target).classList.add('active')
         })
-        el.classList.add('active')
-        locationMaps.forEach(map => {
-            map.classList.remove('active')
-        })
-        const target = el.getAttribute('data-target');
-        document.querySelector(target).classList.add('active')
     })
-})
-const mapTabs = document.querySelectorAll('.location__map-tab-item');
-const mapMaps = document.querySelectorAll('.location__map-item');
-mapTabs.forEach(el => {
-    el.addEventListener('click', () => {
-        mapTabs.forEach(tab => {
-            tab.classList.remove('active')
+    const mapTabs = document.querySelectorAll('.location__map-tab-item');
+    const mapMaps = document.querySelectorAll('.location__map-item');
+    mapTabs.forEach(el => {
+        el.addEventListener('click', () => {
+            mapTabs.forEach(tab => {
+                tab.classList.remove('active')
+            })
+            el.classList.add('active')
+            mapMaps.forEach(map => {
+                map.classList.remove('active')
+            })
+            const target = el.getAttribute('data-target');
+            document.querySelector(target).classList.add('active')
         })
-        el.classList.add('active')
-        mapMaps.forEach(map => {
-            map.classList.remove('active')
-        })
-        const target = el.getAttribute('data-target');
-        document.querySelector(target).classList.add('active')
     })
-})
+}
+location()
 // !location end
 
 
+
 // !sliders start 
-new Swiper('.features__swiper', {
-    modules: [Pagination, Navigation],
-    slidesPerView: 3,
-    spaceBetween: 80,
-    initialSlide: 1,
-    centeredSlides: true,
-    loop: true,
-    speed: 500,
-    navigation: {
-        nextEl: '.features__next',
-        prevEl: '.features__prev',
-    },
-    pagination: {
-        el: ".features__pagination",
-        clickable: true,
-    },
-})
-
-new Swiper('.ext__sw', {
-    modules: [Pagination, Navigation, EffectCreative],
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 600,
-    effect: "creative",
-    creativeEffect: {
-        prev: {
-            shadow: true,
-            translate: ["-100%", 0, -110],
-            opacity: 0,
+const sliders = () => {
+    new Swiper('.features__swiper', {
+        modules: [Pagination, Navigation],
+        slidesPerView: 3,
+        spaceBetween: 80,
+        initialSlide: 1,
+        centeredSlides: true,
+        loop: true,
+        speed: 500,
+        navigation: {
+            nextEl: '.features__next',
+            prevEl: '.features__prev',
         },
-        next: {
-            translate: ["200%", 0, 0],
+        pagination: {
+            el: ".features__pagination",
+            clickable: true,
         },
-    },
-    navigation: {
-        nextEl: '.ext__next',
-        prevEl: '.ext__prev',
-    },
-    pagination: {
-        el: ".ext-p",
-        clickable: true,
-    },
-})
-
-new Swiper('.interior__swiper', {
-    modules: [Pagination, Navigation, EffectCreative],
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 600,
-    effect: "creative",
-    creativeEffect: {
-        prev: {
-            shadow: true,
-            translate: ["-100%", 0, -110],
-            opacity: 0,
+    })
+    
+    new Swiper('.ext__sw', {
+        modules: [Pagination, Navigation, EffectCreative],
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 600,
+        effect: "creative",
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: ["-100%", 0, -110],
+                opacity: 0,
+            },
+            next: {
+                translate: ["200%", 0, 0],
+            },
         },
-        next: {
-            translate: ["200%", 0, 0],
+        navigation: {
+            nextEl: '.ext__next',
+            prevEl: '.ext__prev',
         },
-    },
-    navigation: {
-        nextEl: '.interior__next',
-        prevEl: '.interior__prev',
-    },
-    pagination: {
-        el: ".interior__pagination",
-        clickable: true,
-    },
-})
-
-
-new Swiper('.floor__swiper', {
-    modules: [Navigation, EffectFade],
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    createElements: true,
-    preventClicks: true,
-    preventClicksPropagation: true,
-    noSwiping: true,
-    noSwipingSelector: 'button',
-    slideToClickedSlide: false,
-    focusableElements: 'button',
-    createElements: true,
-    watchSlidesProgress: true,
-    speed: 600,
-    effect: "fade",
-    navigation: {
-        nextEl: '.floor__next',
-        prevEl: '.floor__prev',
-    },
-})
+        pagination: {
+            el: ".ext-p",
+            clickable: true,
+        },
+    })
+    
+    new Swiper('.interior__swiper', {
+        modules: [Pagination, Navigation, EffectCreative],
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 600,
+        effect: "creative",
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: ["-100%", 0, -110],
+                opacity: 0,
+            },
+            next: {
+                translate: ["200%", 0, 0],
+            },
+        },
+        navigation: {
+            nextEl: '.interior__next',
+            prevEl: '.interior__prev',
+        },
+        pagination: {
+            el: ".interior__pagination",
+            clickable: true,
+        },
+    })
+    
+    
+    new Swiper('.floor__swiper', {
+        modules: [Navigation, EffectFade],
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        createElements: true,
+        preventClicks: true,
+        preventClicksPropagation: true,
+        noSwiping: true,
+        noSwipingSelector: 'button',
+        slideToClickedSlide: false,
+        focusableElements: 'button',
+        createElements: true,
+        watchSlidesProgress: true,
+        speed: 600,
+        effect: "fade",
+        navigation: {
+            nextEl: '.floor__next',
+            prevEl: '.floor__prev',
+        },
+    })
+}
+sliders()
 // !sliders end 
 
 
 
 // !gsap animations start
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: '.intro',
-            start: "top bottom",
-            end: "bottom 150px",
-            scrub: 2,
-            markers: false,
-            onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
-            onLeave: () => {header.classList.add('show');header.classList.add('white');},
-            onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
-            onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
-        },
-        defaults: {ease: 'none'}
-    });
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".floor",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-            onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".floor",
-            start: "top 60px",
-            end: "bottom bottom",
-            onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-            onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".location",
-            start: "527px top",
-            end: "bottom bottom",
-            onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
-            onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".exterior",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('exteriorLink').classList.add('active')
-            },
-            onLeaveBack: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('aboutLink').classList.add('active')
-            }
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".location",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('locationLink').classList.add('active')
-            },
-            onLeaveBack: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('interiorLink').classList.add('active')
-            }
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".community",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('communityLink').classList.add('active')
-            },
-            onLeaveBack: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('locationLink').classList.add('active')
-            }
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".developer",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('developerLink').classList.add('active')
-            },
-            onLeaveBack: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('communityLink').classList.add('active')
-            }
-        }
-    })
-})
-
-gsap.utils.toArray(".header").forEach(header => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".interior",
-            start: "top 60px",
-            end: "bottom bottom",
-            markers: false,
-            onEnter: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('interiorLink').classList.add('active')
-            },
-            onLeaveBack: () => {
-                document.querySelectorAll('.header__li').forEach(li => {
-                    li.classList.remove('active')
-                })
-                document.getElementById('exteriorLink').classList.add('active')
-            }
-        }
-    })
-})
-
-gsap.utils.toArray(".section__body").forEach(section => {
-    const tl = gsap.timeline({
+const animations = () => {
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
             scrollTrigger: {
-                trigger: section,
-                start: "top 70%",
-                end: "top 30%", 
-                scrub: 2, 
+                trigger: '.intro',
+                start: "top bottom",
+                end: "bottom 150px",
+                scrub: 2,
                 markers: false,
-            }, 
-            defaults: {ease: "none"} 
+                onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
+                onLeave: () => {header.classList.add('show');header.classList.add('white');},
+                onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
+                onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
+            },
+            defaults: {ease: 'none'}
         });
-    tl
-        .add('start')
-        .from(section.querySelector(".section__title"), { 
-            x: -200,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-        .from(section.querySelector(".about__top"), { 
-            y: 100,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-        .from(section.querySelector(".exterior__title"), { 
-            y: 100,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-        .from(section.querySelector(".features__title"), { 
-            x: -100,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-        .from(section.querySelector(".location__title"), { 
-            y: 100,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-    const tl60 = gsap.timeline({
-        scrollTrigger: {
-            trigger: section,
-            start: "top 50%",
-            end: "top 10%", 
-            scrub: 2, 
-            markers: false,
-        }, 
-        defaults: {ease: "none"} 
-    });
-    tl60
-        .add('start')
-        .from(section.querySelector(".exterior__swiper"), { 
-            y: 100,
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-        .from(section.querySelector(".exterior__prev"), { 
-            x: -100,
-            opacity: 0,
-            ease: "expo.ease",
-            delay: .3,
-        }, 'start')
-        .from(section.querySelector(".exterior__next"), { 
-            x: 100,
-            opacity: 0,
-            ease: "expo.ease",
-            delay: .3,
-        }, 'start')
-    const tlGallery = gsap.timeline({
-        scrollTrigger: {
-            trigger: section,
-            start: "top 100%",
-            end: "bottom 0%", 
-            scrub: 4, 
-            markers: false,
-        }, 
-        defaults: {ease: "none"} 
-    });
-    tlGallery
-        .add('start')
-        .from(section.querySelector(".community__row_left"), {
-            x: 800,
-        }, 'start')
-        .from(section.querySelector(".community__row_right"), {
-            x: -800,
-        }, 'start')
-})
-
-gsap.utils.toArray(".about__bot").forEach(el => {
-    const tl = gsap.timeline({
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
             scrollTrigger: {
-                trigger: el,
-                start: "top 90%",
-                end: "top 30%", 
-                scrub: 2, 
+                trigger: ".floor",
+                start: "top 60px",
+                end: "bottom bottom",
+                markers: false,
+                onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".floor",
+                start: "top 60px",
+                end: "bottom bottom",
+                onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".location",
+                start: "527px top",
+                end: "bottom bottom",
+                onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
+                onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".exterior",
+                start: "top 60px",
+                end: "bottom bottom",
                 markers: false,
                 onEnter: () => {
-                    setTimeout(() => {
-                        charIndex === 0 ? type() : ''
-                    }, 1000);
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('exteriorLink').classList.add('active')
                 },
+                onLeaveBack: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('aboutLink').classList.add('active')
+                }
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".location",
+                start: "top 60px",
+                end: "bottom bottom",
+                markers: false,
+                onEnter: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('locationLink').classList.add('active')
+                },
+                onLeaveBack: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('interiorLink').classList.add('active')
+                }
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".community",
+                start: "top 60px",
+                end: "bottom bottom",
+                markers: false,
+                onEnter: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('communityLink').classList.add('active')
+                },
+                onLeaveBack: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('locationLink').classList.add('active')
+                }
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".developer",
+                start: "top 60px",
+                end: "bottom bottom",
+                markers: false,
+                onEnter: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('developerLink').classList.add('active')
+                },
+                onLeaveBack: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('communityLink').classList.add('active')
+                }
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".header").forEach(header => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".interior",
+                start: "top 60px",
+                end: "bottom bottom",
+                markers: false,
+                onEnter: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('interiorLink').classList.add('active')
+                },
+                onLeaveBack: () => {
+                    document.querySelectorAll('.header__li').forEach(li => {
+                        li.classList.remove('active')
+                    })
+                    document.getElementById('exteriorLink').classList.add('active')
+                }
+            }
+        })
+    })
+    
+    gsap.utils.toArray(".section__body").forEach(section => {
+        const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 70%",
+                    end: "top 30%", 
+                    scrub: 2, 
+                    markers: false,
+                }, 
+                defaults: {ease: "none"} 
+            });
+        tl
+            .add('start')
+            .from(section.querySelector(".section__title"), { 
+                x: -200,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+            .from(section.querySelector(".about__top"), { 
+                y: 100,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+            .from(section.querySelector(".exterior__title"), { 
+                y: 100,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+            .from(section.querySelector(".features__title"), { 
+                x: -100,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+            .from(section.querySelector(".location__title"), { 
+                y: 100,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+        const tl60 = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 50%",
+                end: "top 10%", 
+                scrub: 2, 
+                markers: false,
             }, 
             defaults: {ease: "none"} 
         });
-})
-
-gsap.utils.toArray(".features__body").forEach(el => {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: el,
-            start: "top 50%",
-            end: "bottom 40%", 
-            scrub: 2, 
-            markers: false,
-        }, 
-        defaults: {ease: "none"} 
+        tl60
+            .add('start')
+            .from(section.querySelector(".exterior__swiper"), { 
+                y: 100,
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+            .from(section.querySelector(".exterior__prev"), { 
+                x: -100,
+                opacity: 0,
+                ease: "expo.ease",
+                delay: .3,
+            }, 'start')
+            .from(section.querySelector(".exterior__next"), { 
+                x: 100,
+                opacity: 0,
+                ease: "expo.ease",
+                delay: .3,
+            }, 'start')
+        const tlGallery = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 100%",
+                end: "bottom 0%", 
+                scrub: 4, 
+                markers: false,
+            }, 
+            defaults: {ease: "none"} 
+        });
+        tlGallery
+            .add('start')
+            .from(section.querySelector(".community__row_left"), {
+                x: 800,
+            }, 'start')
+            .from(section.querySelector(".community__row_right"), {
+                x: -800,
+            }, 'start')
     })
-    tl.add('start')
-        .from(el.querySelector(".features__swiper"), {
-            opacity: 0
-        }, 'start')
-        .from(el.querySelector(".features__next"), { 
-            x: -1200,
-            opacity: 1,
-            ease: "expo.ease",
-        }, 'start')
-        .from(el.querySelector(".features__overlay"), { 
-            x: -1200,
-            opacity: 1,
-            ease: "expo.ease",
-        }, 'start')
-        .from(el.querySelector(".features__prev"), {
-            opacity: 0,
-            ease: "expo.ease",
-        }, 'start')
-    tl.add('mid')
-        .fromTo(el.querySelector(".features__overlay"), {
-            x: 0,
-            ease: "expo.ease",
-        }, {
-            x: 1200,
-            ease: "expo.ease",
-        }, 'mid')
-})
-
-gsap.utils.toArray(".details").forEach(el => {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "top 50%", 
-            scrub: 2, 
-            markers: false,
-        }, 
-        defaults: {ease: "none"} 
+    
+    gsap.utils.toArray(".about__bot").forEach(el => {
+        const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                    end: "top 30%", 
+                    scrub: 2, 
+                    markers: false,
+                    onEnter: () => {
+                        setTimeout(() => {
+                            charIndex === 0 ? type() : ''
+                        }, 1000);
+                    },
+                }, 
+                defaults: {ease: "none"} 
+            });
     })
-    tl.add('start')
-        .from(el.querySelector(".details__img"), .1, {
-            opacity: 0,
-            x: 200,
-            ease: "expo.ease",
-        }, 'start')
-        .from(el.querySelector(".details__content"), .1, {
-            opacity: 0,
-            x: -80,
-            delay: .1,
-            ease: "expo.ease",
-        }, 'start')
-})
-
-gsap.utils.toArray(".community__header").forEach(el => {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "top 50%", 
-            scrub: 2, 
-            markers: false,
-        }, 
-        defaults: {ease: "none"} 
+    
+    gsap.utils.toArray(".features__body").forEach(el => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: el,
+                start: "top 50%",
+                end: "bottom 40%", 
+                scrub: 2, 
+                markers: false,
+            }, 
+            defaults: {ease: "none"} 
+        })
+        tl.add('start')
+            .from(el.querySelector(".features__swiper"), {
+                opacity: 0
+            }, 'start')
+            .from(el.querySelector(".features__next"), { 
+                x: -1200,
+                opacity: 1,
+                ease: "expo.ease",
+            }, 'start')
+            .from(el.querySelector(".features__overlay"), { 
+                x: -1200,
+                opacity: 1,
+                ease: "expo.ease",
+            }, 'start')
+            .from(el.querySelector(".features__prev"), {
+                opacity: 0,
+                ease: "expo.ease",
+            }, 'start')
+        tl.add('mid')
+            .fromTo(el.querySelector(".features__overlay"), {
+                x: 0,
+                ease: "expo.ease",
+            }, {
+                x: 1200,
+                ease: "expo.ease",
+            }, 'mid')
     })
-    tl.add('start')
-        .from(document.querySelector(".community__header"), {
-            opacity: 0,
-            y: 80,
-            ease: "expo.ease",
-        }, 'start')
-})
+    
+    gsap.utils.toArray(".details").forEach(el => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                end: "top 50%", 
+                scrub: 2, 
+                markers: false,
+            }, 
+            defaults: {ease: "none"} 
+        })
+        tl.add('start')
+            .from(el.querySelector(".details__img"), .1, {
+                opacity: 0,
+                x: 200,
+                ease: "expo.ease",
+            }, 'start')
+            .from(el.querySelector(".details__content"), .1, {
+                opacity: 0,
+                x: -80,
+                delay: .1,
+                ease: "expo.ease",
+            }, 'start')
+    })
+    
+    gsap.utils.toArray(".community__header").forEach(el => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                end: "top 50%", 
+                scrub: 2, 
+                markers: false,
+            }, 
+            defaults: {ease: "none"} 
+        })
+        tl.add('start')
+            .from(document.querySelector(".community__header"), {
+                opacity: 0,
+                y: 80,
+                ease: "expo.ease",
+            }, 'start')
+    })
+}
+animations()
 // !gsap animations end 

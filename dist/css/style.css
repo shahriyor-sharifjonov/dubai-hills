@@ -603,9 +603,32 @@ ul {
   cursor: auto;
 }
 
-.btn:not([disabled=disabled]):active {
-  background: -o-linear-gradient(294.12deg, #FF7F1B -83.36%, #C98057 184.44%);
-  background: linear-gradient(155.88deg, #FF7F1B -83.36%, #C98057 184.44%);
+.btn:not([disabled=disabled]) {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:not([disabled=disabled])::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: var(--ripple-background, white);
+  border-radius: 50%;
+  pointer-events: none;
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  width: calc(var(--d) * 1px);
+  height: calc(var(--d) * 1px);
+  opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+  -webkit-transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+  -o-transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+  transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+  -webkit-transform: translate(-50%, -50%) scale(var(--s, 1));
+      -ms-transform: translate(-50%, -50%) scale(var(--s, 1));
+          transform: translate(-50%, -50%) scale(var(--s, 1));
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 
 @-webkit-keyframes blink {
@@ -996,6 +1019,7 @@ ul {
 
 .about {
   position: relative;
+  scroll-margin: 40px;
 }
 
 .about__top {
@@ -2207,6 +2231,10 @@ ul {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.developer__body {
+  scroll-margin: 100px;
 }
 
 .developer__title {
