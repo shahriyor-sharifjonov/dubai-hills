@@ -10,8 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
+
 // !onload scroll to top start
 document.scrollingElement.scrollTo(0, 0);
+document.body.style.overflowY = "hidden"
 window.onbeforeunload = function () {
     document.scrollingElement.scrollTo(0, 0);
     window.scrollTo(0, 0);
@@ -21,7 +23,6 @@ window.onbeforeunload = function () {
 
 
 // !preloader start
-const images = gsap.utils.toArray("img")
 let preloaderText = document.querySelector('.loader__text')
 let percentage = 0
 
@@ -67,6 +68,7 @@ const outLoader = () => {
             delay: 0.8,
             ease: "expo.easeInOut"
         })
+        document.body.style.overflowY = "visible"
     }
 }
 // !preloader end
