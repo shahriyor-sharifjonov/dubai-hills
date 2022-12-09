@@ -6,6 +6,7 @@
     -webkit-tap-highlight-color: transparent;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+
     // cursor: none;
     &::selection{
         background: #C7825B;
@@ -102,6 +103,7 @@ ul{
         left: -90px;
         z-index: -1;
         pointer-events: none;
+        user-select: none;
     }
 } 
 .title{

@@ -50,6 +50,7 @@
         pointer-events: none;
         will-change: transform;
         right: -255px;
+        user-select: none;
         transition: 300ms cubic-bezier(0.235, 0.615, 0.185, 0.995);
         z-index: -1;
         img{

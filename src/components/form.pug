@@ -9,7 +9,7 @@ mixin form1()
                     </svg>
                 | Your name
             .form__item-input
-                input(type="text" name="name" id="name1" placeholder="" autocomplete="off")
+                input(type="text" name="name" id="name1" placeholder="Your name" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ mixin form1()
                     </svg>
                 | Your email 
             .form__item-input
-                input(type="email" id="email1" name="email" placeholder="" autocomplete="off")
+                input(type="email" id="email1" name="email" placeholder="yourmail@example.com" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@ mixin form1()
                     </svg>
                 | Your number 
             .form__item-input
-                input(type="tel" id="phone1" name="phone" placeholder="" autocomplete="off")
+                input(type="tel" id="phone1" name="phone" placeholder="+998 99 999 99 99" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@ mixin form1()
                     </svg>
 
 mixin form2()
-    .form.consultation__form  
+    form(action="#" method="post").form-validate.form.consultation__form  
         .form__title Request a call
         .form__item 
             label(for="name2").form__item-label 
@@ -92,7 +92,7 @@ mixin form2()
                     </svg>
                 | Your name
             .form__item-input
-                input(type="text" name="name" id="name2" placeholder="" autocomplete="off")
+                input(type="text" name="name" id="name2" placeholder="Your name" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@ mixin form2()
                     </svg>
                 | Your email 
             .form__item-input
-                input(type="email" id="email2" name="email" placeholder="" autocomplete="off")
+                input(type="email" id="email2" name="email" placeholder="yourmail@example.com" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +145,7 @@ mixin form2()
                     </svg>
                 | Your number 
             .form__item-input
-                input(type="tel" id="phone2" name="phone" placeholder="" autocomplete="off")
+                input(type="tel" id="phone2" name="phone" placeholder="+998 99 999 99 99" autocomplete="off")
                 .form__item-input-border 
                 .form__item-input-correct 
                     <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">

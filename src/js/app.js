@@ -190,7 +190,7 @@ links.forEach(el => {
 
 
 
-// !disable header on scroll down start
+// !disable header on scroll down start 
 let scrollBefore = 0;
 const header = document.querySelector('.header');
 window.addEventListener('scroll', (e) => {
@@ -207,7 +207,49 @@ window.addEventListener('scroll', (e) => {
         }
     }
 })
-// !disable header on scroll down end
+// !disable header on scroll down end 
+
+
+
+// !validations start
+const validations = () => {
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    const forms = document.querySelectorAll('.form-validate');
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll('input');
+        const button = form.querySelector('button[type="submit"]');
+        let filledInputs = []
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                filledInputs = []
+                if (input.name === 'email'){
+                    if(validateEmail(input.value)){
+                        input.parentElement.classList.remove('form__item-input_error')
+                        input.parentElement.classList.add('form__item-input_correct')
+                    } else {
+                        input.parentElement.classList.add('form__item-input_error')
+                        input.parentElement.classList.remove('form__item-input_correct')
+                    }
+                }
+                inputs.forEach(input => {
+                    if (input.value.length !== 0) {
+                        filledInputs.push(input)
+                    }
+                })
+                if(filledInputs.length === inputs.length && !form.querySelector('.form__item-input_error')) {
+                    button.removeAttribute('disabled')
+                } else {
+                    button.setAttribute('disabled', 'disabled')
+                }
+            })
+        })
+    })
+}
+validations()
+// !validations end
 
 
 
@@ -280,6 +322,7 @@ const sliders = () => {
         slidesPerView: 3,
         spaceBetween: 80,
         initialSlide: 1,
+        grabCursor: true,
         centeredSlides: true,
         loop: true,
         speed: 500,
@@ -299,6 +342,7 @@ const sliders = () => {
         spaceBetween: 0,
         loop: true,
         speed: 600,
+        grabCursor: true,
         effect: "creative",
         creativeEffect: {
             prev: {
@@ -326,6 +370,7 @@ const sliders = () => {
         spaceBetween: 0,
         loop: true,
         speed: 600,
+        grabCursor: true,
         effect: "creative",
         creativeEffect: {
             prev: {
