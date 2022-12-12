@@ -93,15 +93,17 @@ SmoothScroll({
 
 
 // !ripple animation start
-document.querySelectorAll('[anim="ripple"]').forEach(el => {
-    el.addEventListener("click", function (e) {
-        e = e.touches ? e.touches[0] : e;
-        var r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
-        el.style.cssText = "--s: 0; --o: 1;";
-        el.offsetTop;
-        el.style.cssText = "--t: 1; --o: 0; --d: ".concat(d, "; --x:").concat(e.clientX - r.left, "; --y:").concat(e.clientY - r.top, ";");
-    });
-})
+if(document.querySelectorAll('[anim="ripple"]')){
+    document.querySelectorAll('[anim="ripple"]').forEach(el => {
+        el.addEventListener("click", function (e) {
+            e = e.touches ? e.touches[0] : e;
+            var r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
+            el.style.cssText = "--s: 0; --o: 1;";
+            el.offsetTop;
+            el.style.cssText = "--t: 1; --o: 0; --d: ".concat(d, "; --x:").concat(e.clientX - r.left, "; --y:").concat(e.clientY - r.top, ";");
+        });
+    })
+}
 // !ripple animation end
 
 
@@ -177,36 +179,40 @@ function erase() {
 
 
 // !header links start
-const links = document.querySelectorAll('.header__li');
-links.forEach(el => {
-    el.addEventListener('click', () => {
-        links.forEach(link => {
-            link.classList.remove('active')
+if(document.querySelectorAll('.header__li')){
+    const links = document.querySelectorAll('.header__li');
+    links.forEach(el => {
+        el.addEventListener('click', () => {
+            links.forEach(link => {
+                link.classList.remove('active')
+            })
+            el.classList.add('active')
         })
-        el.classList.add('active')
     })
-})
+}
 // !header links end
 
 
 
 // !disable header on scroll down start 
-let scrollBefore = 0;
-const header = document.querySelector('.header');
-window.addEventListener('scroll', (e) => {
-    const scrolled = window.scrollY;
-    if(scrollBefore > scrolled){
-        if(header.classList.contains('hide')){
-            header.classList.remove('hide')
+if(document.querySelector('.header')){
+    let scrollBefore = 0;
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', (e) => {
+        const scrolled = window.scrollY;
+        if(scrollBefore > scrolled){
+            if(header.classList.contains('hide')){
+                header.classList.remove('hide')
+            }
+            scrollBefore = scrolled;
+        }else{
+            scrollBefore = scrolled;
+            if(!header.classList.contains('hide')){
+                header.classList.add('hide')
+            }
         }
-        scrollBefore = scrolled;
-    }else{
-        scrollBefore = scrolled;
-        if(!header.classList.contains('hide')){
-            header.classList.add('hide')
-        }
-    }
-})
+    })
+}
 // !disable header on scroll down end 
 
 
@@ -217,36 +223,38 @@ const validations = () => {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
-    const forms = document.querySelectorAll('.form-validate');
-    forms.forEach(form => {
-        const inputs = form.querySelectorAll('input');
-        const button = form.querySelector('button[type="submit"]');
-        let filledInputs = []
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                filledInputs = []
-                if (input.name === 'email'){
-                    if(validateEmail(input.value)){
-                        input.parentElement.classList.remove('form__item-input_error')
-                        input.parentElement.classList.add('form__item-input_correct')
-                    } else {
-                        input.parentElement.classList.add('form__item-input_error')
-                        input.parentElement.classList.remove('form__item-input_correct')
+    if(document.querySelectorAll('.form-validate')){
+        const forms = document.querySelectorAll('.form-validate');
+        forms.forEach(form => {
+            const inputs = form.querySelectorAll('input');
+            const button = form.querySelector('button[type="submit"]');
+            let filledInputs = []
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    filledInputs = []
+                    if (input.name === 'email'){
+                        if(validateEmail(input.value)){
+                            input.parentElement.classList.remove('form__item-input_error')
+                            input.parentElement.classList.add('form__item-input_correct')
+                        } else {
+                            input.parentElement.classList.add('form__item-input_error')
+                            input.parentElement.classList.remove('form__item-input_correct')
+                        }
                     }
-                }
-                inputs.forEach(input => {
-                    if (input.value.length !== 0) {
-                        filledInputs.push(input)
+                    inputs.forEach(input => {
+                        if (input.value.length !== 0) {
+                            filledInputs.push(input)
+                        }
+                    })
+                    if(filledInputs.length === inputs.length && !form.querySelector('.form__item-input_error')) {
+                        button.removeAttribute('disabled')
+                    } else {
+                        button.setAttribute('disabled', 'disabled')
                     }
                 })
-                if(filledInputs.length === inputs.length && !form.querySelector('.form__item-input_error')) {
-                    button.removeAttribute('disabled')
-                } else {
-                    button.setAttribute('disabled', 'disabled')
-                }
             })
         })
-    })
+    }
 }
 validations()
 // !validations end
@@ -255,22 +263,24 @@ validations()
 
 // !tabs start
 const tabs = () => {
-    const tabBtns = document.querySelectorAll('.floor__tab-item');
-    const tabContents = document.querySelectorAll('.floor__content');
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const target = btn.getAttribute('data-target');
-            const el = document.querySelector(target)
-            tabBtns.forEach(btn => {
-                btn.classList.remove('active')
+    if(document.querySelectorAll('.floor__tab-item')){
+        const tabBtns = document.querySelectorAll('.floor__tab-item');
+        const tabContents = document.querySelectorAll('.floor__content');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const target = btn.getAttribute('data-target');
+                const el = document.querySelector(target)
+                tabBtns.forEach(btn => {
+                    btn.classList.remove('active')
+                })
+                e.target.classList.add('active')
+                tabContents.forEach(content => {
+                    content.classList.remove('active')
+                })
+                el.classList.add('active')
             })
-            e.target.classList.add('active')
-            tabContents.forEach(content => {
-                content.classList.remove('active')
-            })
-            el.classList.add('active')
         })
-    })
+    }
 }
 tabs()
 // !tabs end
@@ -279,36 +289,38 @@ tabs()
 
 // !location start
 const location = () => {
-    const locationTabs = document.querySelectorAll('.location__tab-item');
-    const locationMaps = document.querySelectorAll('.location__map');
-    locationTabs.forEach(el => {
-        el.addEventListener('click', () => {
-            locationTabs.forEach(tab => {
-                tab.classList.remove('active')
+    if(document.querySelectorAll('.location__tab-item')){
+        const locationTabs = document.querySelectorAll('.location__tab-item');
+        const locationMaps = document.querySelectorAll('.location__map');
+        locationTabs.forEach(el => {
+            el.addEventListener('click', () => {
+                locationTabs.forEach(tab => {
+                    tab.classList.remove('active')
+                })
+                el.classList.add('active')
+                locationMaps.forEach(map => {
+                    map.classList.remove('active')
+                })
+                const target = el.getAttribute('data-target');
+                document.querySelector(target).classList.add('active')
             })
-            el.classList.add('active')
-            locationMaps.forEach(map => {
-                map.classList.remove('active')
-            })
-            const target = el.getAttribute('data-target');
-            document.querySelector(target).classList.add('active')
         })
-    })
-    const mapTabs = document.querySelectorAll('.location__map-tab-item');
-    const mapMaps = document.querySelectorAll('.location__map-item');
-    mapTabs.forEach(el => {
-        el.addEventListener('click', () => {
-            mapTabs.forEach(tab => {
-                tab.classList.remove('active')
+        const mapTabs = document.querySelectorAll('.location__map-tab-item');
+        const mapMaps = document.querySelectorAll('.location__map-item');
+        mapTabs.forEach(el => {
+            el.addEventListener('click', () => {
+                mapTabs.forEach(tab => {
+                    tab.classList.remove('active')
+                })
+                el.classList.add('active')
+                mapMaps.forEach(map => {
+                    map.classList.remove('active')
+                })
+                const target = el.getAttribute('data-target');
+                document.querySelector(target).classList.add('active')
             })
-            el.classList.add('active')
-            mapMaps.forEach(map => {
-                map.classList.remove('active')
-            })
-            const target = el.getAttribute('data-target');
-            document.querySelector(target).classList.add('active')
         })
-    })
+    }
 }
 location()
 // !location end
