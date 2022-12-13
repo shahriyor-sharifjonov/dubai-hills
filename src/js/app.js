@@ -8,7 +8,11 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
 
+let oneFourHeight = window.innerHeight / 1.4
 
+window.addEventListener('resize', () => {
+    oneFourHeight = window.innerHeight / 1.4
+})
 
 // !onload scroll to top start
 const scroll = () => {
@@ -330,7 +334,7 @@ location()
 const sliders = () => {
     new Swiper('.features__swiper', {
         modules: [Pagination, Navigation],
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 80,
         initialSlide: 1,
         grabCursor: true,
@@ -344,6 +348,15 @@ const sliders = () => {
         pagination: {
             el: ".features__pagination",
             clickable: true,
+        },
+        breakpoints: {
+            768: {
+              slidesPerView: 2,
+              centeredSlides: false,
+            },
+            992: {
+              slidesPerView: 3,
+            },
         },
     })
     
@@ -821,7 +834,7 @@ const animations = () => {
                 tl.add('start')
                 .to('.intro__img', {
                     height: "auto",
-                    top: (window.innerHeight / 1.4)
+                    top: oneFourHeight
                 }, 'start')  
                 .to('.intro__body', {
                     y: -200
@@ -829,9 +842,7 @@ const animations = () => {
             })
         }
     })
-    
-
-
 }
 animations()
 // !gsap animations end 
+

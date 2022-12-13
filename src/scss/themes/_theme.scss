@@ -95,6 +95,9 @@ ul{
     }
     &.gray{
         background: #343435;
+        @include media(992){
+            background: #1D1C1C;
+        }
     }
     &.white{
         background: #fff;
@@ -107,6 +110,7 @@ ul{
         padding-top: 45px;
         @include media(992){
             padding-top: 0;
+            min-height: 0;
         }
     }
     &__title{
@@ -151,6 +155,12 @@ ul{
     line-height: 59px;
     text-transform: capitalize;
     color: inherit;
+    @include media(576){
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+    }
     span{
         background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%), #FFFFFF;
         -webkit-background-clip: text;

@@ -1285,7 +1285,7 @@ ul {
   top: 0;
   left: 100%;
   background: #343435;
-  width: 100%;
+  width: 1000%;
   height: 100%;
   z-index: 1;
 }
@@ -1316,6 +1316,10 @@ ul {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+
+.features__slide-img {
+  display: none;
 }
 
 .features__slide-hr {
@@ -2843,6 +2847,10 @@ ul {
     padding-top: 40px;
   }
 
+  .header {
+    display: none;
+  }
+
   .about__label {
     margin-bottom: 0;
   }
@@ -2859,8 +2867,13 @@ ul {
 }
 
 @media (max-width: 992px) {
+  .section.gray {
+    background: #1D1C1C;
+  }
+
   .section__body {
     padding-top: 0;
+    min-height: 0;
   }
 
   .section__title {
@@ -2908,6 +2921,60 @@ ul {
     margin: 20px auto 0 auto;
     border-radius: 20px;
   }
+
+  .features__title {
+    margin-bottom: 40px;
+  }
+
+  .features__overlay {
+    background: -webkit-gradient(linear, right top, left top, from(#1D1C1C), color-stop(10%, rgba(52, 52, 53, 0)));
+    background: -o-linear-gradient(right, #1D1C1C 0%, rgba(52, 52, 53, 0) 10%);
+    background: linear-gradient(270deg, #1D1C1C 0%, rgba(52, 52, 53, 0) 10%);
+  }
+
+  .features__overlay::before {
+    background: #1D1C1C;
+  }
+}
+
+@media (max-width: 768px) {
+  .features__slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .features__slide-img {
+    display: block;
+    line-height: 0;
+    margin-bottom: 50px;
+  }
+
+  .features__slide-hr {
+    display: none;
+  }
+
+  .features__slide-num {
+    display: none;
+  }
+
+  .features__slide-title {
+    display: none;
+  }
+
+  .features__slide-p {
+    font-size: 16px;
+    line-height: 177%;
+    max-width: 340px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 576px) {
@@ -2921,6 +2988,13 @@ ul {
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
   }
 
   .intro__body {

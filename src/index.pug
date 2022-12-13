@@ -11,33 +11,32 @@ html(lang="en")
             p.loader__text يا
         .cursor  
         .wrapper 
-            //- include components/header 
-            //- +header 
+            include components/header 
+            +header 
             main.main 
                 include components/intro  
                 +intro 
                 include components/about   
                 +about   
-                .h100vh
-                //- include components/features   
-                //- +features   
-                //- include components/brochure   
-                //- +brochure   
-                //- include components/exterior   
-                //- +exterior   
-                //- +interior    
-                //- include components/floor   
-                //- +floor  
-                //- include components/location   
-                //- +location  
-                //- include components/community   
-                //- +community  
-                //- include components/developer   
-                //- +developer  
-                //- include components/consultation   
-                //- +consultation  
-            //- include components/footer 
-            //- +footer 
+                include components/features   
+                +features   
+                include components/brochure   
+                +brochure   
+                include components/exterior   
+                +exterior   
+                +interior    
+                include components/floor   
+                +floor  
+                include components/location   
+                +location  
+                include components/community   
+                +community   
+                include components/developer   
+                +developer  
+                include components/consultation   
+                +consultation  
+            include components/footer 
+            +footer 
         //- script(src="https://form.sales-inquiries.ae/static/form-dist.js")
         //- script(src="https://form.sales-inquiries.ae/static/events-ajax-dist.js") 
         script(src="js/app.min.js") 

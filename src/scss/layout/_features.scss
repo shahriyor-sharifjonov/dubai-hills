@@ -1,6 +1,9 @@
 .features{
     &__title{
         margin-bottom: 130px;
+        @include media(992){
+            margin-bottom: 40px;
+        }
     }
     &__slider{
         width: 100%;
@@ -15,15 +18,21 @@
         right: -45px;
         width: calc(100% + 90px);
         background: linear-gradient(270deg,#343435 0%,rgba(52,52,53,0) 10%);
+        @include media(992){
+            background: linear-gradient(270deg,#1D1C1C 0%,rgba(52,52,53,0) 10%);
+        }
         &::before{
             content: '';
             position: absolute;
             top: 0;
             left: 100%;
             background: #343435;
-            width: 100%;
+            width: 1000%;
             height: 100%;
             z-index: 1;
+            @include media(992){
+                background: #1D1C1C;
+            }
         }
     }
     &__swiper{
@@ -42,11 +51,24 @@
         padding-top: 30px;
         padding-left: 3px;
         padding-right: 3px;
+        @include media(768){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         &.swiper-slide-active{
             .features__slide-hr{
                 &::before{
                     transform: translateX(0);
                 }
+            }
+        }
+        &-img{
+            display: none;
+            @include media(768){
+                display: block;
+                line-height: 0;
+                margin-bottom: 50px;
             }
         }
         &-hr{
@@ -59,6 +81,9 @@
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             background: transparent;
+            @include media(768){
+                display: none;
+            }
             &::before{
                 content: '';
                 position: absolute;
@@ -81,19 +106,31 @@
             color: #FFFFFF;      
             margin-bottom: 53px;
             display: block;      
+            @include media(768){
+                display: none;
+            }
         }
         &-title{
             font-weight: 500;
             font-size: 26px;
             line-height: 177%;
             margin-bottom: 24px;
-            color: #FFFFFF;            
+            color: #FFFFFF;   
+            @include media(768){
+                display: none;
+            }         
         }
         &-p{
             font-weight: 200;
             font-size: 20px;
             line-height: 177%;
             color: #FFFFFF;
+            @include media(768){
+                font-size: 16px;
+                line-height: 177%;
+                max-width: 340px;
+                text-align: center;
+            }
         }
     }
     .swiper{

@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221213131555"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221213164746"/>
     <title>GULP </title>
   </head>
   <body> 
@@ -13,6 +13,18 @@
     </div>
     <div class="cursor"> </div>
     <div class="wrapper"> 
+            <header class="header container"> 
+              <nav class="header__nav"> 
+                <ul class="header__list"> 
+                  <li class="header__li active" id="aboutLink"><a class="header__link" href="#about">About </a></li>
+                  <li class="header__li" id="exteriorLink"><a class="header__link" href="#exterior">Exterior </a></li>
+                  <li class="header__li" id="interiorLink"> <a class="header__link" href="#interior">Interior </a></li>
+                  <li class="header__li" id="locationLink"> <a class="header__link" href="#location">Location </a></li>
+                  <li class="header__li" id="communityLink"> <a class="header__link" href="#community">Community </a></li>
+                  <li class="header__li" id="developerLink"> <a class="header__link" href="#developer">Developer </a></li>
+                </ul><a class="header__tel" href="#!">+971 56 <span>xxx-xx-xx</span></a>
+              </nav>
+            </header>
       <main class="main"> 
                 <section class="section intro afterWhite" id="intro"> 
                   <div class="intro__img"> <picture><source srcset="img/intro.webp" type="image/webp"><img src="img/intro.png" alt="" draggable="false"/></picture></div>
@@ -41,9 +53,704 @@
                   </div>
                   <div class="about__img about__img_lg"> <picture><source srcset="img/about.webp" type="image/webp"><img src="img/about.png" alt="" draggable="false"/></picture></div>
                 </section>
-        <div class="h100vh"></div>
+                <section class="section gray features" id="features">
+                  <div class="features__body section__body container">
+                    <h2 class="subtitle features__title">We focus on key <br><span>features</span> of comfort</h2>
+                    <div class="features__slider"> 
+                      <div class="swiper features__swiper"> 
+                        <div class="features__overlay"> </div>
+                        <div class="swiper-wrapper"> 
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">01</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-1.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Swimming pools</p>
+                            <p class="features__slide-p">Spacious swimming area with temperature-controlled water.</p>
+                          </div>
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">02</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-2.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Restaurants and cafes</p>
+                            <p class="features__slide-p">Welcoming and luxurious venues offer rich menus and impeccable comfort.</p>
+                          </div>
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">03</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-3.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Event space</p>
+                            <p class="features__slide-p">A multi-purpose hall for special occasions and social gatherings.</p>
+                          </div>
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">04</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-4.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Fitness centre</p>
+                            <p class="features__slide-p">Well-equipped gyms and many other facilities for residents’ wellness.</p>
+                          </div>
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">05</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-5.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Spa and sauna</p>
+                            <p class="features__slide-p">High-class service will provide you with quality self-care time.</p>
+                          </div>
+                          <div class="swiper-slide features__slide">
+                            <div class="features__slide-hr"> </div><span class="features__slide-num">06</span>
+                            <div class="features__slide-img"> <img src="img/features-icon-6.svg" alt="" draggable="false"/></div>
+                            <p class="features__slide-title">Kids’ play areas</p>
+                            <p class="features__slide-p">State-of-the-art fun-in-motion activities for families and children.</p>
+                          </div>
+                        </div>
+                        <div class="features__pagination swiper-pagination"></div>
+                      </div>
+                      <div class="features__navigation swiper-navigation"> 
+                        <div class="features__prev swiper-button-prev"><svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"/>
+</svg>
+                        </div>
+                        <div class="features__next swiper-button-next"><svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"/>
+</svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section brochure gray" id="brochure">
+                  <form class="brochure__body container section__body form-validate" action="#" method="post"> 
+                    <div class="section__title"> <picture><source srcset="img/brochure-title.webp" type="image/webp"><img src="img/brochure-title.png" alt="" draggable="false"/></picture></div>
+                                <div class="form brochure__form"> 
+                                  <div class="form__title">Download brochure<br>in one click </div>
+                                  <div class="form__item"> 
+                                    <label class="form__item-label" for="name1"> <span class="form__item-svg"><svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.16644 0.450201C7.70274 0.448252 6.28765 0.975338 5.1819 1.93435C4.07614 2.89335 3.35421 4.21967 3.14912 5.66893C2.94404 7.11818 3.26961 8.59273 4.06586 9.82089C4.86211 11.0491 6.07539 11.9481 7.48215 12.3523C5.48312 12.5951 3.7687 13.3016 2.47619 14.5757C0.832094 16.1947 0 18.6073 0 21.7548C0 21.9658 0.083786 22.168 0.232926 22.3172C0.382067 22.4663 0.584345 22.5501 0.795261 22.5501C1.00618 22.5501 1.20846 22.4663 1.3576 22.3172C1.50674 22.168 1.59052 21.9658 1.59052 21.7548C1.59052 18.8752 2.34895 16.933 3.59291 15.7075C4.83854 14.4803 6.70029 13.8441 9.16644 13.8441C11.6326 13.8441 13.4943 14.4803 14.7416 15.7075C15.9839 16.9347 16.7423 18.8752 16.7423 21.7548C16.7423 21.9658 16.8261 22.168 16.9753 22.3172C17.1244 22.4663 17.3267 22.5501 17.5376 22.5501C17.7485 22.5501 17.9508 22.4663 18.0999 22.3172C18.2491 22.168 18.3329 21.9658 18.3329 21.7548C18.3329 18.6073 17.5008 16.1964 15.855 14.5757C14.5658 13.3033 12.8498 12.5951 10.8507 12.3523C12.2528 11.9435 13.4606 11.0431 14.2527 9.81616C15.0448 8.58918 15.3681 7.11783 15.1635 5.67179C14.9589 4.22575 14.2399 2.9019 13.1385 1.94288C12.0371 0.98386 10.6269 0.453923 9.16644 0.450201ZM4.68786 6.5193C4.68786 5.33151 5.15971 4.19237 5.9996 3.35247C6.8395 2.51257 7.97864 2.04072 9.16644 2.04072C10.3542 2.04072 11.4934 2.51257 12.3333 3.35247C13.1732 4.19237 13.645 5.33151 13.645 6.5193C13.645 7.70709 13.1732 8.84624 12.3333 9.68614C11.4934 10.526 10.3542 10.9979 9.16644 10.9979C7.97864 10.9979 6.8395 10.526 5.9996 9.68614C5.15971 8.84624 4.68786 7.70709 4.68786 6.5193Z" fill="white" fill-opacity="0.4"/>
+</svg></span>Your name</label>
+                                    <div class="form__item-input">
+                                      <input type="text" name="name" id="name1" placeholder="Your name" autocomplete="off"/>
+                                      <div class="form__item-input-border"> </div>
+                                      <div class="form__item-input-correct">
+                                         <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_491)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_491" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                      </div>
+                                      <div class="form__item-input-error">
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form__item"> 
+                                    <label class="form__item-label" for="email1"> <span class="form__item-svg"><svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.0314 0.550293H3.23739C2.00171 0.550293 1 1.552 1 2.78768V16.212C1 17.4477 2.00171 18.4494 3.23739 18.4494H22.0314C23.2671 18.4494 24.2688 17.4477 24.2688 16.212V2.78768C24.2688 1.552 23.2671 0.550293 22.0314 0.550293Z" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.58008 4.13037L12.6347 10.3951L20.6893 4.13037" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>Your email </label>
+                                    <div class="form__item-input">
+                                      <input type="email" id="email1" name="email" placeholder="yourmail@example.com" autocomplete="off"/>
+                                      <div class="form__item-input-border"> </div>
+                                      <div class="form__item-input-correct">
+                                         <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_492)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_492" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                      </div>
+                                      <div class="form__item-input-error">
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form__item"> 
+                                    <label class="form__item-label" for="phone1"> <span class="form__item-svg"><svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.60724 0.558729L4.07151 0.12121C4.73806 -0.0782768 5.45502 -0.0303177 6.08854 0.256135C6.72206 0.542588 7.22885 1.04796 7.51429 1.6779L8.42549 3.68873C8.67102 4.23044 8.73942 4.8348 8.62109 5.41703C8.50275 5.99925 8.20363 6.53012 7.76569 6.93512L6.17352 8.40781C6.15385 8.42604 6.1377 8.44769 6.12589 8.47168C5.95917 8.80945 6.21233 9.71161 7.00533 11.0749C7.89977 12.6115 8.59044 13.2188 8.91064 13.1251L11.0003 12.4907C11.5726 12.3174 12.1852 12.326 12.7523 12.5154C13.3194 12.7048 13.8125 13.0655 14.1626 13.5469L15.4575 15.3258C15.864 15.8844 16.0523 16.5704 15.9875 17.2563C15.9226 17.9422 15.6089 18.5815 15.1047 19.0553L13.9906 20.1009C13.6032 20.465 13.1327 20.7306 12.6194 20.8752C12.1061 21.0198 11.5651 21.0391 11.0426 20.9313C7.94034 20.2908 5.16088 17.8127 2.68046 13.5513C0.199143 9.28722 -0.574448 5.65582 0.422311 2.66932C0.589163 2.16933 0.874886 1.71652 1.25534 1.34916C1.63579 0.981807 2.09978 0.710693 2.60812 0.558729H2.60724ZM2.99007 1.81528C2.68505 1.90642 2.40663 2.06905 2.17833 2.28943C1.95003 2.50982 1.77856 2.78148 1.6784 3.08146C0.819251 5.65494 1.51522 8.92408 3.82629 12.895C6.13559 16.8633 8.63896 19.0946 11.3117 19.6459C11.6253 19.7106 11.9501 19.699 12.2582 19.6122C12.5663 19.5253 12.8487 19.3658 13.0811 19.1471L14.1943 18.1023C14.4659 17.8473 14.635 17.5031 14.67 17.1337C14.705 16.7644 14.6037 16.395 14.3849 16.0941L13.09 14.3143C12.9015 14.0551 12.636 13.861 12.3307 13.759C12.0255 13.657 11.6957 13.6523 11.3875 13.7455L9.29258 14.3817C8.13352 14.7238 7.04326 13.7657 5.8595 11.7303C4.85656 10.0082 4.50902 8.76395 4.93772 7.89504C5.02063 7.72703 5.13354 7.57565 5.27115 7.44789L6.86331 5.9752C7.09922 5.75713 7.26036 5.47124 7.32412 5.15768C7.38787 4.84412 7.35104 4.51862 7.21879 4.22688L6.3076 2.21692C6.1539 1.87764 5.88096 1.60545 5.53976 1.45118C5.19856 1.29692 4.81242 1.27113 4.45345 1.37864L2.98919 1.81616L2.99007 1.81528Z" fill="white" fill-opacity="0.4"/>
+</svg></span>Your number </label>
+                                    <div class="form__item-input">
+                                      <input type="tel" id="phone1" name="phone" placeholder="+998 99 999 99 99" autocomplete="off"/>
+                                      <div class="form__item-input-border"> </div>
+                                      <div class="form__item-input-correct">
+                                         <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_493)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_493" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                      </div>
+                                      <div class="form__item-input-error">
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                    <div class="brochure__content"> 
+                      <ul class="brochure__cat"> 
+                        <li class="brochure__cat-item">Masterplan </li>
+                        <li class="brochure__cat-item">Lifestyle</li>
+                        <li class="brochure__cat-item">Gallery</li>
+                        <li class="brochure__cat-item">Floor plans</li>
+                      </ul>
+                      <h2 class="subtitle brochure__title">Descriptive <span>brochure</span> <br>about Acacia</h2>
+                      <button class="btn brochure__btn" type="submit" disabled="disabled" anim="ripple">Download Brochure ( 10 Mb )</button>
+                      <p class="brochure__label">64 Pages | Download time - 10 sec.</p>
+                    </div>
+                    <div class="brochure__img" data-value="6"><picture><source srcset="img/brochure.webp" type="image/webp"><img src="img/brochure.png" alt="" draggable="false"/></picture></div>
+                  </form>
+                </section>
+                <section class="section exterior">
+                  <div class="section__body exterior__body container" id="exterior"> 
+                    <div class="section__title"> <picture><source srcset="img/exterior-title.webp" type="image/webp"><img src="img/exterior-title.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="title exterior__title">Exterior</h2>
+                    <div class="exterior__slider"> 
+                      <div class="swiper exterior__swiper ext__sw">
+                        <div class="swiper-wrapper">    
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/exterior-1.webp" type="image/webp"><img src="img/exterior-1.png" alt="" draggable="false"/></picture></div>
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/exterior-1.webp" type="image/webp"><img src="img/exterior-1.png" alt="" draggable="false"/></picture></div>
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/exterior-1.webp" type="image/webp"><img src="img/exterior-1.png" alt="" draggable="false"/></picture></div>
+                        </div>
+                      </div>
+                      <div class="exterior__pagination ext-p swiper-pagination">   </div>
+                      <div class="exterior__navigation swiper-navigation">
+                        <div class="swiper-button-prev exterior__prev ext__prev"><svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
+</svg>
+                        </div>
+                        <div class="swiper-button-next exterior__next ext__next"><svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
+</svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="details"> 
+                      <div class="details__img"> <picture><source srcset="img/exterior-vertical.webp" type="image/webp"><img src="img/exterior-vertical.png" alt="" draggable="false"/></picture></div>
+                      <div class="details__content"> 
+                        <h2 class="subtitle details__title">Building details of <span>Acacia</span> Dubai Hills:</h2>
+                        <ul class="details__list"> 
+                          <li class="details__li">Contemporary and elegant design</li>
+                          <li class="details__li">Highest-quality materials</li>
+                          <li class="details__li">Huge and secure parking area</li>
+                          <li class="details__li">Jogging and cycling trails</li>
+                          <li class="details__li">Direct access to the Boulevard area</li>
+                          <li class="details__li">Social and commercial facilities</li>
+                        </ul>
+                        <div class="details__row"> 
+                          <div class="details__col">  
+                            <p class="details__col-num">2019</p>
+                            <p class="details__col-text">developed in</p>
+                          </div>
+                          <div class="details__col">  
+                            <p class="details__col-num">9</p>
+                            <p class="details__col-text">resedential floors</p>
+                          </div>
+                          <div class="details__col">  
+                            <p class="details__col-num">24</p>
+                            <p class="details__col-text">hours security system</p>
+                          </div>
+                        </div>
+                        <button class="details__btn btn" type="button" anim="ripple">Register your interest </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section exterior interior" id="interior"> 
+                  <div class="section__body exterior__body container">
+                    <div class="section__title"> <picture><source srcset="img/interior-title.webp" type="image/webp"><img src="img/interior-title.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="title exterior__title">Interior</h2>
+                    <div class="exterior__slider">
+                      <div class="swiper exterior__swiper interior__swiper">
+                        <div class="swiper-wrapper">
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/interior-1.webp" type="image/webp"><img src="img/interior-1.png" alt="" draggable="false"/></picture></div>
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/interior-1.webp" type="image/webp"><img src="img/interior-1.png" alt="" draggable="false"/></picture></div>
+                          <div class="exterior__slide swiper-slide"><picture><source srcset="img/interior-1.webp" type="image/webp"><img src="img/interior-1.png" alt="" draggable="false"/></picture></div>
+                        </div>
+                      </div>
+                      <div class="exterior__pagination interior__pagination swiper-pagination"></div>
+                      <div class="exterior__navigation swiper-navigation">
+                        <div class="swiper-button-prev exterior__prev interior__prev"><svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
+</svg>
+                        </div>
+                        <div class="swiper-button-next exterior__next interior__next"><svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
+</svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section white floor" id="floor"> 
+                  <div class="section__body floor__body container"> 
+                    <h2 class="floor__title">Floor plans </h2>
+                    <div class="floor__tab"> 
+                      <button class="floor__tab-item active" type="button" data-target="#floor1">1 bedroom </button>
+                      <button class="floor__tab-item" type="button" data-target="#floor2">2 bedrooms </button>
+                      <button class="floor__tab-item" type="button" data-target="#floor3">3 bedrooms </button>
+                    </div>
+                    <div class="floor__content active" id="floor1"> 
+                              <div class="swiper floor__swiper"> 
+                                        <div class="floor__navigation"> 
+                                          <div class="floor__prev swiper-button-prev">
+                                             <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                          <div class="floor__next swiper-button-next">
+                                                <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                        </div>
+                                <div class="swiper-wrapper"> 
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_1-1.webp" type="image/webp"><img src="img/floor_1-1.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE </div>
+                                      <div class="floor__item-info"> 
+                                        <p class="floor__item-info-p">Bedrooms:  <span>1</span></p>
+                                        <p class="floor__item-info-p">Total area:  <span>665 SQ FT</span></p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure</button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                                    </div>
+                                  </div>
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_1-2.webp" type="image/webp"><img src="img/floor_1-2.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE 2</div>
+                                      <div class="floor__item-info">
+                                        <p class="floor__item-info-p">Bedrooms:  <span>2</span></p>
+                                        <p class="floor__item-info-p">Total area:  <span>685 SQ FT</span></p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure</button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                                    </div>
+                                  </div>
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_1-3.webp" type="image/webp"><img src="img/floor_1-3.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE 2</div>
+                                      <div class="floor__item-info">
+                                        <p class="floor__item-info-p">Bedrooms:  <span>2</span></p>
+                                        <p class="floor__item-info-p">Total area:  <span>685 SQ FT</span></p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure</button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                    <div class="floor__content" id="floor2"> 
+                              <div class="swiper floor__swiper">
+                                        <div class="floor__navigation"> 
+                                          <div class="floor__prev swiper-button-prev">
+                                             <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                          <div class="floor__next swiper-button-next">
+                                                <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                        </div>
+                                <div class="swiper-wrapper"> 
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_2-1.webp" type="image/webp"><img src="img/floor_2-1.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE asf </div>
+                                      <div class="floor__item-info">
+                                        <p class="floor__item-info-p">Bedrooms:  <span>1</span></p>
+                                        <p class="floor__item-info-p">Total area:  <span>665 SQ FT</span></p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure</button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                    <div class="floor__content" id="floor3"> 
+                              <div class="swiper floor__swiper"> 
+                                        <div class="floor__navigation"> 
+                                          <div class="floor__prev swiper-button-prev">
+                                             <svg width="27" height="65" viewBox="0 0 27 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 1L1.75438 28.0245C0.736748 29.1588 0.669918 30.8566 1.59524 32.0673L26 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                          <div class="floor__next swiper-button-next">
+                                                <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
+</svg>
+                                          </div>
+                                        </div>
+                                <div class="swiper-wrapper"> 
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_3-1.webp" type="image/webp"><img src="img/floor_3-1.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE gasg</div>
+                                      <div class="floor__item-info">
+                                        <p class="floor__item-info-p">Bedrooms:  <span>1</span></p>
+                                        <p class="floor__item-info-p">Total area:  <span>665 SQ FT</span></p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure</button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities</p>
+                                    </div>
+                                  </div>
+                                  <div class="floor__item swiper-slide"> 
+                                    <div class="floor__item-img"> <picture><source srcset="img/floor_3-2.webp" type="image/webp"><img src="img/floor_3-2.png" alt="" draggable="false"/></picture></div>
+                                    <div class="floor__item-info"> 
+                                      <div class="floor__item-title">TITLE 2 hw</div>
+                                      <div class="floor__item-info">
+                                        <p class="floor__item-info-p">Bedrooms:  <span>2</span> </p>
+                                        <p class="floor__item-info-p">Total area:  <span>685 SQ FT</span> </p>
+                                      </div>
+                                      <button class="floor__item-btn btn" type="button" anim="ripple">Download broshure </button>
+                                      <p class="floor__item-label">Prices, floor plans & availabilities </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section location" id="location"> 
+                  <div class="section__body location__body container"> 
+                    <div class="section__title"> <picture><source srcset="img/location-title.webp" type="image/webp"><img src="img/location-title.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="title location__title">Location </h2>
+                    <div class="location__wrap"> <a class="location__link" href="#!" target="_blank" rel="noopener"> <img src="img/google.svg" alt="" draggable="false"/></a>
+                      <div class="location__tab"> 
+                        <button class="location__tab-item active" type="button" data-target="#map">Dubai Map </button>
+                        <button class="location__tab-item" type="button" data-target="#localMap">Local Map </button>
+                      </div>
+                      <div class="location__map active" id="map"> <picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="" draggable="false"/></picture></div>
+                      <div class="location__map location__map-wrap" id="localMap"> 
+                        <div class="location__map-tab"> 
+                          <button class="location__map-tab-item active" type="button" data-target="#localAll">All categories </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localPharmacies">Pharmacies </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localFitnesses">Fitness </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localShops">Shops </button>
+                          <button class="location__map-tab-item" type="button" data-target="#localBars">Restaurants and bars </button>
+                        </div>
+                        <div class="location__map-item active" id="localAll"> <picture><source srcset="img/local-map_all.webp" type="image/webp"><img src="img/local-map_all.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localPharmacies"> <picture><source srcset="img/local-map_pharmasies.webp" type="image/webp"><img src="img/local-map_pharmasies.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localFitnesses"> <picture><source srcset="img/local-map_fitnesses.webp" type="image/webp"><img src="img/local-map_fitnesses.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localShops"> <picture><source srcset="img/local-map_shops.webp" type="image/webp"><img src="img/local-map_shops.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map-item" id="localBars"> <picture><source srcset="img/local-map_bars.webp" type="image/webp"><img src="img/local-map_bars.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                    <div class="location__info"> 
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">5 mins </p>
+                        <p class="location__info-text">drive to the Dubai Hills Mall </p>
+                      </div>
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">15 mins </p>
+                        <p class="location__info-text">drive to the Dubai Int. Stadium </p>
+                      </div>
+                      <div class="location__info-item"> 
+                        <p class="location__info-title">17 mins </p>
+                        <p class="location__info-text">drive to the Jumeirah Beach </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section community">
+                  <div class="section__body community__body container" id="community"> 
+                    <div class="section__title"> <picture><source srcset="img/community-title.webp" type="image/webp"><img src="img/community-title.png" alt="" draggable="false"/></picture></div>
+                    <div class="community__header">
+                      <h2 class="title community__title">About <span>Dubai Hills</span> Estate</h2>
+                      <p class="community__p">Elite location, which gives access to luscious landscaped greens and pristine fairways with an iconic backdrop of the Burj Khalifa and the Dubai skyline. The 2700-acre multi-purpose development includes high-class amenities and infrastructure such as schools, hospitals, parks, malls and even 18-hole Championship golf course. </p>
+                    </div>
+                    <div class="community__row community__row_left">
+                      <div class="community__track"> 
+                        <div class="community__item"> <picture><source srcset="img/community-1.webp" type="image/webp"><img src="img/community-1.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-2.webp" type="image/webp"><img src="img/community-2.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-3.webp" type="image/webp"><img src="img/community-3.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-1.webp" type="image/webp"><img src="img/community-1.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-2.webp" type="image/webp"><img src="img/community-2.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-3.webp" type="image/webp"><img src="img/community-3.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                    <div class="community__row community__row_right"> 
+                      <div class="community__track"> 
+                        <div class="community__item"> <picture><source srcset="img/community-4.webp" type="image/webp"><img src="img/community-4.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-5.webp" type="image/webp"><img src="img/community-5.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-6.webp" type="image/webp"><img src="img/community-6.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-4.webp" type="image/webp"><img src="img/community-4.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-5.webp" type="image/webp"><img src="img/community-5.png" alt="" draggable="false"/></picture></div>
+                        <div class="community__item"> <picture><source srcset="img/community-6.webp" type="image/webp"><img src="img/community-6.png" alt="" draggable="false"/></picture></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section developer">
+                  <div class="section__body developer__body container" id="developer">
+                    <div class="section__title"> <picture><source srcset="img/developer-title.webp" type="image/webp"><img src="img/developer-title.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="title developer__title"><span>Reliable</span> developer </h2>
+                    <div class="developer__item">
+                      <div class="developer__item-img"> <picture><source srcset="img/developer-1.webp" type="image/webp"><img src="img/developer-1.png" alt="" draggable="false"/></picture></div>
+                      <div class="developer__item-content"> 
+                        <p class="developer__item-title">EMAAR</p>
+                        <p class="developer__item-p">Established in 1997, Emaar Properties is the pioneering developer of integrated, master‐planned communities in the UAE and 12 countries around the world.</p>
+                        <p class="developer__item-subtitle">Emaar in numbers (FY 2021):</p>
+                        <div class="developer__item-grid"> 
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">$10.9 bln </p>
+                            <p class="developer__item-label">Market cap </p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">$7.7 bln</p>
+                            <p class="developer__item-label">Revenue</p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">$1 bln</p>
+                            <p class="developer__item-label">Net profit</p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">81 600+</p>
+                            <p class="developer__item-label">Delivered residential units</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="developer__item developer__item_reverse">
+                      <div class="developer__item-img"> <picture><source srcset="img/developer-2.webp" type="image/webp"><img src="img/developer-2.png" alt="" draggable="false"/></picture></div>
+                      <div class="developer__item-content"> 
+                        <p class="developer__item-title">MERAAS</p>
+                        <p class="developer__item-p">Founded in 2007, the Dubai‐based conglomerate Meraas is committed to creating and consistently delivering developments that strengthen Dubai’s position as a global real estate investment destination of choice.</p>
+                        <p class="developer__item-subtitle">Meraas in numbers:</p>
+                        <div class="developer__item-grid"> 
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">2 000+</p>
+                            <p class="developer__item-label">Commercial objects</p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">3 500+</p>
+                            <p class="developer__item-label">Apartments in 5 districts of the city</p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">1 300+</p>
+                            <p class="developer__item-label">Hotel rooms</p>
+                          </div>
+                          <div class="developer__item-sub"> 
+                            <p class="developer__item-num">$4.9 bln</p>
+                            <p class="developer__item-label">Invested in the entertainment sector</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="section consultation" id="consultation"> 
+                  <div class="section__body consultion__body container"> 
+                    <div class="section__title"> <picture><source srcset="img/consultation-text.webp" type="image/webp"><img src="img/consultation-text.png" alt="" draggable="false"/></picture></div>
+                    <h2 class="consultation__title title"><span>Get</span> consultation from our expert </h2>
+                    <div class="consultation__content"> 
+                      <div class="consultation__info"> 
+                        <div class="consultation__item"> 
+                          <div class="consultation__item-svg">
+                             <svg width="52" height="69" viewBox="0 0 52 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.47354 1.82822L13.2324 0.396614C15.3987 -0.25613 17.7288 -0.0992028 19.7877 0.838102C21.8467 1.77541 23.4937 3.42903 24.4215 5.49027L27.3828 12.0699C28.1808 13.8424 28.4031 15.82 28.0185 17.7251C27.6339 19.6302 26.6618 21.3673 25.2385 22.6925L20.0639 27.5113C20 27.5709 19.9475 27.6417 19.9091 27.7203C19.3673 28.8255 20.1901 31.7774 22.7673 36.2383C25.6742 41.2661 27.9189 43.2532 28.9596 42.9468L35.751 40.871C37.6109 40.3038 39.6019 40.332 41.445 40.9517C43.288 41.5715 44.8907 42.7517 46.0284 44.3269L50.2368 50.1478C51.5581 51.9755 52.1701 54.2201 51.9592 56.4645C51.7483 58.709 50.7288 60.8006 49.0901 62.3509L45.4694 65.7724C44.2103 66.9636 42.6814 67.8328 41.013 68.3059C39.3447 68.7791 37.5866 68.8421 35.8886 68.4896C25.8061 66.3937 16.7729 58.2851 8.71148 44.3412C0.647216 30.3888 -1.86696 18.5064 1.37251 8.7343C1.91478 7.09827 2.84338 5.61664 4.07984 4.41461C5.3163 3.21258 6.8243 2.32546 8.4764 1.82822H8.47354ZM9.71772 5.9398C8.72641 6.23801 7.82154 6.77016 7.07957 7.49127C6.33759 8.21239 5.78031 9.10129 5.45481 10.0829C2.66256 18.5036 4.92446 29.2006 12.4354 42.1938C19.9407 55.1785 28.0766 62.4797 36.763 64.2835C37.7822 64.4952 38.8377 64.4573 39.8391 64.1731C40.8405 63.8889 41.7582 63.3668 42.5137 62.6515L46.1316 59.2328C47.0143 58.3983 47.5636 57.2721 47.6775 56.0635C47.7914 54.8549 47.4621 53.6461 46.7508 52.6617L42.5424 46.838C41.9299 45.9899 41.0671 45.3545 40.0749 45.0208C39.0827 44.6871 38.0109 44.6717 37.0095 44.9769L30.2009 47.0584C26.4339 48.1779 22.8906 45.0427 19.0434 38.3829C15.7838 32.7481 14.6543 28.6766 16.0476 25.8334C16.3171 25.2837 16.684 24.7883 17.1312 24.3703L22.3058 19.5515C23.0725 18.838 23.5962 17.9025 23.8034 16.8765C24.0106 15.8505 23.8909 14.7854 23.4611 13.8308L20.4997 7.25401C20.0002 6.14383 19.1131 5.25319 18.0042 4.74843C16.8953 4.24367 15.6404 4.15929 14.4737 4.51105L9.71485 5.94266L9.71772 5.9398Z" fill="url(#paint0_linear_375_201)"/>
+<defs>
+<linearGradient id="paint0_linear_375_201" x1="20.6471" y1="-95.1428" x2="137.402" y2="102.189" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                          </div>
+                          <p class="consultation__item-p">Our specialists will contact you at a time convenient for you </p>
+                        </div>
+                        <div class="consultation__item"> 
+                          <div class="consultation__item-svg">
+                             <svg width="74" height="65" viewBox="0 0 74 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M52.5425 57.7715H33.3711V43.8286H57.7711V29.8857H71.7139V57.7715H62.9997L57.7711 63L52.5425 57.7715Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M52.5425 57.7715H33.3711V43.8286H57.7711V29.8857H71.7139V57.7715H62.9997L57.7711 63L52.5425 57.7715Z" stroke="url(#paint0_linear_584_400)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 2H57.7714V43.8286H24.6571L17.6857 50.8L10.7143 43.8286H2V2Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 2H57.7714V43.8286H24.6571L17.6857 50.8L10.7143 43.8286H2V2Z" stroke="url(#paint1_linear_584_400)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.1434 22.915H29.8862M40.3434 22.915H42.0862M15.9434 22.915H17.6862" stroke="black" stroke-width="4" stroke-linecap="round"/>
+<path d="M28.1434 22.915H29.8862M40.3434 22.915H42.0862M15.9434 22.915H17.6862" stroke="url(#paint2_linear_584_400)" stroke-width="4" stroke-linecap="round"/>
+<defs>
+<linearGradient id="paint0_linear_584_400" x1="48.5955" y1="-15.9648" x2="91.7838" y2="95.7217" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+<linearGradient id="paint1_linear_584_400" x1="24.1445" y1="-65.5692" x2="88.4066" y2="98.4563" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+<linearGradient id="paint2_linear_584_400" x1="26.3236" y1="21.5304" x2="26.39" y2="25.4064" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                          </div>
+                          <p class="consultation__item-p">Our experts will answer any of your questions </p>
+                        </div>
+                        <div class="consultation__item"> 
+                          <div class="consultation__item-svg">
+                             <svg width="80" height="71" viewBox="0 0 80 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 19.2144V68.0716M40 19.2144C42.7143 8.4998 52.9658 3.02882 75.2857 2.92873C75.6425 2.92738 75.9961 2.99667 76.326 3.1326C76.6559 3.26853 76.9557 3.46841 77.208 3.72072C77.4603 3.97304 77.6602 4.27279 77.7961 4.60271C77.932 4.93263 78.0013 5.28619 78 5.64301V54.5001C78 55.22 77.714 55.9104 77.205 56.4194C76.696 56.9285 76.0056 57.2144 75.2857 57.2144C53.5714 57.2144 45.1826 61.5929 40 68.0716C34.8479 61.6251 26.4286 57.2144 4.7143 57.2144C3.03823 57.2144 2.00002 55.8488 2.00002 54.1727V5.64301C1.99867 5.28619 2.06796 4.93263 2.20389 4.60271C2.33982 4.27279 2.5397 3.97304 2.79201 3.72072C3.04433 3.46841 3.34408 3.26853 3.674 3.1326C4.00392 2.99667 4.35748 2.92738 4.7143 2.92873C27.0342 3.02882 37.2857 8.4998 40 19.2144Z" stroke="url(#paint0_linear_420_152)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_420_152" x1="32.1765" y1="-87.2691" x2="116.663" y2="132.871" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                          </div>
+                          <p class="consultation__item-p">You will get all PDFs (brochures, payment plans, price lists, floor plans) </p>
+                        </div>
+                      </div>
+                                    <form class="form-validate form consultation__form" action="#" method="post"> 
+                                      <div class="form__title">Request a call</div>
+                                      <div class="form__item"> 
+                                        <label class="form__item-label" for="name2"> <span class="form__item-svg"><svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.16644 0.450201C7.70274 0.448252 6.28765 0.975338 5.1819 1.93435C4.07614 2.89335 3.35421 4.21967 3.14912 5.66893C2.94404 7.11818 3.26961 8.59273 4.06586 9.82089C4.86211 11.0491 6.07539 11.9481 7.48215 12.3523C5.48312 12.5951 3.7687 13.3016 2.47619 14.5757C0.832094 16.1947 0 18.6073 0 21.7548C0 21.9658 0.083786 22.168 0.232926 22.3172C0.382067 22.4663 0.584345 22.5501 0.795261 22.5501C1.00618 22.5501 1.20846 22.4663 1.3576 22.3172C1.50674 22.168 1.59052 21.9658 1.59052 21.7548C1.59052 18.8752 2.34895 16.933 3.59291 15.7075C4.83854 14.4803 6.70029 13.8441 9.16644 13.8441C11.6326 13.8441 13.4943 14.4803 14.7416 15.7075C15.9839 16.9347 16.7423 18.8752 16.7423 21.7548C16.7423 21.9658 16.8261 22.168 16.9753 22.3172C17.1244 22.4663 17.3267 22.5501 17.5376 22.5501C17.7485 22.5501 17.9508 22.4663 18.0999 22.3172C18.2491 22.168 18.3329 21.9658 18.3329 21.7548C18.3329 18.6073 17.5008 16.1964 15.855 14.5757C14.5658 13.3033 12.8498 12.5951 10.8507 12.3523C12.2528 11.9435 13.4606 11.0431 14.2527 9.81616C15.0448 8.58918 15.3681 7.11783 15.1635 5.67179C14.9589 4.22575 14.2399 2.9019 13.1385 1.94288C12.0371 0.98386 10.6269 0.453923 9.16644 0.450201ZM4.68786 6.5193C4.68786 5.33151 5.15971 4.19237 5.9996 3.35247C6.8395 2.51257 7.97864 2.04072 9.16644 2.04072C10.3542 2.04072 11.4934 2.51257 12.3333 3.35247C13.1732 4.19237 13.645 5.33151 13.645 6.5193C13.645 7.70709 13.1732 8.84624 12.3333 9.68614C11.4934 10.526 10.3542 10.9979 9.16644 10.9979C7.97864 10.9979 6.8395 10.526 5.9996 9.68614C5.15971 8.84624 4.68786 7.70709 4.68786 6.5193Z" fill="white" fill-opacity="0.4"/>
+</svg></span>Your name</label>
+                                        <div class="form__item-input">
+                                          <input type="text" name="name" id="name2" placeholder="Your name" autocomplete="off"/>
+                                          <div class="form__item-input-border"> </div>
+                                          <div class="form__item-input-correct">
+                                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_494)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_494" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                          </div>
+                                          <div class="form__item-input-error">
+                                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form__item"> 
+                                        <label class="form__item-label" for="email2"> <span class="form__item-svg"><svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.0314 0.550293H3.23739C2.00171 0.550293 1 1.552 1 2.78768V16.212C1 17.4477 2.00171 18.4494 3.23739 18.4494H22.0314C23.2671 18.4494 24.2688 17.4477 24.2688 16.212V2.78768C24.2688 1.552 23.2671 0.550293 22.0314 0.550293Z" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.58008 4.13037L12.6347 10.3951L20.6893 4.13037" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>Your email </label>
+                                        <div class="form__item-input">
+                                          <input type="email" id="email2" name="email" placeholder="yourmail@example.com" autocomplete="off"/>
+                                          <div class="form__item-input-border"> </div>
+                                          <div class="form__item-input-correct">
+                                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_495)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_495" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                          </div>
+                                          <div class="form__item-input-error">
+                                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form__item"> 
+                                        <label class="form__item-label" for="phone2"> <span class="form__item-svg"><svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.60724 0.558729L4.07151 0.12121C4.73806 -0.0782768 5.45502 -0.0303177 6.08854 0.256135C6.72206 0.542588 7.22885 1.04796 7.51429 1.6779L8.42549 3.68873C8.67102 4.23044 8.73942 4.8348 8.62109 5.41703C8.50275 5.99925 8.20363 6.53012 7.76569 6.93512L6.17352 8.40781C6.15385 8.42604 6.1377 8.44769 6.12589 8.47168C5.95917 8.80945 6.21233 9.71161 7.00533 11.0749C7.89977 12.6115 8.59044 13.2188 8.91064 13.1251L11.0003 12.4907C11.5726 12.3174 12.1852 12.326 12.7523 12.5154C13.3194 12.7048 13.8125 13.0655 14.1626 13.5469L15.4575 15.3258C15.864 15.8844 16.0523 16.5704 15.9875 17.2563C15.9226 17.9422 15.6089 18.5815 15.1047 19.0553L13.9906 20.1009C13.6032 20.465 13.1327 20.7306 12.6194 20.8752C12.1061 21.0198 11.5651 21.0391 11.0426 20.9313C7.94034 20.2908 5.16088 17.8127 2.68046 13.5513C0.199143 9.28722 -0.574448 5.65582 0.422311 2.66932C0.589163 2.16933 0.874886 1.71652 1.25534 1.34916C1.63579 0.981807 2.09978 0.710693 2.60812 0.558729H2.60724ZM2.99007 1.81528C2.68505 1.90642 2.40663 2.06905 2.17833 2.28943C1.95003 2.50982 1.77856 2.78148 1.6784 3.08146C0.819251 5.65494 1.51522 8.92408 3.82629 12.895C6.13559 16.8633 8.63896 19.0946 11.3117 19.6459C11.6253 19.7106 11.9501 19.699 12.2582 19.6122C12.5663 19.5253 12.8487 19.3658 13.0811 19.1471L14.1943 18.1023C14.4659 17.8473 14.635 17.5031 14.67 17.1337C14.705 16.7644 14.6037 16.395 14.3849 16.0941L13.09 14.3143C12.9015 14.0551 12.636 13.861 12.3307 13.759C12.0255 13.657 11.6957 13.6523 11.3875 13.7455L9.29258 14.3817C8.13352 14.7238 7.04326 13.7657 5.8595 11.7303C4.85656 10.0082 4.50902 8.76395 4.93772 7.89504C5.02063 7.72703 5.13354 7.57565 5.27115 7.44789L6.86331 5.9752C7.09922 5.75713 7.26036 5.47124 7.32412 5.15768C7.38787 4.84412 7.35104 4.51862 7.21879 4.22688L6.3076 2.21692C6.1539 1.87764 5.88096 1.60545 5.53976 1.45118C5.19856 1.29692 4.81242 1.27113 4.45345 1.37864L2.98919 1.81616L2.99007 1.81528Z" fill="white" fill-opacity="0.4"/>
+</svg></span>Your number </label>
+                                        <div class="form__item-input">
+                                          <input type="tel" id="phone2" name="phone" placeholder="+998 99 999 99 99" autocomplete="off"/>
+                                          <div class="form__item-input-border"> </div>
+                                          <div class="form__item-input-correct">
+                                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_496)"/>
+<path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_313_496" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA761"/>
+<stop offset="1" stop-color="#C7825B"/>
+</linearGradient>
+</defs>
+</svg>
+                                          </div>
+                                          <div class="form__item-input-error">
+                                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+<path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+</svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button class="btn form__btn" type="submit" disabled="disabled" anim="ripple">Send</button>
+                                    </form>
+                    </div>
+                  </div>
+                </section>
       </main>
+            <footer class="footer">  
+              <div class="footer__body container"> <a class="footer__logo" href="#!"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" draggable="false"/></picture></a>
+                <ul class="footer__list"> 
+                  <li class="footer__li"> <a class="footer__link" href="#about">About</a></li>
+                  <li class="footer__li"> <a class="footer__link" href="#exterior">Exterior</a></li>
+                  <li class="footer__li"> <a class="footer__link" href="#interior">Interior</a></li>
+                  <li class="footer__li"> <a class="footer__link" href="#location">Location</a></li>
+                  <li class="footer__li"> <a class="footer__link" href="#community">Community</a></li>
+                  <li class="footer__li"> <a class="footer__link" href="#developer">Developer</a></li>
+                </ul>
+                <div class="footer__tel">   <a class="footer__tel-content" href="#!">+971 56  xxx-xx-xx</a>
+                  <button class="footer__tel-btn" type="button">Show number</button>
+                </div>
+                <div class="footer__soc"> <a class="footer__soc-item" href="#!" target="_blank" rel="noreferrer"><svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 27.5639C0 17.9156 0 13.0915 1.87768 9.40633C3.52932 6.16478 6.16478 3.52932 9.40633 1.87768C13.0915 0 17.9156 0 27.5639 0H47.4361C57.0844 0 61.9085 0 65.5937 1.87768C68.8352 3.52932 71.4707 6.16478 73.1223 9.40633C75 13.0915 75 17.9156 75 27.5639V47.4361C75 57.0844 75 61.9085 73.1223 65.5937C71.4707 68.8352 68.8352 71.4707 65.5937 73.1223C61.9085 75 57.0844 75 47.4361 75H27.5639C17.9156 75 13.0915 75 9.40633 73.1223C6.16478 71.4707 3.52932 68.8352 1.87768 65.5937C0 61.9085 0 57.0844 0 47.4361V27.5639Z" fill="url(#paint0_linear_378_118)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.9735 37.1043C27.9055 32.3414 35.1952 29.2014 38.8426 27.6844C49.2568 23.3528 51.4207 22.6003 52.8312 22.5755C53.1414 22.57 53.835 22.6469 54.2843 23.0114C54.6637 23.3193 54.7681 23.7351 54.818 24.027C54.868 24.3189 54.9302 24.9837 54.8807 25.5032C54.3164 31.4329 51.8745 45.8225 50.6321 52.4638C50.1065 55.274 49.0714 56.2163 48.0694 56.3085C45.8917 56.5089 44.238 54.8693 42.1288 53.4867C38.8283 51.3232 36.9638 49.9764 33.7601 47.8652C30.0577 45.4254 32.4578 44.0844 34.5678 41.8928C35.12 41.3193 44.715 32.5919 44.9007 31.8002C44.9239 31.7012 44.9454 31.3321 44.7262 31.1372C44.5069 30.9423 44.1833 31.009 43.9498 31.062C43.6187 31.1371 38.3462 34.6221 28.132 41.5169C26.6354 42.5446 25.2799 43.0453 24.0653 43.0191C22.7264 42.9901 20.1508 42.262 18.2361 41.6396C15.8877 40.8762 14.0212 40.4726 14.1837 39.1762C14.2683 38.5009 15.1983 37.8103 16.9735 37.1043Z" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_378_118" x1="37.5" y1="0" x2="37.5" y2="75" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2AABEE"/>
+<stop offset="1" stop-color="#229ED9"/>
+</linearGradient>
+</defs>
+</svg></a><a class="footer__soc-item" href="#!" target="_blank" rel="noreferrer"><svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_378_121" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="75" height="75">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.05 0.0369797C15.3774 0.0964355 13.2217 0.227295 12.2419 0.425049C10.7463 0.727081 9.33383 1.18501 8.15922 1.78368C6.77914 2.48701 5.54225 3.38437 4.47423 4.45072C3.40376 5.51913 2.5028 6.75718 1.79665 8.13931C1.19965 9.30762 0.74198 10.7115 0.438665 12.1986C0.236925 13.1883 0.103502 15.3601 0.0430189 17.0435C0.0184917 17.7315 0.00590708 18.6219 0.00590708 19.0326L0 55.9616C0 56.3706 0.0124562 57.2613 0.036855 57.9501C0.0963111 59.6226 0.227166 61.7783 0.425053 62.7581C0.726956 64.2536 1.18501 65.6662 1.78355 66.8408C2.48701 68.221 3.38424 69.4576 4.4506 70.5258C5.51901 71.5961 6.75718 72.4971 8.13918 73.2033C9.30763 73.8002 10.7115 74.258 12.1985 74.5613C13.1882 74.7631 15.3601 74.8965 17.0435 74.9569C17.7313 74.9815 18.6218 74.9941 19.0325 74.9941L55.9615 75C56.3706 75 57.2613 74.9877 57.9499 74.9631C59.6225 74.9036 61.7783 74.7728 62.758 74.5749C64.2536 74.2729 65.6662 73.8149 66.8407 73.2164C68.2207 72.513 69.4576 71.6156 70.5257 70.5494C71.596 69.4809 72.4969 68.2429 73.2032 66.8608C73.8001 65.6924 74.258 64.2887 74.5612 62.8015C74.7631 61.8118 74.8964 59.6398 74.9569 57.9565C74.9815 57.2686 74.994 56.3782 74.994 55.9675L75 19.0385C75 18.6294 74.9875 17.7387 74.963 17.05C74.9034 15.3775 74.7727 13.2218 74.5748 12.242C74.2729 10.7464 73.8149 9.33395 73.2163 8.15934C72.513 6.77914 71.6155 5.54238 70.5494 4.47423C69.4809 3.40401 68.2427 2.50293 66.8607 1.79678C65.6922 1.19978 64.2885 0.741982 62.8014 0.438789C61.8117 0.237053 59.6398 0.10363 57.9565 0.0432739C57.2685 0.0184937 56.3781 0.00603485 55.9674 0.00603485L19.0384 0.0001297C18.6293 0.0001297 17.7386 0.0124512 17.05 0.0369797Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_378_121)">
+<path d="M17.05 0.0360031C15.3774 0.095459 13.2217 0.226318 12.2419 0.424072C10.7463 0.726105 9.33383 1.18404 8.15922 1.7827C6.77914 2.48603 5.54225 3.38339 4.47423 4.44975C3.40376 5.51816 2.5028 6.7562 1.79665 8.13834C1.19965 9.30665 0.74198 10.7105 0.438665 12.1977C0.236925 13.1873 0.103502 15.3591 0.0430189 17.0425C0.0184917 17.7305 0.00590708 18.621 0.00590708 19.0316L0 55.9606C0 56.3696 0.0124562 57.2603 0.036855 57.9491C0.0963111 59.6216 0.227166 61.7773 0.425053 62.7571C0.726956 64.2526 1.18501 65.6652 1.78355 66.8398C2.48701 68.22 3.38424 69.4566 4.4506 70.5248C5.51901 71.5951 6.75718 72.4961 8.13918 73.2024C9.30763 73.7992 10.7115 74.257 12.1985 74.5604C13.1882 74.7621 15.3601 74.8955 17.0435 74.9559C17.7313 74.9805 18.6218 74.9931 19.0325 74.9931L55.9615 74.999C56.3706 74.999 57.2613 74.9867 57.9499 74.9622C59.6225 74.9026 61.7783 74.7719 62.758 74.574C64.2536 74.2719 65.6662 73.8139 66.8407 73.2155C68.2207 72.512 69.4576 71.6147 70.5257 70.5484C71.596 69.4799 72.4969 68.242 73.2032 66.8598C73.8001 65.6914 74.258 64.2877 74.5612 62.8005C74.7631 61.8108 74.8964 59.6388 74.9569 57.9556C74.9815 57.2676 74.994 56.3772 74.994 55.9665L75 19.0375C75 18.6284 74.9875 17.7377 74.963 17.049C74.9034 15.3766 74.7727 13.2209 74.5748 12.2411C74.2729 10.7454 73.8149 9.33298 73.2163 8.15836C72.513 6.77816 71.6155 5.5414 70.5494 4.47325C69.4809 3.40304 68.2427 2.50195 66.8607 1.7958C65.6922 1.1988 64.2885 0.741005 62.8014 0.437813C61.8117 0.236076 59.6398 0.102654 57.9565 0.0422974C57.2685 0.0175171 56.3781 0.00505829 55.9674 0.00505829L19.0384 -0.000846863C18.6293 -0.000846863 17.7386 0.0114746 17.05 0.0360031Z" fill="url(#paint0_linear_378_121)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50.5039 42.4366C49.8359 42.1023 46.5517 40.4867 45.9392 40.2639C45.327 40.0411 44.8817 39.9297 44.4364 40.5982C43.9911 41.2667 42.7109 42.7708 42.3212 43.2166C41.9315 43.6622 41.5419 43.718 40.8739 43.3836C40.2059 43.0495 38.0536 42.3442 35.5021 40.0691C33.5163 38.2985 32.1756 36.1115 31.7859 35.443C31.3963 34.7745 31.7444 34.4131 32.0789 34.0801C32.3793 33.781 32.7468 33.3002 33.0808 32.9103C33.4148 32.5203 33.5262 32.2417 33.7488 31.7961C33.9715 31.3504 33.8602 30.9604 33.6931 30.6261C33.5262 30.2919 32.1903 27.005 31.6336 25.6679C31.0914 24.3658 30.5406 24.542 30.1306 24.5216C29.7414 24.5022 29.2957 24.4981 28.8503 24.4981C28.405 24.4981 27.6814 24.6653 27.069 25.3337C26.4567 26.0022 24.731 27.6179 24.731 30.9047C24.731 34.1916 27.1247 37.367 27.4587 37.8127C27.7927 38.2585 32.1691 45.0036 38.87 47.8961C40.4638 48.5842 41.7081 48.995 42.6782 49.3029C44.2785 49.811 45.7347 49.7394 46.8857 49.5674C48.169 49.3757 50.8379 47.9519 51.3946 46.392C51.9511 44.8322 51.9511 43.4951 51.7842 43.2166C51.6172 42.938 51.1719 42.7708 50.5039 42.4366ZM38.316 59.0738H38.307C34.3197 59.0722 30.409 58.0015 26.9974 55.9776L26.1859 55.496L17.7759 57.7015L20.0207 49.5044L19.4923 48.6641C17.268 45.1273 16.0933 41.0394 16.095 36.8422C16.0998 24.5945 26.068 14.6302 38.3248 14.6302C44.2599 14.6325 49.839 16.9461 54.0343 21.1448C58.2296 25.3436 60.5388 30.9247 60.5365 36.8602C60.5315 49.1088 50.5634 59.0738 38.316 59.0738ZM57.2259 17.9541C52.1784 12.9024 45.4659 10.119 38.3142 10.1162C23.5786 10.1162 11.5856 22.1046 11.5797 36.8403C11.5778 41.5507 12.8087 46.1487 15.1482 50.2015L11.3555 64.0508L25.5278 60.3345C29.4327 62.4636 33.8291 63.5855 38.3036 63.5875H38.3145H38.3146C53.0488 63.5875 65.0429 51.5975 65.0489 36.8617C65.0516 29.7205 62.2735 23.0057 57.2259 17.9541Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_378_121" x1="-8.04664e-05" y1="74.999" x2="-8.04664e-05" y2="-0.000933035" gradientUnits="userSpaceOnUse">
+<stop stop-color="#25CF43"/>
+<stop offset="1" stop-color="#61FD7D"/>
+</linearGradient>
+</defs>
+</svg></a></div>
+              </div>
+            </footer>
     </div>
-    <script src="js/app.min.js?_v=20221213131555"> </script>
+    <script src="js/app.min.js?_v=20221213164746"> </script>
   </body>
 </html>
