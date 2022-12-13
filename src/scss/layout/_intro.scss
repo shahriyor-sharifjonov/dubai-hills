@@ -3,19 +3,10 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
-    isolation: isolate;
     position: relative;
     padding-top: 0;
-    // background-attachment: fixed !important;
-    &::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(360.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
-        z-index: -1;
+    @include media(576){
+        // height: 150vh;
     }
     &__img{
         position: absolute;
@@ -23,7 +14,21 @@
         left: 0;
         width: 100%;
         height: 100%;
+        isolation: isolate;
         z-index: -2;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(360.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
+            z-index: 1;
+            @include media(1400){
+                background: linear-gradient(360.91deg,#1d1c1c 5.03%,rgba(29,28,28,0) 110.45%);
+            }
+        }
         img{
             width: 100%;
             height: 100%;
@@ -36,6 +41,9 @@
         align-items: center;
         justify-content: center;
         padding-top: 0;
+        @include media(576){
+            height: 100vh;
+        }
     }
     &__title{
         font-weight: 600;
@@ -44,6 +52,14 @@
         text-align: center;
         letter-spacing: 0.15em;
         color: #FFFFFF;
+        @include media(992){
+            font-size: 68px;
+            line-height: 120%;
+        }
+        @include media(576){
+            font-size: 48px;
+            line-height: 59px;
+        }
     }
     &__p{
         font-weight: 300;
@@ -52,9 +68,25 @@
         color: #FFFFFF;
         margin-bottom: 40px;
         text-align: center;
+        @include media(992){
+            font-size: 20px;
+            line-height: 120%;
+            margin-bottom: 30px;
+        }
+        @include media(576){
+            font-size: 12px;
+            line-height: 113%;
+            margin-bottom: 25px;
+        }
     }
     &__btn{
         max-width: 300px;
         width: 100%;
+        @include media(576){
+            max-width: 159px;
+            height: 30px;
+            font-size: 8px;
+            line-height: 120%;
+        }
     }
 }

@@ -6,7 +6,6 @@
     -webkit-tap-highlight-color: transparent;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-
     // cursor: none;
     &::selection{
         background: #C7825B;
@@ -20,6 +19,9 @@
 html,
 body{
     height: 100%;
+}
+.h200vh{
+    height: 200vh;
 }
 .loader{
     position: fixed;
@@ -40,6 +42,10 @@ body{
         color: #FFFFFF;
         position: relative;
         padding-left: 47px;
+        @include media(576){
+            font-size: 40px;
+            line-height: 120%;
+        }
         &::before{
             content: '';
             position: absolute;
@@ -84,6 +90,9 @@ ul{
 }
 .section{
     padding-top: 80px;
+    @include media(1200){
+        padding-top: 40px;
+    }
     &.gray{
         background: #343435;
     }
@@ -96,6 +105,9 @@ ul{
         min-height: 362px;
         isolation: isolate;
         padding-top: 45px;
+        @include media(992){
+            padding-top: 0;
+        }
     }
     &__title{
         position: absolute;
@@ -104,6 +116,12 @@ ul{
         z-index: -1;
         pointer-events: none;
         user-select: none;
+        @include media(1400){
+            left: 0;
+        }
+        @include media(992){
+            display: none;
+        }
     }
 } 
 .title{
@@ -113,6 +131,12 @@ ul{
     text-align: left;
     color: inherit;
     margin-bottom: 30px;
+    @include media(576){
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 20px;
+    }
     span{
         background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
         -webkit-background-clip: text;

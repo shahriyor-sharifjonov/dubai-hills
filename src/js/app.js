@@ -148,7 +148,6 @@ const type = () => {
         setTimeout(erase, showTime);
     }
 }
-
 function erase() {
     if (charIndex > 0) {
         if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing")
@@ -416,7 +415,6 @@ const sliders = () => {
         noSwipingSelector: 'button',
         slideToClickedSlide: false,
         focusableElements: 'button',
-        createElements: true,
         watchSlidesProgress: true,
         speed: 600,
         effect: "fade",
@@ -433,362 +431,407 @@ sliders()
 
 // !gsap animations start
 const animations = () => {
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.intro',
-                start: "top bottom",
-                end: "bottom 150px",
-                scrub: 2,
-                markers: false,
-                onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
-                onLeave: () => {header.classList.add('show');header.classList.add('white');},
-                onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
-                onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
-            },
-            defaults: {ease: 'none'}
-        });
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".floor",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-                onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".floor",
-                start: "top 60px",
-                end: "bottom bottom",
-                onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-                onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".location",
-                start: "527px top",
-                end: "bottom bottom",
-                onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
-                onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".exterior",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('exteriorLink').classList.add('active')
-                },
-                onLeaveBack: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('aboutLink').classList.add('active')
-                }
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".location",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('locationLink').classList.add('active')
-                },
-                onLeaveBack: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('interiorLink').classList.add('active')
-                }
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".community",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('communityLink').classList.add('active')
-                },
-                onLeaveBack: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('locationLink').classList.add('active')
-                }
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".developer",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('developerLink').classList.add('active')
-                },
-                onLeaveBack: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('communityLink').classList.add('active')
-                }
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".header").forEach(header => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".interior",
-                start: "top 60px",
-                end: "bottom bottom",
-                markers: false,
-                onEnter: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('interiorLink').classList.add('active')
-                },
-                onLeaveBack: () => {
-                    document.querySelectorAll('.header__li').forEach(li => {
-                        li.classList.remove('active')
-                    })
-                    document.getElementById('exteriorLink').classList.add('active')
-                }
-            }
-        })
-    })
-    
-    gsap.utils.toArray(".section__body").forEach(section => {
-        const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 70%",
-                    end: "top 30%", 
-                    scrub: 2, 
-                    markers: false,
-                }, 
-                defaults: {ease: "none"} 
-            });
-        tl
-            .add('start')
-            .from(section.querySelector(".section__title"), { 
-                x: -200,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-            .from(section.querySelector(".about__top"), { 
-                y: 100,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-            .from(section.querySelector(".exterior__title"), { 
-                y: 100,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-            .from(section.querySelector(".features__title"), { 
-                x: -100,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-            .from(section.querySelector(".location__title"), { 
-                y: 100,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-        const tl60 = gsap.timeline({
-            scrollTrigger: {
-                trigger: section,
-                start: "top 50%",
-                end: "top 10%", 
-                scrub: 2, 
-                markers: false,
-            }, 
-            defaults: {ease: "none"} 
-        });
-        tl60
-            .add('start')
-            .from(section.querySelector(".exterior__swiper"), { 
-                y: 100,
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-            .from(section.querySelector(".exterior__prev"), { 
-                x: -100,
-                opacity: 0,
-                ease: "expo.ease",
-                delay: .3,
-            }, 'start')
-            .from(section.querySelector(".exterior__next"), { 
-                x: 100,
-                opacity: 0,
-                ease: "expo.ease",
-                delay: .3,
-            }, 'start')
-        const tlGallery = gsap.timeline({
-            scrollTrigger: {
-                trigger: section,
-                start: "top 100%",
-                end: "bottom 0%", 
-                scrub: 4, 
-                markers: false,
-            }, 
-            defaults: {ease: "none"} 
-        });
-        tlGallery
-            .add('start')
-            .from(section.querySelector(".community__row_left"), {
-                x: 800,
-            }, 'start')
-            .from(section.querySelector(".community__row_right"), {
-                x: -800,
-            }, 'start')
-    })
-    
-    gsap.utils.toArray(".about__bot").forEach(el => {
-        const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                    end: "top 30%", 
-                    scrub: 2, 
-                    markers: false,
-                    onEnter: () => {
-                        setTimeout(() => {
-                            charIndex === 0 ? type() : ''
-                        }, 1000);
+    ScrollTrigger.matchMedia({
+        "all": function() {
+			gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.intro',
+                        start: "top bottom",
+                        end: "bottom 150px",
+                        scrub: 2,
+                        markers: false,
+                        onEnter: () => {header.classList.remove('show');header.classList.remove('white');},
+                        onLeave: () => {header.classList.add('show');header.classList.add('white');},
+                        onEnterBack: () => {header.classList.remove('show');header.classList.remove('white');},
+                        onLeaveBack: () => {header.classList.add('show');header.classList.add('white');},
                     },
-                }, 
-                defaults: {ease: "none"} 
-            });
+                    defaults: {ease: 'none'}
+                });
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".floor",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".floor",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".location",
+                        start: "527px top",
+                        end: "bottom bottom",
+                        onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
+                        onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".exterior",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('exteriorLink').classList.add('active')
+                        },
+                        onLeaveBack: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('aboutLink').classList.add('active')
+                        }
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".location",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('locationLink').classList.add('active')
+                        },
+                        onLeaveBack: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('interiorLink').classList.add('active')
+                        }
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".community",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('communityLink').classList.add('active')
+                        },
+                        onLeaveBack: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('locationLink').classList.add('active')
+                        }
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".developer",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('developerLink').classList.add('active')
+                        },
+                        onLeaveBack: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('communityLink').classList.add('active')
+                        }
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".interior",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('interiorLink').classList.add('active')
+                        },
+                        onLeaveBack: () => {
+                            document.querySelectorAll('.header__li').forEach(li => {
+                                li.classList.remove('active')
+                            })
+                            document.getElementById('exteriorLink').classList.add('active')
+                        }
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".section__body").forEach(section => {
+                const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 70%",
+                            end: "top 30%", 
+                            scrub: 2, 
+                            markers: false,
+                        }, 
+                        defaults: {ease: "none"} 
+                    });
+                tl
+                    .add('start')
+                    .from(section.querySelector(".exterior__title"), { 
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".features__title"), { 
+                        x: -100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".location__title"), { 
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                const tl60 = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 50%",
+                        end: "top 10%", 
+                        scrub: 2, 
+                        markers: false,
+                    }, 
+                    defaults: {ease: "none"} 
+                });
+                tl60
+                    .add('start')
+                    .from(section.querySelector(".exterior__swiper"), { 
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".exterior__prev"), { 
+                        x: -100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                        delay: .3,
+                    }, 'start')
+                    .from(section.querySelector(".exterior__next"), { 
+                        x: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                        delay: .3,
+                    }, 'start')
+                const tlGallery = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 100%",
+                        end: "bottom 0%", 
+                        scrub: 4, 
+                        markers: false,
+                    }, 
+                    defaults: {ease: "none"} 
+                });
+                tlGallery
+                    .add('start')
+                    .from(section.querySelector(".community__row_left"), {
+                        x: 800,
+                    }, 'start')
+                    .from(section.querySelector(".community__row_right"), {
+                        x: -800,
+                    }, 'start')
+            })
+            
+            gsap.utils.toArray(".about__bot").forEach(el => {
+                const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 90%",
+                            end: "top 30%", 
+                            scrub: 2, 
+                            markers: false,
+                            onEnter: () => {
+                                setTimeout(() => {
+                                    charIndex === 0 ? type() : ''
+                                }, 1000);
+                            },
+                        }, 
+                        defaults: {ease: "none"} 
+                    });
+            })
+            
+            gsap.utils.toArray(".features__body").forEach(el => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 50%",
+                        end: "bottom 40%", 
+                        scrub: 2, 
+                        markers: false,
+                    }, 
+                    defaults: {ease: "none"} 
+                })
+                tl.add('start')
+                    .from(el.querySelector(".features__swiper"), {
+                        opacity: 0
+                    }, 'start')
+                    .from(el.querySelector(".features__next"), { 
+                        x: -1200,
+                        opacity: 1,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(el.querySelector(".features__overlay"), { 
+                        x: -1200,
+                        opacity: 1,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(el.querySelector(".features__prev"), {
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                tl.add('mid')
+                    .fromTo(el.querySelector(".features__overlay"), {
+                        x: 0,
+                        ease: "expo.ease",
+                    }, {
+                        x: 1200,
+                        ease: "expo.ease",
+                    }, 'mid')
+            })
+            
+            gsap.utils.toArray(".details").forEach(el => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        end: "top 50%", 
+                        scrub: 2, 
+                        markers: false,
+                    }, 
+                    defaults: {ease: "none"} 
+                })
+                tl.add('start')
+                    .from(el.querySelector(".details__img"), .1, {
+                        opacity: 0,
+                        x: 200,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(el.querySelector(".details__content"), .1, {
+                        opacity: 0,
+                        x: -80,
+                        delay: .1,
+                        ease: "expo.ease",
+                    }, 'start')
+            })
+            
+            gsap.utils.toArray(".community__header").forEach(el => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        end: "top 50%", 
+                        scrub: 2, 
+                        markers: false,
+                    }, 
+                    defaults: {ease: "none"} 
+                })
+                tl.add('start')
+                    .from(document.querySelector(".community__header"), {
+                        opacity: 0,
+                        y: 80,
+                        ease: "expo.ease",
+                    }, 'start')
+            })
+		},
+        "(min-width: 576px)": function() {
+            gsap.utils.toArray(".section__body").forEach(section => {
+                const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 70%",
+                            end: "top 30%", 
+                            scrub: 2, 
+                            markers: false,
+                        }, 
+                        defaults: {ease: "none"} 
+                    });
+                tl
+                    .add('start')
+                    .from(section.querySelector(".section__title"), { 
+                        x: -200,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".about__top"), { 
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+            })
+        },
+        "(max-width: 576px)": function() {
+            gsap.utils.toArray(".intro").forEach(el => {
+                const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top top",
+                            end: "bottom 30%",
+                            scrub: true,
+                            markers: false,
+                        }, 
+                        defaults: {ease: "none"} 
+                    });
+                tl.add('start')
+                .to('.intro__img', {
+                    height: "auto",
+                    top: (window.innerHeight / 1.4)
+                }, 'start')  
+                .to('.intro__body', {
+                    y: -200
+                }, 'start')
+            })
+        }
     })
     
-    gsap.utils.toArray(".features__body").forEach(el => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: el,
-                start: "top 50%",
-                end: "bottom 40%", 
-                scrub: 2, 
-                markers: false,
-            }, 
-            defaults: {ease: "none"} 
-        })
-        tl.add('start')
-            .from(el.querySelector(".features__swiper"), {
-                opacity: 0
-            }, 'start')
-            .from(el.querySelector(".features__next"), { 
-                x: -1200,
-                opacity: 1,
-                ease: "expo.ease",
-            }, 'start')
-            .from(el.querySelector(".features__overlay"), { 
-                x: -1200,
-                opacity: 1,
-                ease: "expo.ease",
-            }, 'start')
-            .from(el.querySelector(".features__prev"), {
-                opacity: 0,
-                ease: "expo.ease",
-            }, 'start')
-        tl.add('mid')
-            .fromTo(el.querySelector(".features__overlay"), {
-                x: 0,
-                ease: "expo.ease",
-            }, {
-                x: 1200,
-                ease: "expo.ease",
-            }, 'mid')
-    })
-    
-    gsap.utils.toArray(".details").forEach(el => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: el,
-                start: "top 80%",
-                end: "top 50%", 
-                scrub: 2, 
-                markers: false,
-            }, 
-            defaults: {ease: "none"} 
-        })
-        tl.add('start')
-            .from(el.querySelector(".details__img"), .1, {
-                opacity: 0,
-                x: 200,
-                ease: "expo.ease",
-            }, 'start')
-            .from(el.querySelector(".details__content"), .1, {
-                opacity: 0,
-                x: -80,
-                delay: .1,
-                ease: "expo.ease",
-            }, 'start')
-    })
-    
-    gsap.utils.toArray(".community__header").forEach(el => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: el,
-                start: "top 80%",
-                end: "top 50%", 
-                scrub: 2, 
-                markers: false,
-            }, 
-            defaults: {ease: "none"} 
-        })
-        tl.add('start')
-            .from(document.querySelector(".community__header"), {
-                opacity: 0,
-                y: 80,
-                ease: "expo.ease",
-            }, 'start')
-    })
+
+
 }
 animations()
 // !gsap animations end 
