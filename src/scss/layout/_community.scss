@@ -55,14 +55,17 @@
         overflow: hidden;
         height: 100%;
         cursor: pointer;
+        &:hover{
+            border-radius: 20px;
+            overflow: hidden;
+            img{
+                border-radius: 20px;
+                transform: scale(1.1);
+            }
+        }
         img{
             transition: 500ms ease-in-out;
             border-radius: 20px;
-        }
-        &:hover{
-            img{
-                transform: scale(1.1)
-            }
         }
     }
 }

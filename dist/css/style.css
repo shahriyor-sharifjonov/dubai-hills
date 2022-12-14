@@ -2348,17 +2348,23 @@ ul {
   cursor: pointer;
 }
 
+.community__item:hover {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.community__item:hover img {
+  border-radius: 20px;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .community__item img {
   -webkit-transition: 500ms ease-in-out;
   -o-transition: 500ms ease-in-out;
   transition: 500ms ease-in-out;
   border-radius: 20px;
-}
-
-.community__item:hover img {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .developer__body {
