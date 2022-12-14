@@ -51,21 +51,28 @@
     }
     &__item{
         line-height: 0;
-        border-radius: 20px;
-        overflow: hidden;
         height: 100%;
+        width: 100%;
         cursor: pointer;
-        &:hover{
-            border-radius: 20px;
+        &-img{
             overflow: hidden;
-            img{
-                border-radius: 20px;
-                transform: scale(1.1);
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            clip-path: content-box;
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                }
             }
         }
         img{
             transition: 500ms ease-in-out;
             border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            will-change: transform;
         }
     }
 }

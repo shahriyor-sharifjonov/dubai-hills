@@ -425,6 +425,7 @@ const sliders = () => {
         preventClicks: true,
         preventClicksPropagation: true,
         noSwiping: true,
+        grabCursor: true,
         noSwipingSelector: 'button',
         slideToClickedSlide: false,
         focusableElements: 'button',

@@ -11,6 +11,10 @@
         gap: 56px;
         position: relative;
         isolation: isolate;
+        @include media(1200){
+            gap: 40px;
+            align-items: center;
+        }
     }
     &__content{
         flex: 1 1 auto;
@@ -24,6 +28,9 @@
         width: 100%;
         list-style-type: disc;
         margin-bottom: 30px;
+        @include media(1200){
+            display: none;
+        }
     }
     &__title{
         margin-bottom: 20px;
@@ -41,6 +48,9 @@
     &__form{
         margin-bottom: -120px;
         z-index: -2;
+        @include media(1200){
+            margin-bottom: -55px;
+        }
     }
     &__img{
         width: 1086px;
@@ -53,6 +63,9 @@
         user-select: none;
         transition: 300ms cubic-bezier(0.235, 0.615, 0.185, 0.995);
         z-index: -1;
+        @include media(1200){
+            display: none;
+        }
         img{
             width: 100%;
         }

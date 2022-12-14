@@ -155,6 +155,10 @@ ul{
     line-height: 59px;
     text-transform: capitalize;
     color: inherit;
+    @include media(1200){
+        font-size: 44px;
+        line-height: 120%;
+    }
     @include media(576){
         font-weight: 500;
         font-size: 28px;
