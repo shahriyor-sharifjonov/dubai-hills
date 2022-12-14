@@ -834,8 +834,8 @@ const animations = () => {
                     });
                 tl.add('start')
                 .to('.intro__img', {
-                    height: "auto",
-                    top: oneFourHeight
+                    scaleY: .5,
+                    // top: oneFourHeight
                 }, 'start')  
                 .to('.intro__body', {
                     y: -200

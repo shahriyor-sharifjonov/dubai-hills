@@ -2846,6 +2846,43 @@ ul {
     background: #1D1C1C;
   }
 
+  .no-webp .brochure {
+    background: url("../img/brochure-background-sm.png") center/cover no-repeat; }
+
+  .brochure {
+    padding: 30px 0;
+    background-position: 20px 0 20px 0 !important;
+  }
+
+  .brochure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 244px;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10.82%, #1D1C1C), color-stop(115.84%, rgba(29, 28, 28, 0)));
+    background: -o-linear-gradient(bottom, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+    background: linear-gradient(360deg, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+    -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+        -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+    z-index: -1;
+  }
+
+  .brochure::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 244px;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10.82%, #1D1C1C), color-stop(115.84%, rgba(29, 28, 28, 0)));
+    background: -o-linear-gradient(bottom, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+    background: linear-gradient(360deg, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+    z-index: -1;
+  }
+
   .brochure__body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2860,6 +2897,9 @@ ul {
 
   .brochure__form {
     margin-bottom: 0;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(75.45%, rgba(29, 28, 28, 0.67)), to(rgba(29, 28, 28, 0)));
+    background: -o-linear-gradient(bottom, rgba(29, 28, 28, 0.67) 75.45%, rgba(29, 28, 28, 0) 100%);
+    background: linear-gradient(360deg, rgba(29, 28, 28, 0.67) 75.45%, rgba(29, 28, 28, 0) 100%);
   }
 
   .exterior {
@@ -2868,6 +2908,19 @@ ul {
 
   .exterior::before {
     display: none;
+  }
+
+  .form__title {
+    font-weight: 600;
+  }
+
+  .form__title span {
+    background: -o-linear-gradient(294.12deg, #FFA761 -83.36%, #C7825B 184.44%);
+    background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 }
 
@@ -2999,4 +3052,9 @@ ul {
   .exterior__slide {
     max-height: 500px;
   }
+}
+
+@media (max-width: 992px) {
+
+  .webp .brochure { background: url(../img/brochure-background-sm.webp) center/cover no-repeat; }
 }

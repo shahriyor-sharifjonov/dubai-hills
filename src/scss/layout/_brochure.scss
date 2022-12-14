@@ -1,6 +1,32 @@
 .brochure{
     position: relative;
     z-index: 1;
+    @include media(992){
+        padding: 30px 0;
+        background: url('../img/brochure-background-sm.png') center / cover no-repeat;
+        background-position: 20px 0 20px 0 !important;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;    
+            height: 244px;
+            background: linear-gradient(360deg, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: -1;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;    
+            height: 244px;
+            background: linear-gradient(360deg, #1D1C1C 10.82%, rgba(29, 28, 28, 0) 115.84%);
+            z-index: -1;
+        }
+    }
     .section__title{
         z-index: -3;
     }
@@ -61,6 +87,7 @@
         }
         @include media(992){
             margin-bottom: 0;
+            background: linear-gradient(360deg, rgba(29, 28, 28, 0.67) 75.45%, rgba(29, 28, 28, 0) 100%);
         }
     }
     &__img{
