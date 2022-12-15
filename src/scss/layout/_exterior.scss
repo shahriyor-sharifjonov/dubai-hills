@@ -5,6 +5,9 @@
     @include media(1200){
         padding-top: 100px;
     }
+    @include media(992){
+        padding-top: 80px;
+    }
     &.interior{
         padding-top: 80px;
         margin-bottom: -155px;
@@ -33,6 +36,9 @@
         border-radius: 50%;
         background: #E7975F;
         filter: blur(200px);
+        @include media(992){
+            display: none;
+        }
     }
     &__body{
         scroll-margin: 100px;

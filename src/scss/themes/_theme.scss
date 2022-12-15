@@ -90,9 +90,6 @@ ul{
 }
 .section{
     padding-top: 80px;
-    @include media(1200){
-        padding-top: 40px;
-    }
     &.gray{
         background: #343435;
         @include media(992){
