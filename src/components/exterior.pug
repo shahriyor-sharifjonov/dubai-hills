@@ -2,8 +2,8 @@ mixin exterior()
     section.section.exterior
         .section__body.exterior__body.container#exterior 
             .section__title 
-                img(src="@img/exterior-title.png", alt="" draggable="false")
-            h2.title.exterior__title Exterior
+                img(src="@img/exterior-title.png", alt="" draggable="false") 
+            h2.title.exterior__title Exterior 
             .exterior__slider 
                 .swiper.exterior__swiper.ext__sw
                     .swiper-wrapper     
@@ -23,6 +23,23 @@ mixin exterior()
                         <svg width="26" height="65" viewBox="0 0 26 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L24.2335 26.8964C25.8382 28.685 25.9436 31.3623 24.4844 33.2715L1 64" stroke-width="1"></path>
                         </svg>
+            .exterior__carousel 
+                .swiper.exterior__carousel-swiper 
+                    .swiper-wrapper 
+                        .swiper-slide.exterior__carousel-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false") 
+                        .swiper-slide.exterior__carousel-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false") 
+                        .swiper-slide.exterior__carousel-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false") 
+                .swiper.exterior__gallery 
+                    .swiper-wrapper 
+                        .swiper-slide.exterior__gallery-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false")
+                        .swiper-slide.exterior__gallery-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false")
+                        .swiper-slide.exterior__gallery-item 
+                            img(src="@img/exterior-1.png", alt="" draggable="false")
             .details 
                 .details__img 
                     img(src="@img/exterior-vertical.png", alt="" draggable="false")

@@ -1,4 +1,7 @@
 .features{
+    @include media(992){
+        padding-bottom: 50px;
+    }
     &__title{
         margin-bottom: 130px;
         @include media(992){

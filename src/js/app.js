@@ -8,10 +8,10 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
 
-let oneFourHeight = window.innerHeight / 1.4
+let oneFourHeight = window.innerHeight / 1.5
 
 window.addEventListener('resize', () => {
-    oneFourHeight = window.innerHeight / 1.4
+    oneFourHeight = window.innerHeight / 1.5
 })
 
 // !onload scroll to top start
@@ -230,7 +230,7 @@ const validations = () => {
         const forms = document.querySelectorAll('.form-validate');
         forms.forEach(form => {
             const inputs = form.querySelectorAll('input');
-            const button = form.querySelector('button[type="submit"]');
+            const button = form.querySelectorAll('button[type="submit"]');
             let filledInputs = []
             inputs.forEach(input => {
                 input.addEventListener('input', () => {
@@ -250,9 +250,13 @@ const validations = () => {
                         }
                     })
                     if(filledInputs.length === inputs.length && !form.querySelector('.form__item-input_error')) {
-                        button.removeAttribute('disabled')
+                        button.forEach(button => {
+                            button.removeAttribute('disabled')
+                        })
                     } else {
-                        button.setAttribute('disabled', 'disabled')
+                        button.forEach(button => {
+                            button.setAttribute('disabled', 'disabled')
+                        })
                     }
                 })
             })

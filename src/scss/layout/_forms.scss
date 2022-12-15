@@ -20,6 +20,10 @@
         @include media(992){
             font-weight: 600;
         }
+        @include media(575){
+            font-size: 24px;
+            line-height: 29px;
+        }
         span{
             @include media(992){
                 background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
@@ -33,6 +37,9 @@
     &__item{
         &:not(:last-of-type){
             margin-bottom: 56px;
+            @include media(575){
+                margin-bottom: 35px;
+            }
         }
         &-label{
             display: flex;
@@ -43,6 +50,24 @@
             line-height: 20px;
             color: rgba(255, 255, 255, 0.4);
             margin-bottom: 15px;
+            svg{
+                fill: #fff;
+                fill-opacity: .4;
+                @include media(992){
+                    fill-opacity: 1;
+                }
+                &.nonfill{
+                    fill: none;
+                    stroke: #fff;
+                    stroke-opacity: .4;
+                    @include media(992){
+                        stroke-opacity: 1;
+                    }
+                }
+            }
+            @include media(992){
+                color: #fff;
+            }
         }
         &-svg{
             width: 33px;
@@ -85,6 +110,15 @@
                 line-height: 22px;
                 color: #FFFFFF; 
                 padding-right: 56px; 
+                &::placeholder{
+                    @include media(992){
+                        color: #ffffff90;
+                    }
+                }
+                @include media(575){
+                    font-size: 16px;
+                    line-height: 19px;
+                }
                 &~.form__item-input-border{
                     position: absolute;
                     bottom: 0;

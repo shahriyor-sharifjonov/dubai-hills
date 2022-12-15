@@ -1317,6 +1317,10 @@ ul {
   margin-bottom: 12px;
 }
 
+.brochure__btn.lg {
+  display: none;
+}
+
 .brochure__label {
   font-weight: 400;
   font-size: 12px;
@@ -2502,6 +2506,17 @@ ul {
   margin-bottom: 15px;
 }
 
+.form__item-label svg {
+  fill: #fff;
+  fill-opacity: 0.4;
+}
+
+.form__item-label svg.nonfill {
+  fill: none;
+  stroke: #fff;
+  stroke-opacity: 0.4;
+}
+
 .form__item-svg {
   width: 33px;
   display: -webkit-box;
@@ -2834,6 +2849,10 @@ ul {
     border-radius: 20px;
   }
 
+  .features {
+    padding-bottom: 50px;
+  }
+
   .features__title {
     text-align: center;
     margin-bottom: 70px;
@@ -2898,6 +2917,24 @@ ul {
     margin-right: auto;
   }
 
+  .brochure__btn.lg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .brochure__form {
     margin-bottom: 0;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(75.45%, rgba(29, 28, 28, 0.67)), to(rgba(29, 28, 28, 0)));
@@ -2906,10 +2943,14 @@ ul {
   }
 
   .exterior {
-    padding-top: 80px;
+    padding-top: 50px;
   }
 
   .exterior::before {
+    display: none;
+  }
+
+  .exterior__slider {
     display: none;
   }
 
@@ -2924,6 +2965,38 @@ ul {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+  }
+
+  .form__item-label svg {
+    fill-opacity: 1;
+  }
+
+  .form__item-label svg.nonfill {
+    stroke-opacity: 1;
+  }
+
+  .form__item-label {
+    color: #fff;
+  }
+
+  .form__item-input input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5647058824);
+  }
+
+  .form__item-input input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5647058824);
+  }
+
+  .form__item-input input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5647058824);
+  }
+
+  .form__item-input input::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5647058824);
+  }
+
+  .form__item-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5647058824);
   }
 }
 
@@ -3054,6 +3127,29 @@ ul {
 @media (max-width: 575px) {
   .form {
     padding: 45px 30px;
+  }
+
+  .form__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .form__item:not(:last-of-type) {
+    margin-bottom: 35px;
+  }
+
+  .form__item-input input {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media (max-width: 390px) {
+  .brochure__btn.lg span {
+    max-width: 180px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
