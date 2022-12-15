@@ -1,17 +1,17 @@
 import * as functions from './modules/functions.js'
 import imagesLoaded from 'imagesloaded'
 import { gsap } from 'gsap'
-import Swiper, { Navigation, Pagination, EffectCreative, EffectFade } from 'swiper';
+import Swiper, { Navigation, Pagination, EffectCreative, EffectFade, Thumbs, FreeMode } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
 
-let oneFourHeight = window.innerHeight / 1.5
+let oneFourHeight = window.innerHeight / 5
 
 window.addEventListener('resize', () => {
-    oneFourHeight = window.innerHeight / 1.5
+    oneFourHeight = window.innerHeight / 5
 })
 
 // !onload scroll to top start
@@ -441,6 +441,30 @@ const sliders = () => {
             prevEl: '.floor__prev',
         },
     })
+
+    const galleryThumbs = new Swiper('.exterior__gallery', {
+        modules: [FreeMode],
+        spaceBetween: 12,
+        slidesPerView: 'auto',
+        loop: true,
+        // freeMode: true,
+        //   loopedSlides: 5,
+        slideToClickedSlide: true,
+    });
+    const galleryTop = new Swiper('.exterior__carousel-swiper', {
+        modules: [Thumbs],
+        spaceBetween: 12,
+        loop: true,
+        grabCursor: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs,
+        },
+    });
 }
 sliders()
 // !sliders end 
@@ -838,8 +862,8 @@ const animations = () => {
                     });
                 tl.add('start')
                 .to('.intro__img', {
-                    height: "auto",
-                    y: oneFourHeight
+                    scale: 0.5,
+                    y: oneFourHeight,
                 }, 'start')  
                 .to('.intro__body', {
                     y: -200

@@ -948,14 +948,26 @@ ul {
   height: 100%;
   isolation: isolate;
   z-index: -2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
 }
 
 .intro__img::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 200%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   height: 100%;
   background: -o-linear-gradient(89.09deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
   background: linear-gradient(360.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
@@ -967,6 +979,9 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 
 .intro__body {
@@ -1452,6 +1467,73 @@ ul {
   -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
+}
+
+.exterior__carousel {
+  display: none;
+}
+
+.exterior__carousel-swiper {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.exterior__carousel .swiper-wrapper {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.exterior__carousel-item {
+  line-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  opacity: 0;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.exterior__carousel-item.swiper-slide-active {
+  opacity: 1;
+}
+
+.exterior__carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.exterior__gallery .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.exterior__gallery-item {
+  width: 107px;
+  height: 107px;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.exterior__gallery-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
 }
 
 .details {
@@ -2954,6 +3036,10 @@ ul {
     display: none;
   }
 
+  .exterior__carousel {
+    display: block;
+  }
+
   .form__title {
     font-weight: 600;
   }
@@ -3125,6 +3211,10 @@ ul {
 }
 
 @media (max-width: 575px) {
+  .intro__img img {
+    width: 200vw;
+  }
+
   .form {
     padding: 45px 30px;
   }

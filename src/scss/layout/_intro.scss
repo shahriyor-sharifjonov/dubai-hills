@@ -3,6 +3,7 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
+    // overflow: hidden;
     position: relative;
     padding-top: 0;
     @include media(576){
@@ -16,12 +17,16 @@
         height: 100%;
         isolation: isolate;
         z-index: -2;
+        display: flex;
+        justify-content: center;
+        transform-origin: center bottom;
         &::before{
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
+            left: 50%;
+            width: 200%;
+            transform: translateX(-50%);
             height: 100%;
             background: linear-gradient(360.91deg, #1D1C1C 14.03%, rgba(29, 28, 28, 0) 110.45%);
             z-index: 1;
@@ -33,6 +38,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform-origin: center;
+            @include media(575){
+                width: 200vw;
+            }
         }
     }
     &__body{
