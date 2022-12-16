@@ -9,6 +9,9 @@
         display: flex;
         justify-content: space-between;
         gap: 56px;
+        @include media(992){
+            flex-direction: column;
+        }
         &:not(:last-of-type){
             margin-bottom: 80px; 
         }
@@ -35,8 +38,13 @@
             border-radius: 20px;
             overflow: hidden;
             line-height: 0;
+            @include media(575){
+                width: 100%;
+                min-width: 0;
+            }
             img{
                 width: 100%;
+                border-radius: 20px;
             }
         }
         &-content{
