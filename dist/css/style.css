@@ -1533,6 +1533,16 @@ ul {
           transform: rotate(-90deg);
 }
 
+.exterior__gallery.interior__cbot::before {
+  background: -o-linear-gradient(95.09deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+  background: linear-gradient(354.91deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+}
+
+.exterior__gallery.interior__cbot::after {
+  background: -o-linear-gradient(95.09deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+  background: linear-gradient(354.91deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+}
+
 .exterior__gallery .swiper-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

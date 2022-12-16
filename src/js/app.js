@@ -442,28 +442,42 @@ const sliders = () => {
         },
     })
 
-    const galleryThumbs = new Swiper('.exterior__gallery', {
-        modules: [FreeMode],
+    const galleryThumbs = new Swiper('.exterior__cbot', {
         spaceBetween: 12,
-        slidesPerView: 3.5,
+        slidesPerView: "auto",
         // loop: true,
         // freeMode: true,
         // loopedSlides: 5,
         slideToClickedSlide: true,
     });
-    const galleryTop = new Swiper('.exterior__carousel-swiper', {
+    const galleryTop = new Swiper('.exterior__ctop', {
         modules: [Thumbs],
         spaceBetween: 12,
         // loop: true,
         grabCursor: true,
         autoHeight: true,
         slideToClickedSlide: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
         thumbs: {
             swiper: galleryThumbs,
+        },
+    });
+    const galleryThumbs2 = new Swiper('.interior__cbot', {
+        spaceBetween: 12,
+        slidesPerView: "auto",
+        // loop: true,
+        // freeMode: true,
+        // loopedSlides: 5,
+        slideToClickedSlide: true,
+    });
+    const galleryTop2 = new Swiper('.interior__ctop', {
+        modules: [Thumbs],
+        spaceBetween: 12,
+        // loop: true,
+        grabCursor: true,
+        autoHeight: true,
+        slideToClickedSlide: true,
+        thumbs: {
+            swiper: galleryThumbs2,
         },
     });
 }

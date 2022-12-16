@@ -155,6 +155,14 @@
             pointer-events: none;
             transform: rotate(-90deg);
         }
+        &.interior__cbot{
+            &::before{
+                background: linear-gradient(354.91deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+            }
+            &::after{
+                background: linear-gradient(354.91deg, #FFFFFF -9.27%, rgba(255, 255, 255, 0) 86.62%);
+            }
+        }
         .swiper-wrapper{
             display: flex;
             width: max-content;
