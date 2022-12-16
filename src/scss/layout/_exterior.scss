@@ -6,16 +6,28 @@
         padding-top: 100px;
     }
     @include media(992){
-        padding-top: 50px;
-        padding-bottom: 80px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+    &__title{
+        @include media(992){
+            text-align: center;
+        }
     }
     &.interior{
         padding-top: 80px;
         margin-bottom: -155px;
         @include media(992){
             margin-bottom: 0;
+            padding-top: 50px;
             background: #fff;
             color: #1D1C1C;
+            .swiper-button-next,
+            .swiper-button-prev{
+                svg path{
+                    stroke: #000;   
+                }
+            }
         }
         &::before{
             display: none;

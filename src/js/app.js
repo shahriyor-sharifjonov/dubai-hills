@@ -427,6 +427,7 @@ const sliders = () => {
         slidesPerGroup: 1,
         createElements: true,
         preventClicks: true,
+        autoHeight: true,
         preventClicksPropagation: true,
         noSwiping: true,
         grabCursor: true,

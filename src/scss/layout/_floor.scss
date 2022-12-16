@@ -1,5 +1,8 @@
 .floor{
     padding-top: 195px;
+    @include media(992){
+        padding-top: 0; 
+    }
     &__title{
         font-weight: 500;
         font-size: 50px;
@@ -7,6 +10,12 @@
         text-align: center;
         color: #000000;
         margin-bottom: 30px;
+        @include media(992){
+            font-weight: 500;
+            margin-bottom: 25px;
+            font-size: 28px;
+            line-height: 34px;
+        }
     }
     &__content{
         display: none;
@@ -26,7 +35,7 @@
     }
     &__navigation{
         position: absolute;
-        width: calc(667px + 90px);
+        width: 650px;
         z-index: 5;
         top: 50%;
         transform: translateY(-50%);
@@ -35,6 +44,14 @@
         align-items: center;
         justify-content: space-between;
         pointer-events: none;
+        @include media(1200){
+            width: 566px;
+        }
+        @include media(992){
+            transform: translateY(0);
+            top: 250px;
+            width: calc(100% + 90px);
+        }
         .swiper-button{
             &-prev{
                 pointer-events: all;
@@ -118,6 +135,10 @@
         justify-content: center;
         gap: 28px;
         margin-bottom: 50px;
+        @include media(768){
+            gap: 7px;
+            margin-bottom: 25px;
+        }
         &-item{
             padding: 8px 22px;
             font-weight: 400;
@@ -130,6 +151,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @include media(768){
+                padding: 6px 14px;
+                border-radius: 9px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+            }
             &.active{
                 background: #E3945E;
                 color: #FFFFFF;
@@ -142,6 +170,16 @@
         justify-content: space-between;
         align-items: center;
         gap: 120px;
+        @include media(992){
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            justify-content: flex-start;
+            height: max-content;
+        }
+        @include media(768){
+            gap: 25px;
+        }
         &-title{
             font-weight: 500;
             font-size: 46.4421px;
@@ -152,39 +190,70 @@
         }
         &-img{
             position: relative;
-            max-width: 667px;
+            max-width: 580px;
             width: 100%;
+            height: max-content;
             display: flex;
             align-items: center;
             justify-content: center;
             img{
                 max-width: 100%;    
+                height: 100%;
             }
         }
         &-info{
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-bottom: 50px;
             min-width: 330px;
+            @include media(992){
+                align-items: center;
+                gap: 5px;
+            }
+            &-row{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 35px;
+                @include media(992){
+                    align-items: center;
+                    margin-bottom: 30px;
+                }
+                @include media(768){
+                    margin-bottom: 20px;
+                }
+            }
             &-p{
                 font-weight: 500;
                 font-size: 20px;
                 line-height: 100%;
                 text-transform: uppercase;
                 color: #000000;
+                @include media(992){
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 100%;
+                }
                 span{
                     font-weight: 700;
                 }
             }
-            &-btn{
-                margin-bottom: 25px;
-            }
-            &-label{
+        }
+        &-label{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            color: rgba(0, 0, 0, 0.6);
+            @include media(992){
                 font-weight: 500;
-                font-size: 14px;
+                font-size: 12px;
                 line-height: 100%;
-                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+        &-btn{
+            @include media(992){
+                max-width: 300px;
+                width: 100%;
             }
         }
     }
