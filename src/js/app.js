@@ -445,18 +445,19 @@ const sliders = () => {
     const galleryThumbs = new Swiper('.exterior__gallery', {
         modules: [FreeMode],
         spaceBetween: 12,
-        slidesPerView: 'auto',
-        loop: true,
+        slidesPerView: 3.5,
+        // loop: true,
         // freeMode: true,
-        //   loopedSlides: 5,
+        // loopedSlides: 5,
         slideToClickedSlide: true,
     });
     const galleryTop = new Swiper('.exterior__carousel-swiper', {
         modules: [Thumbs],
         spaceBetween: 12,
-        loop: true,
+        // loop: true,
         grabCursor: true,
         autoHeight: true,
+        slideToClickedSlide: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

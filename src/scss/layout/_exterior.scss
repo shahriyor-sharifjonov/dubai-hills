@@ -7,10 +7,16 @@
     }
     @include media(992){
         padding-top: 50px;
+        padding-bottom: 80px;
     }
     &.interior{
         padding-top: 80px;
         margin-bottom: -155px;
+        @include media(992){
+            margin-bottom: 0;
+            background: #fff;
+            color: #1D1C1C;
+        }
         &::before{
             display: none;
         }
@@ -47,7 +53,7 @@
         width: 100%;
         position: relative;
         padding-bottom: 45px;
-        @include media(992){
+        @include media(768){
             display: none;
         }
     }
@@ -88,7 +94,7 @@
     }
     &__carousel{
         display: none;
-        @include media(992){
+        @include media(768){
             display: block;
         }
         &-swiper{
@@ -117,6 +123,38 @@
         }
     }
     &__gallery{
+        position: relative;
+        @include media(575){
+            margin-left: -15px;
+            margin-right: -15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: calc(100% + 30px) !important;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 107px;
+            height: 100%;
+            background: linear-gradient(354.91deg, #1D1C1C 3%, rgba(29, 28, 28, 0) 86.62%);
+            transform: matrix(0, -1, -1, 0, 0, 0);
+            z-index: 1;
+            pointer-events: none;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            right: -1px;
+            top: 0;
+            width: 107px;
+            height: 100%;
+            background: linear-gradient(354.91deg, #1D1C1C 3%, rgba(29, 28, 28, 0) 86.62%);
+            z-index: 1;
+            pointer-events: none;
+            transform: rotate(-90deg);
+        }
         .swiper-wrapper{
             display: flex;
             width: max-content;

@@ -3,12 +3,20 @@
     justify-content: space-between;
     gap: 110px;
     padding-top: 80px;
+    @include media(1200){
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+    }
     &__img{
         max-width: 460px;
         width: 100%;
         border-radius: 20px;
         overflow: hidden;
         line-height: 0;
+        @include media(1200){
+            display: none;
+        }
         img{
             width: 100%;
             height: 100%;
@@ -17,11 +25,25 @@
     }
     &__title{
         margin-bottom: 40px;
+        @include media(1200){
+            text-align: center;
+        }
+        @include media(992){
+            max-width: 424px;
+        }
+        @include media(575){
+            max-width: 365px;
+            margin-bottom: 20px;
+        }
     }
     &__content{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @include media(1200){
+            align-items: center;
+            max-width: 600px;
+        }
     }
     &__list{
         list-style-type: disc;
@@ -30,12 +52,24 @@
         flex-direction: column;
         gap: 30px;
         margin-bottom: 40px;
+        @include media(1200){
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        @include media(575){
+            gap: 20px;
+        }
     }
     &__li{
         font-weight: 400;
         font-size: 20px;
         line-height: 96.5%;
         color: #FFFFFF;        
+        @include media(575){
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 96.5%;
+        }
     }
     &__row{
         display: flex;
@@ -45,6 +79,20 @@
         width: calc(100% + 88px);
         margin-right: -44px;
         flex: 1 1 auto;
+        @include media(1400){
+            margin-right: 0;
+            width: 100%;
+            gap: 60px;
+            max-width: 550px;
+        }
+        @include media(1200){
+            margin-bottom: 50px;
+        }
+        @include media(575){
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
     }
     &__col{
         display: flex;
@@ -63,6 +111,12 @@
                 border: 1px solid;
                 border-image-slice: 1;
                 border-image-source: radial-gradient(46.51% 343999.97% at 50% 0.01%, #FFFFFF 0%, rgba(255, 255, 255, 0) 66.77%);
+                @include media(1400){
+                    right: -60%;
+                }
+                @include media(575){
+                    display: none;
+                }
             }
         }
         &-num{
@@ -83,5 +137,15 @@
             color: #FFFFFF;
             text-align: center;
         }
+    }
+    &__btn{
+        font-size: 16px;
+        line-height: 20px;
+        padding: 15px 15px;
+        max-width: 300px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
