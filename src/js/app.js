@@ -296,20 +296,26 @@ tabs()
 
 // !location start
 const location = () => {
-    if(document.querySelectorAll('.location__tab-item')){
-        const locationTabs = document.querySelectorAll('.location__tab-item');
+    if(document.querySelectorAll('.gotoblock')){
+        const locationTabs = document.querySelectorAll('.gotoblock');
         const locationMaps = document.querySelectorAll('.location__map');
         locationTabs.forEach(el => {
             el.addEventListener('click', () => {
-                locationTabs.forEach(tab => {
-                    tab.classList.remove('active')
+                locationTabs.forEach(el => {
+                    el.classList.remove('active')
                 })
                 el.classList.add('active')
                 locationMaps.forEach(map => {
                     map.classList.remove('active')
                 })
                 const target = el.getAttribute('data-target');
-                document.querySelector(target).classList.add('active')
+                const element = document.querySelector(target)
+                locationTabs.forEach(el => {
+                    if(el.getAttribute('data-target') === target){
+                        el.classList.add('active')
+                    }
+                })
+                element.classList.add('active')
             })
         })
         const mapTabs = document.querySelectorAll('.location__map-tab-item');

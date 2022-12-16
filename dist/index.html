@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221216163056"/>
+    <link rel="stylesheet" href="css/style.min.css?_v=20221216170811"/>
     <title>ACACIA</title>
   </head>
   <body> 
@@ -473,36 +473,52 @@
                     <h2 class="title location__title">Location </h2>
                     <div class="location__wrap"> <a class="location__link" href="#!" target="_blank" rel="noopener"> <img src="img/google.svg" alt="" draggable="false"/></a>
                       <div class="location__tab"> 
-                        <button class="location__tab-item active" type="button" data-target="#map">Dubai Map </button>
-                        <button class="location__tab-item" type="button" data-target="#localMap">Local Map </button>
+                        <button class="location__tab-item gotoblock active" type="button" data-target="#map">Dubai Map </button>
+                        <button class="location__tab-item gotoblock" type="button" data-target="#localMap">Local Map </button>
                       </div>
-                      <div class="location__map active" id="map"> <picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="" draggable="false"/></picture></div>
-                      <div class="location__map location__map-wrap" id="localMap"> 
-                        <div class="location__map-tab"> 
-                          <button class="location__map-tab-item active" type="button" data-target="#localAll">All categories </button>
-                          <button class="location__map-tab-item" type="button" data-target="#localPharmacies">Pharmacies </button>
-                          <button class="location__map-tab-item" type="button" data-target="#localFitnesses">Fitness </button>
-                          <button class="location__map-tab-item" type="button" data-target="#localShops">Shops </button>
-                          <button class="location__map-tab-item" type="button" data-target="#localBars">Restaurants and bars </button>
+                      <div class="location__maps"> 
+                        <div class="location__map active" id="map"> <picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="" draggable="false"/></picture></div>
+                        <div class="location__map location__map-wrap" id="localMap"> 
+                          <div class="location__map-tab"> 
+                            <button class="location__map-tab-item active" type="button" data-target="#localAll">All categories </button>
+                            <button class="location__map-tab-item" type="button" data-target="#localPharmacies">Pharmacies </button>
+                            <button class="location__map-tab-item" type="button" data-target="#localFitnesses">Fitness </button>
+                            <button class="location__map-tab-item" type="button" data-target="#localShops">Shops </button>
+                            <button class="location__map-tab-item" type="button" data-target="#localBars">Restaurants and bars </button>
+                          </div>
+                          <div class="location__map-item active" id="localAll"> <picture><source srcset="img/local-map_all.webp" type="image/webp"><img src="img/local-map_all.png" alt="" draggable="false"/></picture></div>
+                          <div class="location__map-item" id="localPharmacies"> <picture><source srcset="img/local-map_pharmasies.webp" type="image/webp"><img src="img/local-map_pharmasies.png" alt="" draggable="false"/></picture></div>
+                          <div class="location__map-item" id="localFitnesses"> <picture><source srcset="img/local-map_fitnesses.webp" type="image/webp"><img src="img/local-map_fitnesses.png" alt="" draggable="false"/></picture></div>
+                          <div class="location__map-item" id="localShops"> <picture><source srcset="img/local-map_shops.webp" type="image/webp"><img src="img/local-map_shops.png" alt="" draggable="false"/></picture></div>
+                          <div class="location__map-item" id="localBars"> <picture><source srcset="img/local-map_bars.webp" type="image/webp"><img src="img/local-map_bars.png" alt="" draggable="false"/></picture></div>
                         </div>
-                        <div class="location__map-item active" id="localAll"> <picture><source srcset="img/local-map_all.webp" type="image/webp"><img src="img/local-map_all.png" alt="" draggable="false"/></picture></div>
-                        <div class="location__map-item" id="localPharmacies"> <picture><source srcset="img/local-map_pharmasies.webp" type="image/webp"><img src="img/local-map_pharmasies.png" alt="" draggable="false"/></picture></div>
-                        <div class="location__map-item" id="localFitnesses"> <picture><source srcset="img/local-map_fitnesses.webp" type="image/webp"><img src="img/local-map_fitnesses.png" alt="" draggable="false"/></picture></div>
-                        <div class="location__map-item" id="localShops"> <picture><source srcset="img/local-map_shops.webp" type="image/webp"><img src="img/local-map_shops.png" alt="" draggable="false"/></picture></div>
-                        <div class="location__map-item" id="localBars"> <picture><source srcset="img/local-map_bars.webp" type="image/webp"><img src="img/local-map_bars.png" alt="" draggable="false"/></picture></div>
                       </div>
+                      <div class="location__navigation"> 
+                        <button class="gotoblock location__navigation-left location__navigation-btn active" type="button" data-target="#map"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L12.0903 9.73593C13.0832 10.4971 13.1413 11.9728 12.2114 12.8097L2 22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
+                        </button>
+                        <button class="gotoblock location__navigation-right location__navigation-btn" type="button" data-target="#localMap"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L12.0903 9.73593C13.0832 10.4971 13.1413 11.9728 12.2114 12.8097L2 22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="location__tab sm"> 
+                      <button class="location__tab-item gotoblock active" type="button" data-target="#map"></button>
+                      <button class="location__tab-item gotoblock" type="button" data-target="#localMap"></button>
                     </div>
                     <div class="location__info"> 
                       <div class="location__info-item"> 
-                        <p class="location__info-title">5 mins </p>
+                        <p class="location__info-title">5 <span>mins</span></p>
                         <p class="location__info-text">drive to the Dubai Hills Mall </p>
                       </div>
                       <div class="location__info-item"> 
-                        <p class="location__info-title">15 mins </p>
+                        <p class="location__info-title">15 <span>mins</span></p>
                         <p class="location__info-text">drive to the Dubai Int. Stadium </p>
                       </div>
                       <div class="location__info-item"> 
-                        <p class="location__info-title">17 mins </p>
+                        <p class="location__info-title">17 <span>mins</span></p>
                         <p class="location__info-text">drive to the Jumeirah Beach </p>
                       </div>
                     </div>
@@ -811,6 +827,6 @@
               </div>
             </footer>
     </div>
-    <script src="js/app.min.js?_v=20221216163056"> </script>
+    <script src="js/app.min.js?_v=20221216170811"> </script>
   </body>
 </html>

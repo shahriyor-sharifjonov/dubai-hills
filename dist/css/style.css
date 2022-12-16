@@ -2020,14 +2020,13 @@ ul {
 
 .location__title {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   color: #1D1C1C;
 }
 
 .location__wrap {
   position: relative;
   height: 590px;
-  overflow: hidden;
   border-radius: 20px;
 }
 
@@ -2062,6 +2061,10 @@ ul {
           box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   padding: 7.5px;
+}
+
+.location__tab.sm {
+  display: none;
 }
 
 .location__tab-item {
@@ -2115,11 +2118,62 @@ ul {
   visibility: visible;
 }
 
+.location__maps {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.location__navigation {
+  display: none;
+}
+
+.location__navigation-left svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.location__navigation-right {
+  margin-left: auto;
+}
+
+.location__navigation-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(#E3945E), to(#E3945E)), #FFFFFF;
+  background: -o-linear-gradient(bottom, #E3945E, #E3945E), #FFFFFF;
+  background: linear-gradient(0deg, #E3945E, #E3945E), #FFFFFF;
+  border: 5px solid #fff;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.location__navigation-btn.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .location__map {
   display: none;
   height: 100%;
   width: 100%;
   line-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .location__map img {
@@ -3281,6 +3335,7 @@ ul {
     content: "";
     position: absolute;
     top: 0;
+    z-index: 3;
     left: 0;
     width: 100%;
     height: 120px;
@@ -3309,8 +3364,113 @@ ul {
     display: none;
   }
 
+  .location__tab.sm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 7px;
+    background: transparent;
+    padding: 0;
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    padding-top: 10px;
+  }
+
+  .location__tab-item {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.062745098);
+  }
+
+  .location__tab-item::before {
+    display: none;
+  }
+
+  .location__tab-item.active {
+    background: #E3945E;
+  }
+
+  .location__maps {
+    border-radius: 45px;
+  }
+
+  .location__navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 70px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: -35px;
+  }
+
+  .location__map {
+    border-radius: 45px;
+  }
+
+  .location__map-tab {
+    display: none;
+  }
+
+  .location__info {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .location__info-item:nth-child(2) {
+    padding: 30px 0;
+  }
+
+  .location__info-item:nth-child(2)::before {
+    display: none;
+  }
+
+  .location__info-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .location__info-title {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 96.5%;
+  }
+
+  .location__info-title span {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 96.5%;
+  }
+
   .location__info-text {
     color: #1D1C1C;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 96.5%;
   }
 
   .form__title {
