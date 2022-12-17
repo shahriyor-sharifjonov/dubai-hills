@@ -443,6 +443,8 @@ const sliders = () => {
         watchSlidesProgress: true,
         speed: 600,
         effect: "fade",
+        observer: true,
+        observeParents: true,
         navigation: {
             nextEl: '.floor__next',
             prevEl: '.floor__prev',
@@ -463,6 +465,8 @@ const sliders = () => {
         // loop: true,
         grabCursor: true,
         autoHeight: true,
+        observer: true,
+        observeParents: true,
         slideToClickedSlide: true,
         thumbs: {
             swiper: galleryThumbs,
@@ -482,9 +486,32 @@ const sliders = () => {
         // loop: true,
         grabCursor: true,
         autoHeight: true,
+        observer: true,
+        observeParents: true,
         slideToClickedSlide: true,
         thumbs: {
             swiper: galleryThumbs2,
+        },
+    });
+    const communityThumbs = new Swiper('.community__gallery', {
+        spaceBetween: 12,
+        slidesPerView: "auto",
+        // loop: true,
+        // freeMode: true,
+        // loopedSlides: 5,
+        slideToClickedSlide: true,
+    });
+    const communityTop = new Swiper('.community__swiper', {
+        modules: [Thumbs],
+        spaceBetween: 12,
+        // loop: true,
+        grabCursor: true,
+        autoHeight: true,
+        observer: true,
+        observeParents: true,
+        slideToClickedSlide: true,
+        thumbs: {
+            swiper: communityThumbs,
         },
     });
 }
