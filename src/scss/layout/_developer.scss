@@ -4,6 +4,10 @@
     }
     &__title{
         margin-bottom: 80px;
+        @include media(992){
+            margin-bottom: 50px;
+            text-align: center;
+        }
     }
     &__item{
         display: flex;
@@ -11,24 +15,44 @@
         gap: 56px;
         @include media(992){
             flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
         &:not(:last-of-type){
             margin-bottom: 80px; 
+            @include media(992){
+                margin-bottom: 50px;
+            }
         }
         &_reverse{
             flex-direction: row-reverse;
             .developer__item{
                 &-title{
                     text-align: left;
+                    @include media(992){
+                        text-align: center;
+                    }
                 }
                 &-p{
                     text-align: left;
+                    @include media(992){
+                        text-align: center;
+                    }
                 }
                 &-subtitle{     
                     text-align: left;
+                    @include media(992){
+                        text-align: center;
+                    }
                 }
                 &-sub{
                     align-items: flex-start;
+                    @include media(992){
+                        align-items: center;
+                    }
                 }
             }
         }
@@ -38,9 +62,10 @@
             border-radius: 20px;
             overflow: hidden;
             line-height: 0;
-            @include media(575){
-                width: 100%;
+            @include media(992){
                 min-width: 0;
+                max-width: 500px;
+                width: 100%;
             }
             img{
                 width: 100%;
@@ -51,6 +76,22 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 1;
+            @include media(992){
+                position: relative;
+                z-index: 2;
+                margin-top: -270px;
+                align-items: center;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: -155px;
+                    left: -15px;
+                    width: calc(100% + 30px);
+                    height: 370px;
+                    background: linear-gradient(356.45deg, #1D1C1C 12.28%, rgba(29, 28, 28, 0) 95%);
+                    z-index: -1;
+                }
+            }
         }
         &-title{
             font-weight: 500;
@@ -59,6 +100,13 @@
             text-align: right;
             color: #fff;
             margin-bottom: 40px;
+            @include media(992){
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 32px;
+                margin-bottom: 40px;
+                color: #FFFFFF;
+            }
         }
         &-p{
             font-weight: 300;
@@ -67,6 +115,14 @@
             margin-bottom: 70px;
             text-align: right;
             color: #fff;
+            @include media(992){
+                font-weight: 200;
+                text-align: center;
+                font-size: 16px;
+                line-height: 177%;
+                color: #FFFFFF;
+                margin-bottom: 50px;
+            }
         }
         &-subtitle{
             font-weight: 500;
@@ -74,13 +130,23 @@
             line-height: 177%;
             margin-bottom: 20px;
             text-align: right;
-            color: #fff;            
+            color: #fff;     
+            @include media(992){
+                display: none;
+            }       
         }
         &-grid{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 0 28px;
+            @include media(992){
+                justify-content: center;
+            }
+            @include media(575){
+                flex-direction: column;
+                gap: 25px;
+            }
         }
         &-sub{
             width: calc(50% - 14px);
@@ -88,6 +154,12 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            @include media(992){
+                align-items: center;
+            }
+            @include media(575){
+                width: 100%;
+            }
         }
         &-num{
             font-weight: 700;
@@ -105,6 +177,9 @@
             font-size: 14px;
             line-height: 96.5%;
             color: #fff;
+            @include media(992){
+                text-align: center;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 .community{
     padding-top: 500px;
     padding-bottom: 80px;
-    @include media(768){
+    @include media(992){
         padding-bottom: 0;
     }
     &__body{
