@@ -3199,6 +3199,20 @@ ul {
     line-height: 120%;
   }
 
+  .footer {
+    padding-top: 80px;
+  }
+
+  .footer__logo {
+    margin-bottom: 50px;
+  }
+
+  .footer__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px 70px;
+  }
+
   .intro__title {
     font-size: 68px;
     line-height: 120%;
@@ -3713,6 +3727,22 @@ ul {
     text-align: center;
   }
 
+  .consultation__title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .consultation__info {
+    display: none;
+  }
+
+  .consultation__form {
+    max-width: 550px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .form__title {
     font-weight: 600;
   }
@@ -3772,6 +3802,15 @@ ul {
     font-size: 28px;
     line-height: 34px;
     text-align: center;
+  }
+
+  .footer__logo {
+    max-width: 163px;
+    width: 100%;
+  }
+
+  .footer__logo img {
+    width: 100%;
   }
 
   .features__title {
@@ -3939,6 +3978,14 @@ ul {
 }
 
 @media (max-width: 575px) {
+  .footer__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 22px 70px;
+  }
+
   .intro__img {
     display: -webkit-box;
     display: -ms-flexbox;
