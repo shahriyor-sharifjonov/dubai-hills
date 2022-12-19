@@ -1,0 +1,78 @@
+mixin popup()
+    .popup#popup1
+        .popup__overlay.popup-close  
+        .popup__body
+            button(type="button").popup-close.popup__close 
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.0798 1.01996L1.07812 21.0308M21.0798 21.0308L1.07812 1.01996" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            form(action="#" method="post").form-validate.form.popup__form  
+                .form__title.popup__title <span>Download</span> brochure in one click
+                .form__item 
+                    .form__item-input
+                        input(type="text" name="name" id="name2" placeholder="Your name" autocomplete="off")
+                        .form__item-input-border 
+                        .form__item-input-correct 
+                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_494)"/>
+                                <path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_313_494" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFA761"/>
+                                <stop offset="1" stop-color="#C7825B"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        .form__item-input-error     
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+                                <path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+                            </svg>
+                .form__item 
+                    .form__item-input
+                        input(type="email" id="email2" name="email" placeholder="Your email" autocomplete="off")
+                        .form__item-input-border 
+                        .form__item-input-correct 
+                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_495)"/>
+                                <path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_313_495" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFA761"/>
+                                <stop offset="1" stop-color="#C7825B"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        .form__item-input-error     
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+                                <path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+                            </svg>
+                .form__item 
+                    .form__item-input
+                        input(type="tel" id="phone2" name="phone" placeholder="Your phone" autocomplete="off")
+                        .form__item-input-border 
+                        .form__item-input-correct 
+                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11.498" cy="10.5" r="10.5" fill="url(#paint0_linear_313_496)"/>
+                                <path d="M7.45898 10.4998L10.2859 13.3267L15.9398 7.26904" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_313_496" x1="9.33628" y1="-29.0769" x2="39.7036" y2="38.7451" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFA761"/>
+                                <stop offset="1" stop-color="#C7825B"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        .form__item-input-error     
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.5" cy="10.5" r="10.5" fill="#E14800"/>
+                                <path d="M7.16186 13.0566C6.94605 13.2724 6.94605 13.6223 7.16186 13.8381C7.37768 14.054 7.72759 14.054 7.9434 13.8381L10.5 11.2815L13.0566 13.8381C13.2724 14.054 13.6223 14.054 13.8381 13.8381C14.054 13.6223 14.054 13.2724 13.8381 13.0566L11.2815 10.5L13.8381 7.9434C14.054 7.72759 14.054 7.37768 13.8381 7.16186C13.6223 6.94605 13.2724 6.94605 13.0566 7.16186L10.5 9.71846L7.9434 7.16186C7.72759 6.94605 7.37768 6.94605 7.16186 7.16186C6.94605 7.37768 6.94605 7.72759 7.16186 7.9434L9.71846 10.5L7.16186 13.0566Z" fill="white"/>
+                            </svg>
+                button(type="submit" disabled anim='ripple').btn.form__btn Download 
+            ul.popup__cat
+                li.popup__cat-item Masterplan
+                li.popup__cat-item Gallery
+                li.popup__cat-item Lifestyle
+                li.popup__cat-item Floor plans
+            .popup__img 
+                img(src="@img/brochure.png", alt="" draggable="false")

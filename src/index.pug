@@ -9,7 +9,6 @@ html(lang="en")
     body 
         .loader
             p.loader__text يا
-        .cursor  
         .wrapper 
             include components/header 
             +header 
@@ -23,18 +22,20 @@ html(lang="en")
                 include components/brochure   
                 +brochure   
                 include components/exterior   
-                +exterior   
-                +interior    
+                +exterior
+                +interior
                 include components/floor   
-                +floor  
+                +floor
                 include components/location   
-                +location  
+                +location
                 include components/community   
-                +community   
+                +community
                 include components/developer   
-                +developer  
+                +developer
                 include components/consultation   
-                +consultation  
+                +consultation
+                include components/popups
+                +popup 
             include components/footer 
             +footer 
         //- script(src="https://form.sales-inquiries.ae/static/form-dist.js")

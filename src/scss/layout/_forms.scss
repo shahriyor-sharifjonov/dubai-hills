@@ -114,8 +114,13 @@
                     @include media(992){
                         color: #ffffff90;
                     }
+                    @include media(575){
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
                 }
                 @include media(575){
+                    padding-right: 30px;
                     font-size: 16px;
                     line-height: 19px;
                 }
