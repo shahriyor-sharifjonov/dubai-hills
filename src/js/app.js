@@ -112,6 +112,49 @@ if(document.querySelectorAll('[anim="ripple"]')){
 
 
 
+// !showmore start
+if(document.querySelector('.showmore')){
+    const buttons = document.querySelectorAll('.showmore');
+    buttons.forEach(button => {
+        let more = false
+        button.addEventListener('click', () => {
+            more = !more
+            const target = button.getAttribute('data-target')
+            const el = document.querySelector(target);
+            el.classList.toggle('more')
+            if(more){
+                button.innerHTML = 'Hide'
+            }else{
+                button.innerHTML = 'View More'
+            }
+        })
+    })
+}
+// !showmore end
+
+
+
+// !showtel start
+if(document.querySelector('.shownumber')){
+    const buttons = document.querySelectorAll('.shownumber');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const number = button.getAttribute('data-tel');
+            const tel = number.replace(/\s/g, '');
+            const target = button.getAttribute('data-target');
+            const el = document.querySelector(target);
+            el.innerHTML = number
+            el.setAttribute('href', `tel:${tel}`)
+            if(button.classList.contains('remove')){
+                button.remove()
+            }
+        })
+    })
+}
+// !showtel end
+
+
+
 // !custom cursor start
 // const mouse = document.querySelector('.cursor');
 // function moveMouse(e) {

@@ -37,6 +37,19 @@ body{
 .h200vh{
     height: 200vh;
 }
+.showmore{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 177%;
+    text-decoration-line: underline;
+    color: #E5965F;
+    &.sm{
+        display: none;
+        @include media(575){
+            display: block;
+        }
+    }
+}
 .loader{
     position: fixed;
     top: 0;
