@@ -503,7 +503,7 @@ const sliders = () => {
         slidesPerGroup: 1,
         createElements: true,
         preventClicks: true,
-        autoHeight: true,
+        autoHeight: false,
         preventClicksPropagation: true,
         noSwiping: true,
         grabCursor: true,
@@ -518,6 +518,11 @@ const sliders = () => {
         navigation: {
             nextEl: '.floor__next',
             prevEl: '.floor__prev',
+        },
+        breakpoints: {
+          992: {
+            autoHeight: true,
+          },
         },
     })
 
@@ -967,6 +972,29 @@ const animations = () => {
                     }, 'start')
             })
         },
+        "(max-width: 992px)": function() {
+            gsap.utils.toArray(".developer__item-img").forEach(el => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: true,
+                        markers: false,
+                        onEnter: () => {el.parentElement.querySelector(".developer__item-content").classList.remove('show')}
+                    },
+                    onComplete: () => {el.parentElement.querySelector(".developer__item-content").classList.add('show')}
+                })
+                tl.add('start')
+                .from(el, {
+                    opacity: 0,
+                })
+                // .from(el.parentElement.querySelector(".developer__item-content"), {
+                //     opacity: 0,
+                //     y: 100,
+                // })
+            })
+        },
         "(max-width: 576px)": function() {
             gsap.utils.toArray(".intro").forEach(el => {
                 const tl = gsap.timeline({
@@ -988,7 +1016,7 @@ const animations = () => {
                     y: -200
                 }, 'start')
             })
-        }
+        },
     })
 }
 animations()
