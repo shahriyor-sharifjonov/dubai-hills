@@ -148,6 +148,9 @@ if(document.querySelector('.shownumber')){
             if(button.classList.contains('remove')){
                 button.remove()
             }
+            if(button.parentElement.querySelector('.remove')){
+                button.parentElement.querySelector('.remove').remove()
+            }
         })
     })
 }
