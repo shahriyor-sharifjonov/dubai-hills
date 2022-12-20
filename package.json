@@ -15,6 +15,7 @@
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
+    "fancybox": "^3.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -44,9 +45,10 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "gsap": "^3.11.3",
     "imagesloaded": "^5.0.0",
-    "jquery": "^3.6.1",
+    "jquery": "^3.6.2",
     "locomotive-scroll": "^4.1.4",
     "smoothscroll-for-websites": "^1.4.10",
     "typeit": "^8.7.0"

@@ -1,5 +1,4 @@
 import * as functions from './modules/functions.js'
-import imagesLoaded from 'imagesloaded'
 import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination, EffectCreative, EffectFade, Thumbs, FreeMode } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
