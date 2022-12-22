@@ -6,6 +6,9 @@
     // overflow: hidden;
     position: relative;
     padding-top: 0;
+    @include media(992){
+        padding-top: 0;
+    }
     @include media(576){
         // height: 150vh;
     }

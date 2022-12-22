@@ -3389,6 +3389,10 @@ ul {
     gap: 30px 70px;
   }
 
+  .intro {
+    padding-top: 0;
+  }
+
   .intro__title {
     font-size: 68px;
     line-height: 120%;
