@@ -1012,7 +1012,7 @@ const animations = () => {
                 tl.add('start')
                 .to('.intro__img', {
                     scale: 0.5,
-                    y: oneFourHeight,
+                    // y: oneFourHeight,
                 }, 'start')  
                 .to('.intro__body', {
                     y: -200
