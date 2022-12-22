@@ -523,7 +523,7 @@ const sliders = () => {
         },
         breakpoints: {
           992: {
-            autoHeight: true,
+            // autoHeight: true,
           },
         },
     })
