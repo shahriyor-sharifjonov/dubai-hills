@@ -976,6 +976,7 @@ ul {
   height: 100%;
   isolation: isolate;
   z-index: -2;
+  will-change: transform;
 }
 
 .intro__img::before {
@@ -995,6 +996,7 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  will-change: transform;
 }
 
 .intro__body {

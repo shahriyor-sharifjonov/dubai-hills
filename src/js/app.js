@@ -1003,7 +1003,7 @@ const animations = () => {
                         scrollTrigger: {
                             trigger: el,
                             start: "top top",
-                            end: "bottom 50%",
+                            end: "bottom 30%",
                             scrub: true,
                             markers: false,
                         }, 
@@ -1011,11 +1011,13 @@ const animations = () => {
                     });
                 tl.add('start')
                 .to('.intro__img', {
-                    scale: 0.5, 
-                    // y: oneFourHeight,
-                }, 'start')  
+                    scale: 0.5,
+                    y: oneFourHeight,
+                }, 'start') 
                 .to('.intro__body', {
-                    y: -200
+                    y: -200,
+                    // opacity: 0,
+                    // ease: "expo.easeOut",
                 }, 'start')
             })
         },
