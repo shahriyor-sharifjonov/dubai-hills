@@ -22,9 +22,22 @@
         z-index: -2;
         will-change: transform;
         @include media(575){
+            top: -50px;
+            height: calc(100% + 50px);
             display: flex;
             justify-content: center;
             transform-origin: center bottom;
+            &::after{
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 50%;
+                width: 200%;
+                height: 100px;
+                transform: translateX(-50%);
+                background: linear-gradient(180deg,#1d1c1c 5%,rgba(29,28,28,0) 90.45%);
+                z-index: 1;
+            }
         }
         &::before{
             content: '';
@@ -48,7 +61,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            will-change: transform;
             @include media(575){
                 width: 200vw;
                 transform-origin: center; 

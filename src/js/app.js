@@ -147,7 +147,7 @@ if(document.querySelector('.shownumber')){
             if(button.classList.contains('remove')){
                 button.remove()
             }
-            if(button.parentElement.querySelector('.remove')){
+            if(button?.parentElement?.querySelector('.remove')){
                 button.parentElement.querySelector('.remove').remove()
             }
         })
@@ -980,21 +980,42 @@ const animations = () => {
                     scrollTrigger: {
                         trigger: el,
                         start: "top bottom",
-                        end: "bottom bottom",
+                        end: "bottom 50%",
                         scrub: true,
                         markers: false,
-                        onEnter: () => {el.parentElement.querySelector(".developer__item-content").classList.remove('show')}
                     },
-                    onComplete: () => {el.parentElement.querySelector(".developer__item-content").classList.add('show')}
+                    defaults: {ease: "none"} 
                 })
                 tl.add('start')
                 .from(el, {
                     opacity: 0,
                 })
-                // .from(el.parentElement.querySelector(".developer__item-content"), {
-                //     opacity: 0,
-                //     y: 100,
-                // })
+            })
+            gsap.utils.toArray(".developer__item-img").forEach(el => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "bottom 80%",
+                        end: "bottom 70%",
+                        scrub: 1,
+                        markers: false,
+                    },
+                    defaults: {ease: "none"} 
+                })
+                tl.add('start')
+                .to(el.parentElement.querySelector('.developer__item-content-before'), {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.1,
+                }, 'start')
+                .to(el.parentElement.querySelector('.developer__item-title'), {
+                    opacity: 1,
+                    y: 0,
+                }, 'start')
+                .to(el.parentElement.querySelector('.developer__item-p'), {
+                    opacity: 1,
+                    y: 0,
+                }, 'start')
             })
         },
         "(max-width: 576px)": function() {
@@ -1004,7 +1025,7 @@ const animations = () => {
                             trigger: el,
                             start: "top top",
                             end: "bottom 30%",
-                            scrub: true,
+                            scrub: 0.8,
                             markers: false,
                         }, 
                         defaults: {ease: "none"} 
@@ -1013,7 +1034,7 @@ const animations = () => {
                 .to('.intro__img', {
                     scale: 0.5,
                     y: oneFourHeight,
-                }, 'start') 
+                }, 'start')
                 .to('.intro__body', {
                     y: -200,
                     // opacity: 0,
