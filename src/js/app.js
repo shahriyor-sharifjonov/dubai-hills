@@ -38,7 +38,9 @@ const menuToggle = () => {
   headerMenu.classList.toggle("open")
   header.classList.toggle("open")
   if(menuOpened){
-    document.body.style.overflowY = "hidden"
+    setTimeout(() => {
+        document.body.style.overflowY = "hidden"
+    }, 300);
   } else {
     document.body.style.overflowY = "auto"
   }
