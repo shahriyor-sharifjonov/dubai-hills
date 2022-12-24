@@ -3372,6 +3372,7 @@ ul {
   .header {
     opacity: 1;
     visibility: visible;
+    pointer-events: none;
     top: 0;
     left: 0;
     right: 0;
@@ -3382,6 +3383,10 @@ ul {
     width: 100%;
     height: 100%;
     max-width: 100% !important;
+  }
+
+  .header * {
+    pointer-events: all;
   }
 
   .header.hide {
@@ -3411,11 +3416,9 @@ ul {
     bottom: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    visibility: hidden;
     -webkit-transform: translateX(100%);
         -ms-transform: translateX(100%);
             transform: translateX(100%);
@@ -3430,8 +3433,6 @@ ul {
   }
 
   .header__nav.open {
-    opacity: 1;
-    visibility: visible;
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);

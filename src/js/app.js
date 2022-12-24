@@ -30,6 +30,7 @@ scroll()
 // !header menu start
 const headerButton = document.querySelector(".header__button")
 const headerMenu = document.querySelector(".header__nav")
+const headerLinks = document.querySelectorAll('.header__link');
 const header = document.querySelector(".header")
 let menuOpened = false
 const menuToggle = () => {
@@ -45,6 +46,12 @@ const menuToggle = () => {
     document.body.style.overflowY = "auto"
   }
 }
+
+headerLinks.forEach(el => {
+    el.addEventListener('click', () => {
+        menuToggle()
+    })
+})
 
 headerButton.onclick = menuToggle
 
