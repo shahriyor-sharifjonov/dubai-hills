@@ -26,6 +26,38 @@ scroll()
 // !onload scroll to top end
 
 
+
+// !header menu start
+const headerButton = document.querySelector(".header__button")
+const headerMenu = document.querySelector(".header__nav")
+const header = document.querySelector(".header")
+let menuOpened = false
+const menuToggle = () => {
+  menuOpened = !menuOpened
+  headerButton.classList.toggle("open")
+  headerMenu.classList.toggle("open")
+  header.classList.toggle("open")
+  if(menuOpened){
+    document.body.style.overflowY = "hidden"
+  } else {
+    document.body.style.overflowY = "auto"
+  }
+}
+
+headerButton.onclick = menuToggle
+
+window.onclick = (e) => {
+  if (
+    menuOpened &&
+    !e.composedPath().includes(headerButton) &&
+    !e.composedPath().includes(headerMenu)
+  )
+    menuToggle()
+}
+// !header menu end
+
+
+
 // !cursor start
 function lerp(start, end, amount) {
   return (1-amount)*start+amount*end

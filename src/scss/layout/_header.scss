@@ -13,7 +13,17 @@
     visibility: hidden;
     transition: 300ms ease-out;
     @include media(1200){
-        display: none;
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 0) !important;
+        width: 100%;
+        height: 100%;
+        max-width: 100% !important;
+        // display: none;
     }
     &.show{
         opacity: 1;
@@ -24,14 +34,25 @@
         opacity: 0 !important;
         visibility: hidden !important;
         transform: translateX(-50%) translateY(-20px) !important;
+        @include media(1200){
+            transform: translate(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
     }
     &.white{
         background: #fff;
         color: #1D1C1C;
+        @include media(1200){
+            background: transparent;
+        }
     }
     &.black{
         background: #1D1C1C;
         color: #fff;
+        @include media(1200){
+            background: transparent;
+        }
     }
     &__nav{
         display: flex;
@@ -39,16 +60,129 @@
         justify-content: space-between;
         flex: 1 1 auto;
         padding: 0 50px;
+        @include media(1200){
+            position: fixed;
+            flex-direction: column;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            justify-content: flex-start;
+            visibility: hidden;
+            transform: translateX(100%);
+            z-index: 50;
+            padding: 0;
+            transition: 300ms ease;
+            padding-top: 110px;
+            background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+            &.open{
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+        }
+    }
+    &__button {
+        width: 64px;
+        height: 64px;
+        border-radius: 3px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        outline: none;
+        background: none;
+        display: none;
+        transition: 300ms ease-out;
+        z-index: 60;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 15px -7px #000;
+        @include media(1200) {
+          display: block;
+        }
+        &.open {
+            box-shadow: 0 0 15px -7px transparent;
+            .header__button-line,
+            &::before {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+            &::after {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-135deg);
+            }
+        }
+        &::before,
+        &::after,
+        &-line {
+          transition: 0.5s;
+          position: absolute;
+          content: "";
+          left: 50%;
+          width: 30px;
+          height: 2px;
+          background: #1D1C1C;
+          transform: translateX(-50%);
+        }
+        &::before {
+          top: 40%;
+        }
+        &::after {
+          bottom: 40%;
+        }
+        &-line {
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+        }
+    }
+    &__title{
+        display: none;
+        @include media(1200){
+            display: flex;
+            margin-bottom: 58px;
+            width: 100%;
+            padding-bottom: 10px;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            padding-left: 30px;
+            color: #FFFFFF;
+            position: relative;
+            &::before{  
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 30px;
+                right: 30px;
+                height: 1px;
+                background: #fff;
+            }
+        }
     }
     &__list{
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 44px;
+        @include media(1200){
+            padding: 0 30px;
+            gap: 16px;
+            flex-direction: column; 
+            width: 100%;
+            align-items: flex-start;
+            justify-content: center;
+        }
     }
     &__li{
         position: relative;
         transition: 300ms ease-out;
+        @include media(1200){
+            width: 100%;
+        }
         &::before{
             content: '';
             position: absolute;
@@ -62,13 +196,21 @@
             visibility: hidden;
             transition: 300ms ease-out;
             background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
+            @include media(1200){
+                left: auto;
+                right: -1px;
+                width: 14px;
+                height: 14px;
+                background: #1E1D1D;
+            }
         }
         &.active{
-            background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
+            color: #FFA761;
+            @include media(1200){
+                .header__link{
+                    color: #1E1D1D;
+                }
+            }
             &::before{
                 opacity: 1;
                 visibility: visible;
@@ -82,6 +224,12 @@
         line-height: 22px;
         color: inherit;
         transition: 300ms ease-out;
+        @include media(1200){
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            color: #FFFFFF;
+        }
     }
     &__tel{
         font-weight: 400;
@@ -90,6 +238,9 @@
         color: inherit;  
         text-decoration: none;
         transition: 300ms ease-out;
+        @include media(1200){
+            display: none;
+        }
         span{
             background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%);
             -webkit-background-clip: text;
