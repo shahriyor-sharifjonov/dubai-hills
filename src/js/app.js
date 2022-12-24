@@ -532,7 +532,7 @@ const sliders = () => {
         spaceBetween: 12,
         slidesPerView: "auto",
         // loop: true,
-        // freeMode: true,
+        freeMode: true,
         // loopedSlides: 5,
         slideToClickedSlide: true,
     });
