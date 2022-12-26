@@ -339,6 +339,7 @@ ul{
     &[disabled="disabled"]{
         background: linear-gradient(155.88deg, #FDAA68 -83.36%, #D2AF9A 184.44%);
         cursor: auto;
+        pointer-events: none;
     }
     &:not([disabled="disabled"]){
         position: relative;

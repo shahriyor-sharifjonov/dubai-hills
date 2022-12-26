@@ -19,6 +19,9 @@
             transform: translateY(0);
             opacity: 1;
         }
+        .popup__close{
+            transform: rotate(0);
+        }
     }
     &__overlay{
         position: absolute;
@@ -34,6 +37,11 @@
         position: absolute;
         top: 35px;
         right: 35px;
+        transition: 500ms ease;
+        transform: rotate(-360deg);
+        &:hover{
+            transform: rotate(-90deg) !important;
+        }
         @include media(575){
             top: 15px;
             right: 15px;

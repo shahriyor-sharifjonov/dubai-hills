@@ -560,7 +560,7 @@ const sliders = () => {
         modules: [Pagination, Navigation],
         slidesPerView: 1,
         spaceBetween: 80,
-        initialSlide: 1,
+        initialSlide: 0,
         grabCursor: true,
         centeredSlides: true,
         loop: true,
@@ -575,11 +575,13 @@ const sliders = () => {
         },
         breakpoints: {
             768: {
-              slidesPerView: 2,
-              centeredSlides: false,
+                initialSlide: 1,
+                slidesPerView: 2,
+                centeredSlides: false,
             },
             992: {
-              slidesPerView: 3,
+                slidesPerView: 3,
+                initialSlide: 1,
             },
         },
     })
@@ -672,7 +674,9 @@ const sliders = () => {
 
     const galleryThumbs = new Swiper('.exterior__cbot', {
         spaceBetween: 12,
-        slidesPerView: "auto",
+        slidesPerView: 3,
+        observer: true,
+        observeParents: true,
         // loop: true,
         freeMode: true,
         // loopedSlides: 5,
@@ -693,7 +697,9 @@ const sliders = () => {
     });
     const galleryThumbs2 = new Swiper('.interior__cbot', {
         spaceBetween: 12,
-        slidesPerView: "auto",
+        slidesPerView: 3,
+        observer: true,
+        observeParents: true,
         // loop: true,
         // freeMode: true,
         // loopedSlides: 5,
@@ -714,7 +720,9 @@ const sliders = () => {
     });
     const communityThumbs = new Swiper('.community__gallery', {
         spaceBetween: 12,
-        slidesPerView: "auto",
+        slidesPerView: 3,
+        observer: true,
+        observeParents: true,
         // loop: true,
         // freeMode: true,
         // loopedSlides: 5,
@@ -968,6 +976,21 @@ const animations = () => {
                         opacity: 0,
                         ease: "expo.ease",
                         delay: .3,
+                    }, 'start')
+                    .from(section.querySelector(".location__wrap"), {
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".exterior__carousel"), {
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
+                    }, 'start')
+                    .from(section.querySelector(".community__slider"), {
+                        y: 100,
+                        opacity: 0,
+                        ease: "expo.ease",
                     }, 'start')
                 const tlGallery = gsap.timeline({
                     scrollTrigger: {

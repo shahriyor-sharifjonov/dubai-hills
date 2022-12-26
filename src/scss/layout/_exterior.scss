@@ -138,14 +138,14 @@
     &__gallery{
         position: relative;
         @include media(575){
-            margin-left: -15px;
-            margin-right: -15px;
-            padding-left: 15px;
-            padding-right: 15px;
-            width: calc(100% + 30px) !important;
+            // margin-left: -15px;
+            // margin-right: -15px;
+            // padding-left: 15px;
+            // padding-right: 15px;
+            // width: calc(100% + 30px) !important;
         }
         &::before{
-            content: '';
+            // content: '';
             position: absolute;
             left: -1px;
             top: 0;
@@ -157,7 +157,7 @@
             pointer-events: none;
         }
         &::after{
-            content: '';
+            // content: '';
             position: absolute;
             right: -1px;
             top: 0;

@@ -106,7 +106,10 @@
             margin-bottom: 30px;
         }
         @include media(576){
-            font-size: 12px;
+            font-weight: 300;
+            font-size: 16px;
+            max-width: 300px;
+            width: 100%;
             line-height: 113%;
             margin-bottom: 25px;
         }
