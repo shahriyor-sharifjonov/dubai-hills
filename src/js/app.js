@@ -771,43 +771,6 @@ const animations = () => {
             gsap.utils.toArray(".header").forEach(header => {
                 gsap.timeline({
                     scrollTrigger: {
-                        trigger: ".floor",
-                        start: "top 60px",
-                        end: "bottom bottom",
-                        markers: false,
-                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-                    }
-                })
-            })
-            
-            gsap.utils.toArray(".header").forEach(header => {
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".floor",
-                        start: "top 60px",
-                        end: "bottom bottom",
-                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
-                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
-                    }
-                })
-            })
-            
-            gsap.utils.toArray(".header").forEach(header => {
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".location",
-                        start: "527px top",
-                        end: "bottom bottom",
-                        onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
-                        onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
-                    }
-                })
-            })
-            
-            gsap.utils.toArray(".header").forEach(header => {
-                gsap.timeline({
-                    scrollTrigger: {
                         trigger: ".exterior",
                         start: "top 60px",
                         end: "bottom bottom",
@@ -1113,6 +1076,32 @@ const animations = () => {
                     }, 'start')
             })
 		},
+        "(min-width: 992px)": function() {
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".floor",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+                    }
+                })
+            })
+            
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".location",
+                        start: "527px top",
+                        end: "bottom bottom",
+                        onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
+                        onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
+                    }
+                })
+            })
+        },
         "(min-width: 576px)": function() {
             gsap.utils.toArray(".section__body").forEach(section => {
                 const tl = gsap.timeline({
@@ -1140,6 +1129,30 @@ const animations = () => {
             })
         },
         "(max-width: 992px)": function() {
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".community",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {header.classList.remove('black'); header.classList.add('white')},
+                        onLeaveBack: () => {header.classList.add('black'); header.classList.remove('white')}
+                    }
+                })
+            })
+            gsap.utils.toArray(".header").forEach(header => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".interior",
+                        start: "top 60px",
+                        end: "bottom bottom",
+                        markers: false,
+                        onEnter: () => {header.classList.remove('white'); header.classList.add('black')},
+                        onLeaveBack: () => {header.classList.add('white'); header.classList.remove('black')}
+                    }
+                })
+            })
             gsap.utils.toArray(".developer__item-img").forEach(el => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
