@@ -13,6 +13,17 @@ mixin location()
                 .location__maps 
                     .location__map#map.active 
                         img(src="@img/map.png", alt="" draggable="false") 
+                        .location__map-marker 
+                            <svg width="34" height="41" viewBox="0 0 34 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5605 20.7006C17.699 20.7006 18.674 20.2949 19.4855 19.4834C20.2956 18.6734 20.7006 17.699 20.7006 16.5605C20.7006 15.422 20.2956 14.447 19.4855 13.6355C18.674 12.8254 17.699 12.4204 16.5605 12.4204C15.422 12.4204 14.4477 12.8254 13.6376 13.6355C12.8261 14.447 12.4204 15.422 12.4204 16.5605C12.4204 17.699 12.8261 18.6734 13.6376 19.4834C14.4477 20.2949 15.422 20.7006 16.5605 20.7006ZM16.5605 40.625C16.2845 40.625 16.0085 40.5732 15.7325 40.4697C15.4565 40.3662 15.215 40.2282 15.008 40.0557C9.97081 35.6051 6.21019 31.4739 3.72612 27.6623C1.24204 23.8492 0 20.2866 0 16.9745C0 11.7994 1.66502 7.67649 4.99506 4.60589C8.32373 1.5353 12.1789 0 16.5605 0C20.9421 0 24.7973 1.5353 28.126 4.60589C31.456 7.67649 33.121 11.7994 33.121 16.9745C33.121 20.2866 31.879 23.8492 29.3949 27.6623C26.9108 31.4739 23.1502 35.6051 18.1131 40.0557C17.9061 40.2282 17.6645 40.3662 17.3885 40.4697C17.1125 40.5732 16.8365 40.625 16.5605 40.625Z" fill="url(#paint0_linear_1065_64)"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_1065_64" x1="13.151" y1="-56.25" x2="79.6083" y2="64.759" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFA761"/>
+                                <stop offset="1" stop-color="#C7825B"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                            .location__map-marker-shadow 
                     .location__map.location__map-wrap#localMap 
                         .location__map-tab 
                             button(type='button' data-target="#localAll").location__map-tab-item.active All categories 
@@ -21,15 +32,15 @@ mixin location()
                             button(type='button' data-target="#localShops").location__map-tab-item Shops 
                             button(type='button' data-target="#localBars").location__map-tab-item Restaurants and bars 
                         .location__map-item#localAll.active 
-                            img(src="@img/local-map_all.png", alt="" draggable="false")
+                            img(src="@img/local-map_all.svg", alt="" draggable="false")
                         .location__map-item#localPharmacies 
-                            img(src="@img/local-map_pharmasies.png", alt="" draggable="false")
+                            img(src="@img/local-map_pharmasies.svg", alt="" draggable="false")
                         .location__map-item#localFitnesses 
-                            img(src="@img/local-map_fitnesses.png", alt="" draggable="false")
+                            img(src="@img/local-map_fitnesses.svg", alt="" draggable="false")
                         .location__map-item#localShops 
-                            img(src="@img/local-map_shops.png", alt="" draggable="false")
+                            img(src="@img/local-map_shops.svg", alt="" draggable="false")
                         .location__map-item#localBars 
-                            img(src="@img/local-map_bars.png", alt="" draggable="false")
+                            img(src="@img/local-map_bars.svg", alt="" draggable="false")
                 .location__navigation 
                     button(type="button" data-target="#map").gotoblock.location__navigation-left.location__navigation-btn.active
                         <svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg">

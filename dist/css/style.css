@@ -2095,9 +2095,6 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   gap: 120px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
 }
 
 .floor__item-title {
@@ -2300,6 +2297,11 @@ ul {
 
 .location__navigation {
   display: none;
+  pointer-events: none;
+}
+
+.location__navigation-left {
+  pointer-events: all;
 }
 
 .location__navigation-left svg {
@@ -2309,6 +2311,7 @@ ul {
 }
 
 .location__navigation-right {
+  pointer-events: all;
   margin-left: auto;
 }
 
@@ -2346,6 +2349,7 @@ ul {
   line-height: 0;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .location__map img {
@@ -2356,6 +2360,28 @@ ul {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
+}
+
+.location__map-marker {
+  position: absolute;
+  top: 190px;
+  left: 177px;
+}
+
+.location__map-marker svg {
+  -webkit-animation: marker 5s infinite;
+          animation: marker 5s infinite;
+}
+
+.location__map-marker-shadow {
+  position: absolute;
+  bottom: -16px;
+  width: 33px;
+  height: 6px;
+  background: #000;
+  border-radius: 1000%;
+  -webkit-animation: marker-shadow 5s infinite;
+          animation: marker-shadow 5s infinite;
 }
 
 .location__map.active {
@@ -2401,8 +2427,8 @@ ul {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 22.5624px 162px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 22.5624px 162px rgba(0, 0, 0, 0.25);
 }
 
 .location__map-tab-item.active {
@@ -2520,6 +2546,74 @@ ul {
   font-size: 20px;
   line-height: 96.5%;
   color: #FFFFFF;
+}
+
+@-webkit-keyframes marker {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes marker {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes marker-shadow {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes marker-shadow {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .community {
@@ -3171,6 +3265,26 @@ ul {
           transform: rotate(0);
 }
 
+.popup .form__item-input input::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.popup .form__item-input input::-moz-placeholder {
+  font-weight: 400;
+}
+
+.popup .form__item-input input:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.popup .form__item-input input::-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.popup .form__item-input input::placeholder {
+  font-weight: 400;
+}
+
 .popup__overlay {
   position: absolute;
   top: 0;
@@ -3731,6 +3845,11 @@ ul {
     width: 566px;
   }
 
+  .location__map-marker {
+    top: 190px;
+    left: 90px;
+  }
+
   .location__info-item:nth-child(2) {
     padding: 0px 26px;
   }
@@ -4118,6 +4237,19 @@ ul {
 
   .location__map {
     border-radius: 45px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .location__map img {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+
+  .location__map-marker {
+    top: 190px;
+    left: 266px;
   }
 
   .location__map-tab {
@@ -4460,17 +4592,6 @@ ul {
 
   .floor__item-info-row {
     margin-bottom: 20px;
-  }
-
-  .location__map {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
-  .location__map img {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
   }
 
   .community__p {

@@ -158,6 +158,7 @@
     }
     &__navigation{
         display: none;
+        pointer-events: none;
         @include media(992){
             display: flex;
             width: calc(100% + 70px);
@@ -169,11 +170,13 @@
             left: -35px;
         }
         &-left{
+            pointer-events: all;
             svg{
                 transform: rotate(180deg);
             }
         }
         &-right{
+            pointer-events: all;
             margin-left: auto;
         }
         &-btn{
@@ -199,12 +202,13 @@
         line-height: 0;
         border-radius: 20px;
         overflow: hidden;
+        position: relative;
         @include media(992){
             border-radius: 45px;
-        }
-        @include media(768){
             overflow-x: scroll;
             overflow-y: hidden;
+        }
+        @include media(768){
         }
         img{
             line-height: 0;
@@ -212,8 +216,33 @@
             width: 100%;
             object-fit: cover;
             object-position: bottom;
-            @include media(768){
+            @include media(992){
                 width: max-content;
+            }
+        }
+        &-marker{
+            position: absolute;
+            top: 190px;
+            left: 177px;
+            svg{
+                animation: marker 5s infinite;
+            }
+            @include media(1200){
+                top: 190px;
+                left: 90px;
+            }
+            @include media(992){
+                top: 190px;
+                left: 266px;
+            }
+            &-shadow{
+                position: absolute;
+                bottom: -16px;
+                width: 33px;
+                height: 6px;
+                background: #000;
+                border-radius: 1000%;
+                animation: marker-shadow 5s infinite;
             }
         }
         &.active{
@@ -247,7 +276,7 @@
                 position: relative;
                 isolation: isolate;
                 overflow: hidden;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 22.5624px 162px rgba(0, 0, 0, 0.25);
                 &.active{
                     color: #fff;
                     &::before{
@@ -268,17 +297,17 @@
                     z-index: -1;
                     background: linear-gradient(155.88deg, #FFA761 -83.36%, #C7825B 184.44%), #FFFFFF;
                 }
-            }
-        }
-        &-item{
+            }   
+        }       
+        &-item{ 
             height: 100%;
             width: 100%;
             display: none;
             &.active{
                 display: block;
-            }
-        }
-    }
+            }   
+        }       
+    }           
     &__info{
         padding: 30px 0;
         display: flex;
@@ -378,5 +407,27 @@
                 line-height: 96.5%;
             }
         }
+    }
+}
+@keyframes marker {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes marker-shadow {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.6);
+    }
+    100%{
+        transform: scale(1); 
     }
 }
