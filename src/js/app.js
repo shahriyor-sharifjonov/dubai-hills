@@ -1,4 +1,5 @@
 import * as functions from './modules/functions.js'
+import { keypixGallery } from './modules/keypixGallery.js'
 import { gsap } from 'gsap'
 import Swiper, { Navigation, Pagination, EffectCreative, EffectFade, Thumbs, FreeMode } from 'swiper';
 import SmoothScroll from 'smoothscroll-for-websites'
@@ -6,6 +7,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 
 functions.isWebp();
 gsap.registerPlugin(ScrollTrigger);
+
+let kg = new keypixGallery()
+kg.init()
 
 let oneFourHeight = window.innerHeight / 5
 

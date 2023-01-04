@@ -223,13 +223,13 @@
         &-marker{
             position: absolute;
             top: 190px;
-            left: 177px;
+            left: 210px;
             svg{
-                animation: marker 5s infinite;
+                animation: marker 2.5s infinite;
             }
             @include media(1200){
                 top: 190px;
-                left: 90px;
+                left: 115px;
             }
             @include media(992){
                 top: 190px;
@@ -242,7 +242,7 @@
                 height: 6px;
                 background: #000;
                 border-radius: 1000%;
-                animation: marker-shadow 5s infinite;
+                animation: marker-shadow 2.5s infinite;
             }
         }
         &.active{

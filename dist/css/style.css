@@ -134,6 +134,117 @@
   padding-left: 15px;
 }
 
+.kg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  isolation: isolate;
+}
+
+.kg.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kg__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.kg__item {
+  cursor: pointer;
+}
+
+.kg__body {
+  max-width: 90%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-height: calc(90vh - 45px);
+  margin-bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.kg__img {
+  max-width: 100%;
+  max-height: inherit;
+  border-radius: 15px;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.kg__img img {
+  max-width: 100%;
+  max-height: inherit;
+  border-radius: 15px;
+}
+
+.kg__pagination {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.kg__pagination-item {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.kg__pagination-item.active {
+  background: #FFA761;
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }
@@ -1041,6 +1152,13 @@ ul {
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.footer__li:hover {
+  color: #FFA761;
 }
 
 .footer__link {
@@ -2365,12 +2483,12 @@ ul {
 .location__map-marker {
   position: absolute;
   top: 190px;
-  left: 177px;
+  left: 210px;
 }
 
 .location__map-marker svg {
-  -webkit-animation: marker 5s infinite;
-          animation: marker 5s infinite;
+  -webkit-animation: marker 2.5s infinite;
+          animation: marker 2.5s infinite;
 }
 
 .location__map-marker-shadow {
@@ -2380,8 +2498,8 @@ ul {
   height: 6px;
   background: #000;
   border-radius: 1000%;
-  -webkit-animation: marker-shadow 5s infinite;
-          animation: marker-shadow 5s infinite;
+  -webkit-animation: marker-shadow 2.5s infinite;
+          animation: marker-shadow 2.5s infinite;
 }
 
 .location__map.active {
@@ -3847,7 +3965,7 @@ ul {
 
   .location__map-marker {
     top: 190px;
-    left: 90px;
+    left: 115px;
   }
 
   .location__info-item:nth-child(2) {
