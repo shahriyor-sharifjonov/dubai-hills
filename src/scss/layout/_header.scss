@@ -49,6 +49,13 @@
             transform: translateY(-20px);
         }
     }
+    &.open{
+        .header__button{
+            opacity: 1 !important;
+            visibility: visible !important; 
+            transform: translateY(0) !important; 
+        }
+    }
     &.white{
         background: #fff;
         color: #1D1C1C;

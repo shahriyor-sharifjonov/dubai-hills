@@ -44,10 +44,14 @@ const menuToggle = () => {
   header.classList.toggle("open")
   if(menuOpened){
     setTimeout(() => {
-        document.body.style.overflowY = "hidden"
+        document.body.style.overflowY = "hidden";
+        document.body.classList.add('hidden-y');
+        // document.querySelector('html').style.overflowY = "hidden";
     }, 300);
   } else {
-    document.body.style.overflowY = "auto"
+    document.body.style.overflowY = "auto";
+    document.body.classList.remove('hidden-y');
+    // document.querySelector('html').style.overflowY = "hidden";
   }
 }
 
@@ -567,7 +571,7 @@ const sliders = () => {
         initialSlide: 0,
         grabCursor: true,
         centeredSlides: true,
-        loop: true,
+        loop: false,
         speed: 500,
         navigation: {
             nextEl: '.features__next',
@@ -582,6 +586,7 @@ const sliders = () => {
                 initialSlide: 1,
                 slidesPerView: 2,
                 centeredSlides: false,
+                loop: true,
             },
             992: {
                 slidesPerView: 3,
